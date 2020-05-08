@@ -1,5 +1,4 @@
-</div>
-<footer>
+    <footer>
         <p>&copy; <?php echo date("Y");?> | Megan Hendrickson | All Rights Reserved</p>
         <p><?php echo "Last modified" . date(" F d, Y.", getlastmod()); ?></p>
         <!-- scripts -->

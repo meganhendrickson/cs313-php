@@ -50,6 +50,7 @@ h1 {
     display: none;
 }
 #page-container {
+    background: #868187;
     min-height: 100vh;
     overflow: hidden;
     display: block;

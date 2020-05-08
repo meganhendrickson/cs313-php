@@ -1,5 +1,4 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/header.php'?>
-<div id="landingpage">
     <main id="hello">
         <h1>Well, Hello There!</h1>
         <p>Allow me to introduce myself: I'm a designer, a web developer-in-training, and a chocolate lover.
@@ -9,4 +8,3 @@
         </p>
     </main>
     <?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
-</div>
