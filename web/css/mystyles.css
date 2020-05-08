@@ -58,10 +58,6 @@ h1 {
     padding-bottom: 100px;
 }
 main {
-    padding: 20px;
-}
-
-#hello {
     position: absolute;
     top: 50%;
     right: 5%;

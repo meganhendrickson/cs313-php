@@ -19,4 +19,3 @@
                 <i class="fa fa-bars"></i></a>
         </nav>
     </header>
-    <div id="page-container">
