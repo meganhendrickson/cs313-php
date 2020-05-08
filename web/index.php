@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/header.php'?>
 <div id="landingpage">
-    <main>
+    <main id="hello">
         <h1>Well, Hello There!</h1>
         <p>Allow me to introduce myself: I'm a designer, a web developer-in-training, and a chocolate lover.
             I like to perfect every detail, put puzzles together, laugh at silly jokes, cry over bad design,
