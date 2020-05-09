@@ -2,7 +2,6 @@
 
 class Product
 {
-
     public $productArray = array(
         "bee-kind" => array(
             'id' => '1',

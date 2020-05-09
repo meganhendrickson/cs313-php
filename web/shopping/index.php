@@ -12,7 +12,7 @@
 <main>
     <h1>PHP Shopping Cart Demo</h1>
 <?php
-require_once ("Product.php");
+require_once ("product.php");
 $product = new Product();
 $productArray = $product->getAllProduct();
 ?>
