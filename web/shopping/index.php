@@ -1,9 +1,15 @@
-<html lang="en">
-<head>
-<title>PHP Shopping Cart</title>
-<link href="style.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
+<?php
+    ob_start();
+    include $_SERVER['DOCUMENT_ROOT'].'/common/header.php';
+    $buffer=ob_get_contents();
+    ob_end_clean();
+
+    $title = "Shopping Cart Assignment";
+    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+    echo $buffer;
+?>
+<main>
     <h1>PHP Shopping Cart Demo</h1>
 <?php
 require_once ("Product.php");
@@ -45,5 +51,5 @@ if (! empty($productArray)) {
 }
 ?>
 </div>
-</body>
-</html>
+</main>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
