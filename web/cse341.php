@@ -12,7 +12,7 @@
     <main>
         <h1>CSE 341 Assignments</h1>
         <ul>
-            <li><a href="/shopping.php">Shopping Cart</a></li>
+            <li><a href="/shopping/">Shopping Cart</a></li>
         </ul>
     </main>
 <?php include $_SERVER ['DOCUMENT_ROOT'].'/common/footer.php';?> 
