@@ -1,44 +1,56 @@
 <?php
-/* SHOPPING CONTROLLER */
-//product array 
+session_start();
+//include header
+ob_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
+$buffer = ob_get_contents();
+ob_end_clean();
+//set page title
+$title = "Shopping Cart Assignment";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
+?>
+<main>
+    <h1>Shopping Cart Demo</h1>
+    <?php
 require_once ("product.php");
 $product = new Product();
 $productArray = $product->getAllProduct();
-
-// Create or access a Session
-session_start();
-
-$action = filter_input(INPUT_POST, 'action');
-    if($action == NULL){
-        $action = filter_input(INPUT_GET, 'action');
+?>
+<div id="product-grid">
+    <div class="txt-heading">Products</div>
+<?php
+if (! empty($productArray)) {
+    foreach ($productArray as $k => $v) {
+        ?>
+		<div class="product-item">
+        <form id="frmCart">
+            <div class="product-image">
+                <img src="<?php echo $productArray[$k]["image"]; ?>">
+            </div>
+            <div>
+                <div class="product-info">
+                    <strong><?php echo $productArray[$k]["name"]; ?></strong>
+                </div>
+                <div class="product-info product-price"><?php echo "$".$productArray[$k]["price"]; ?></div>
+                <div class="product-info">
+                    <button type="button"
+                        id="add_<?php echo $productArray[$k]["code"]; ?>"
+                        class="btnAddAction cart-action"
+                        onClick="cartAction('add','<?php echo $productArray[$k]["code"]; ?>')">
+                        <img src="images/add-to-cart.png" />
+                    </button>
+                    <input type="text"
+                        id="qty_<?php echo $productArray[$k]["code"]; ?>"
+                        name="quantity" value="1" size="2" />
+                </div>
+            </div>
+        </form>
+    </div>
+	<?php
     }
-
-switch ($action){
-    case "add":
-        if(!empty($_POST["quantity"])) {
-            $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-            $itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name"], 'code'=>$productByCode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productByCode[0]["price"], 'image'=>$productByCode[0]["image"]));
-            
-            if(!empty($_SESSION["cart_item"])) {
-                if(in_array($productByCode[0]["code"],array_keys($_SESSION["cart_item"]))) {
-                    foreach($_SESSION["cart_item"] as $k => $v) {
-                            if($productByCode[0]["code"] == $k) {
-                                if(empty($_SESSION["cart_item"][$k]["quantity"])) {
-                                    $_SESSION["cart_item"][$k]["quantity"] = 0;
-                                }
-                                $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-                            }
-                    }
-                } else {
-                    $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
-                }
-            } else {
-                $_SESSION["cart_item"] = $itemArray;
-            }
-        }
-        include 'view/product-display.php';
-        break;
-
-    default:
-        include 'view/product-display.php';
 }
+?>
+</div>
+</main>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
