@@ -120,3 +120,12 @@ footer {
     color: #000;
     background-color: #fff;
 }
+
+.cart-actions a {
+    color: white;
+    text-decoration: none;
+}
+
+.cart-actions a:hover {
+    text-decoration: underline;
+}

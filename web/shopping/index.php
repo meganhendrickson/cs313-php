@@ -49,6 +49,6 @@ $productArray = $product->getAllProduct();
         }
         ?>
     </div>
-    <a href="view-cart.php">View Cart</a>
+    <a class="cart-action" href="view-cart.php">View Cart</a>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

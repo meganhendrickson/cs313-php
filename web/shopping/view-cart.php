@@ -54,14 +54,14 @@ require_once("product.php");
           </tbody>
         </table>
         <a id="btnEmpty" class="cart-action" onClick="cartAction('empty','');"><img src="images/icon-empty.png" />Empty Cart</a>
-        <a id="btnCheckout" class="cart-action" onClick="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
-        <a id="btnCheckout" class="cart-action" onClick="checkout.php"><img src="images/check.png" />Checkout</a>
+        <a id="btnCheckout" class="cart-action" href="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
+        <a id="btnCheckout" class="cart-action" href="checkout.php"><img src="images/check.png" />Checkout</a>
       <?php
       }
       else{
         ?>
         <p>Your shopping cart is empty.</p>
-        <a id="btnCheckout" class="cart-action" onClick="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
+        <a id="btnCheckout" class="cart-action" href="index.php">Continue Shopping</a>
       <?php
       }
       ?>
