@@ -33,7 +33,7 @@ function cartAction(action, product_code) {
           $("#cart-item").html(data);
           if (action == "add") {
               $("#add_" + product_code + " img").attr("src",
-                      "images/icon-check.png");
+                      "images/check.png");
               $("#add_" + product_code).attr("onclick", "");
           }
       },
