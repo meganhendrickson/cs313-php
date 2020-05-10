@@ -1,3 +1,7 @@
 .product-image img {
     max-width: 200px;
 }
+
+.add-to-cart-button img {
+    width: 10px;
+}

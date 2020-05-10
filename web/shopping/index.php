@@ -9,6 +9,7 @@
 
     echo $buffer;
 ?>
+<link rel="stylesheet" type="text/css" href="main.css">
 <main>
     <h1>PHP Shopping Cart Demo</h1>
 <?php
