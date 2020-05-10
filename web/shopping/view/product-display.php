@@ -15,12 +15,12 @@
 <main>
     <h1>PHP Shopping Cart Demo</h1>
     <div id="product-grid">
-        <?php
+        <?php require_once ("product.php");
         if (! empty($productArray)) {
             foreach ($productArray as $k => $v) {
                 ?>
                 <div class="product-item">
-                <form id="frmCart" method="post" action="index.php?action=add&code+<?php echo $productArray[$k]["code"];?>">
+                <form method="post" action="index.php?action=add&code+<?php echo $productArray[$k]["code"];?>">
                     <div class="product-image">
                         <img src="<?php echo $productArray[$k]["image"]; ?>">
                     </div>
