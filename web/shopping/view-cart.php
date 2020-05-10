@@ -25,7 +25,7 @@ require_once ("product.php");
       if (isset($_SESSION["cart_item"])) {
         $item_total = 0;
       ?>
-        <table class="tutorial-table">
+        <table class="cart-table">
           <tbody>
             <tr>
               <th><strong>Name</strong></th>
