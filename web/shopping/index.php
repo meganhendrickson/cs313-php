@@ -1,10 +1,12 @@
 <?php
 session_start();
+
 //include header
 ob_start();
 include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
 $buffer = ob_get_contents();
 ob_end_clean();
+
 //set page title
 $title = "Shopping Cart Assignment";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
@@ -13,46 +15,40 @@ echo $buffer;
 <main>
     <h1>Fabulous Tees</h1>
     <?php
-require_once ("product.php");
-$product = new Product();
-$productArray = $product->getAllProduct();
-?>
-<div id="product-grid">
-    <div class="txt-heading">Products</div>
-<?php
-if (! empty($productArray)) {
-    foreach ($productArray as $k => $v) {
+    require_once("product.php");
+    $product = new Product();
+    $productArray = $product->getAllProduct();
+    ?>
+    <div id="product-grid">
+        <div class="txt-heading">Products</div>
+        <?php
+        if (!empty($productArray)) {
+            foreach ($productArray as $k => $v) {
         ?>
-		<div class="product-item">
-        <form id="frmCart">
-            <div class="product-image">
-                <img src="<?php echo $productArray[$k]["image"]; ?>">
-            </div>
-            <div>
-                <div class="product-info">
-                    <strong><?php echo $productArray[$k]["name"]; ?></strong>
+                <div class="product-item">
+                    <form id="frmCart">
+                        <div class="product-image">
+                            <img src="<?php echo $productArray[$k]["image"]; ?>">
+                        </div>
+                        <div>
+                            <div class="product-info">
+                                <strong><?php echo $productArray[$k]["name"]; ?></strong>
+                            </div>
+                            <div class="product-info product-price"><?php echo "$" . $productArray[$k]["price"]; ?></div>
+                            <div class="product-info">
+                                <input type="text" id="qty_<?php echo $productArray[$k]["code"]; ?>" class="quantityInput" name="quantity" value="1" size="2" />
+                                <button type="button" id="add_<?php echo $productArray[$k]["code"]; ?>" class="btnAddAction cart-action" onClick="cartAction('add','<?php echo $productArray[$k]["code"]; ?>')">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="product-info product-price"><?php echo "$".$productArray[$k]["price"]; ?></div>
-                <div class="product-info">
-                    <input type="text"
-                        id="qty_<?php echo $productArray[$k]["code"]; ?>"
-                        class="quantityInput"
-                        name="quantity" value="1" size="2" />
-                    <button type="button"
-                        id="add_<?php echo $productArray[$k]["code"]; ?>"
-                        class="btnAddAction cart-action"
-                        onClick="cartAction('add','<?php echo $productArray[$k]["code"]; ?>')">
-                        Add to Cart
-                    </button>    
-                </div>
-            </div>
-        </form>
+        <?php
+            }
+        }
+        ?>
     </div>
-	<?php
-    }
-}
-?>
-</div>
-<a href="view-cart.php">View Cart</a>
+    <a href="view-cart.php">View Cart</a>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
