@@ -40,7 +40,7 @@ class Product
         ),
         "it-is-well" => array(
             'id' => '6',
-            'name' => 'Everythings Fine Tshirt',
+            'name' => 'It is Well Tshirt',
             'code' => 'it-is-well',
             'image' => 'images/it-is-well.jpg',
             'price' => '15.00'

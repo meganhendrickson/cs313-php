@@ -11,7 +11,7 @@ $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $bu
 echo $buffer;
 ?>
 <main>
-    <h1>Shopping Cart Demo</h1>
+    <h1>Fabulous Tees</h1>
     <?php
 require_once ("product.php");
 $product = new Product();
@@ -53,5 +53,6 @@ if (! empty($productArray)) {
 }
 ?>
 </div>
+<a href="view-cart.php">View Cart</a>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
