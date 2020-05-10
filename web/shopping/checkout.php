@@ -61,15 +61,18 @@ require_once("product.php");
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname"><br>
         <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname">
+        <input type="text" id="lname" name="lname"><br>
         <label for="address">Address:</label><br>
         <input type="text" id="address" name="address"><br>
         <label for="city">City:</label><br>
-        <input type="text" id="city" name="city">
+        <input type="text" id="city" name="city"><br>
         <label for="state">State:</label><br>
         <input type="text" id="state" name="state"><br>
         <label for="zipcode">Zip Code:</label><br>
-        <input type="text" id="zipcode" name="zipcode">
+        <input type="text" id="zipcode" name="zipcode"><br>
+        <input type="submit" value="Complete Purchase"><br>
     </form>
+    <a id="btnCheckout" class="cart-action" href="view-cart.php"><img src="images/add-to-cart.png" />Return to Cart</a>
+
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
