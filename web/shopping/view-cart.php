@@ -10,16 +10,13 @@ $title = "View Cart";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
-require_once ("cart-action.php");
-require_once ("product.php");
+require_once("cart-action.php");
+require_once("product.php");
 
 ?>
 <main>
   <h1>Your Shopping Cart</h1>
   <div id="shopping-cart">
-    <div class="txt-heading">
-      Shopping Cart <a id="btnEmpty" class="cart-action" onClick="cartAction('empty','');"><img src="images/icon-empty.png" /> Empty Cart</a>
-    </div>
     <div id="cart-item">
       <?php
       if (isset($_SESSION["cart_item"])) {
@@ -56,6 +53,9 @@ require_once ("product.php");
             </tr>
           </tbody>
         </table>
+        <a id="btnEmpty" class="cart-action" onClick="cartAction('empty','');"><img src="images/icon-empty.png" />Empty Cart</a>
+        <a id="btnCheckout" class="cart-action" href="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
+        <a id="btnCheckout" class="cart-action" href="checkout.php"><img src="images/check.png" />Checkout</a>
       <?php
       }
       ?>
