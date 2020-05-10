@@ -36,6 +36,7 @@ switch ($action){
                 $_SESSION["cart_item"] = $itemArray;
             }
         }
+        include 'view/product-display.php';
         break;
 
     default:

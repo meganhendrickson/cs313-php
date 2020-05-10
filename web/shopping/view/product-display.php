@@ -20,7 +20,7 @@
             foreach ($productArray as $k => $v) {
                 ?>
                 <div class="product-item">
-                <form method="post" action="index.php?action=add&code+<?php echo $productArray[$k]["code"];?>">
+                <form method="post" action="index.php?action=add">
                     <div class="product-image">
                         <img src="<?php echo $productArray[$k]["image"]; ?>">
                     </div>
