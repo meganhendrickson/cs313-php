@@ -20,6 +20,7 @@ $productArray = $product->getAllProduct();
 ?>
 <main>
     <h1>Fabulous Tees</h1>
+    <a class="cart-action" href="view-cart.php">View Cart</a>
     <div id="product-grid">
         <?php
         if (!empty($productArray)) {
@@ -49,6 +50,5 @@ $productArray = $product->getAllProduct();
         }
         ?>
     </div>
-    <a class="cart-action" href="view-cart.php">View Cart</a>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
