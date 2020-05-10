@@ -12,7 +12,8 @@
 <?php
 if(isset($_SESSION["cart_item"])){
     $item_total = 0;
-?>	
+?>
+<main>	
 <table class="tutorial-table">
 <tbody>
 <tr>
@@ -47,3 +48,4 @@ if(isset($_SESSION["cart_item"])){
   <?php
 }
 ?>
+</main>

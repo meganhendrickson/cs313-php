@@ -13,6 +13,7 @@
     <h1>PHP Shopping Cart Demo</h1>
 <?php
 require_once ("product.php");
+require_once ("cartaction.php");
 $product = new Product();
 $productArray = $product->getAllProduct();
 ?>
