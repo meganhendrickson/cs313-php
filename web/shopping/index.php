@@ -11,16 +11,16 @@ ob_end_clean();
 $title = "Shopping Cart Assignment";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
+
+require_once("cart-action.php"); //cart actions
+require_once("product.php"); //product array
+
+$product = new Product();
+$productArray = $product->getAllProduct();
 ?>
 <main>
     <h1>Fabulous Tees</h1>
-    <?php
-    require_once("product.php");
-    $product = new Product();
-    $productArray = $product->getAllProduct();
-    ?>
     <div id="product-grid">
-        <div class="txt-heading">Products</div>
         <?php
         if (!empty($productArray)) {
             foreach ($productArray as $k => $v) {
@@ -44,19 +44,6 @@ echo $buffer;
                         </div>
                     </form>
                 </div>
-                <div class="clear-float"></div>
-    <div id="shopping-cart">
-        <div class="txt-heading">
-            Shopping Cart <a id="btnEmpty" class="cart-action"
-                onClick="cartAction('empty','');"><img
-                src="images/icon-empty.png" /> Empty Cart</a>
-        </div>
-        <div id="cart-item">
-        <?php 
-		require_once "ajax-action.php";
-        ?>
-        </div>
-    </div>
         <?php
             }
         }
