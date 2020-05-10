@@ -33,7 +33,7 @@ if (! empty($productArray)) {
                 </div>
                 <div class="product-info product-price"><?php echo "$".$productArray[$k]["price"]; ?></div>
                 <div class="product-info">
-                    <button type="button"
+                    <button class="add-to-cart-button" type="button"
                         id="add_<?php echo $productArray[$k]["code"]; ?>"
                         class="btnAddAction cart-action"
                         onClick="cartAction('add','<?php echo $productArray[$k]["code"]; ?>')">
