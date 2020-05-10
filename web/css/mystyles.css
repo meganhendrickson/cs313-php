@@ -121,16 +121,16 @@ footer {
     background-color: #fff;
 }
 
-.cart-actions a:link {
+a:link.cart-actions {
     color: white;
     text-decoration: none;
 }
 
-.cart-actions a:visited {
+a:visited.cart-actions {
     color: white;
     text-decoration: none;
 }
 
-.cart-actions a:hover {
+a:hover.cart-actions {
     text-decoration: underline;
 }
