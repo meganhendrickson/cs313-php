@@ -38,7 +38,7 @@ echo $buffer;
                             <div class="product-info">
                                 <input type="text" id="qty_<?php echo $productArray[$k]["code"]; ?>" class="quantityInput" name="quantity" value="1" size="2" />
                                 <button type="button" id="add_<?php echo $productArray[$k]["code"]; ?>" class="btnAddAction cart-action" onClick="cartAction('add','<?php echo $productArray[$k]["code"]; ?>')">
-                                    Add to Cart
+                                    <img src="images/add-to-cart.png" />
                                 </button>
                             </div>
                         </div>
