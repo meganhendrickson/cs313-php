@@ -111,4 +111,8 @@ footer {
     }
 }
 
+/* SHOPPING CART ASSIGNMENT */
+.product-image img {
+    max-width: 200px;
+}
 
