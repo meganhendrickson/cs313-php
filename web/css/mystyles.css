@@ -121,7 +121,7 @@ footer {
     background-color: #fff;
 }
 
-.cart-actions a {
+.cart-actions a:link a:visited {
     color: white;
     text-decoration: none;
 }
