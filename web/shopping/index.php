@@ -35,7 +35,7 @@ if (! empty($productArray)) {
                 <div class="product-info product-price"><?php echo "$".$productArray[$k]["price"]; ?></div>
                 <div class="cart-action">
                     <input type="text" class="product-quantity" name="quantity" value="1" size="2" />
-                    <input type="image" src="images/add-to-cart.png" class="addbtn" value="add to cart" alt="add" />
+                    <input type="submit" class="addbtn" value="add to cart"/>
                 </div>
             </div>
         </form>
