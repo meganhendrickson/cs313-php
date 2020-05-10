@@ -20,7 +20,7 @@ require_once("product.php");
     <div id="cart-item">
       <?php
       if (isset($_SESSION["cart_item"])) {
-        $item_total = 0;
+        $item_total > 0;
       ?>
         <table class="cart-table">
           <tbody>
@@ -56,6 +56,12 @@ require_once("product.php");
         <a id="btnEmpty" class="cart-action" onClick="cartAction('empty','');"><img src="images/icon-empty.png" />Empty Cart</a>
         <a id="btnCheckout" class="cart-action" onClick="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
         <a id="btnCheckout" class="cart-action" onClick="checkout.php"><img src="images/check.png" />Checkout</a>
+      <?php
+      }
+      else{
+        ?>
+        <p>Your shopping cart is empty.</p>
+        <a id="btnCheckout" class="cart-action" onClick="index.php"><img src="images/add-to-cart.png" />Continue Shopping</a>
       <?php
       }
       ?>
