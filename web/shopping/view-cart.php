@@ -10,7 +10,9 @@ $title = "View Cart";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
-require_once("cart-action.php")
+require_once ("cart-action.php");
+require_once ("product.php");
+
 ?>
 <main>
   <h1>Your Shopping Cart</h1>
