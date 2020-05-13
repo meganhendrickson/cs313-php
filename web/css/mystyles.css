@@ -142,13 +142,13 @@ ul.assignment-menu {
     background-color: #fff;
 }
 
-.cart-action a:link, .cart-action a:visited {
+a:link.cart-action, a:visited.cart-action {
     color: #fff;
     text-decoration: none;
     font-size: 1.5em;
 }
 
-.cart-action a:hover {
+a:hover.cart-action {
     color: #fff;
     text-decoration: underline;
     font-size: 1.5em;
