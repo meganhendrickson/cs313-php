@@ -110,11 +110,11 @@ footer {
 }
 
 /*CLASS ASSIGNMENT MENU*/
-.assignment-menu {
+ul.assignment-menu {
     list-style-type: none;
 }
 
-.assignemnt-menu a {
+.assignment-menu li a {
     color: #fff;
     text-decoration: none;
 }
