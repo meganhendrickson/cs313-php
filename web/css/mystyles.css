@@ -109,6 +109,16 @@ footer {
     }
 }
 
+/*CLASS ASSIGNMENT MENU*/
+.assignment-menu {
+    list-style-type: none;
+}
+
+.assignemnt-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
 /* SHOPPING CART ASSIGNMENT */
 .product-image img {
     max-width: 200px;

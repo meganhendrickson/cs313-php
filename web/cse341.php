@@ -11,7 +11,7 @@
 ?>
     <main>
         <h1>CSE 341 Assignments</h1>
-        <ul>
+        <ul class="assinment-menu">
             <li><a href="/shopping/">Shopping Cart</a></li>
         </ul>
     </main>
