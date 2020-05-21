@@ -19,5 +19,3 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
 $allUsers = getAllUsers();
 echo $allUsers; ?>
 </main>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
