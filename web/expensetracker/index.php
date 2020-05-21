@@ -5,7 +5,7 @@
 // Create or access a Session
 session_start();
 
-require_once("../library.functions.php");
+require_once("library/functions.php");
 
 $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
