@@ -10,6 +10,7 @@ $title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
+require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
 ?>
 
 <main>
