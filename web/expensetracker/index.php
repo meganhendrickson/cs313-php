@@ -1,21 +1,20 @@
 <?php
-//include header
-ob_start();
-include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
-$buffer = ob_get_contents();
-ob_end_clean();
 
-//set page title
-$title = "Dashboard";
-$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
-echo $buffer;
+/* EXPENSE TRACKER CONTROLLER */
 
-require_once ('library/functions.php');
-?>
+// Create or access a Session
+session_start();
 
-<main>
-  <h1>Dashboard</h1>
-<?php 
-$allUsers = getAllUsers();
-echo $allUsers; ?>
-</main>
+$action = filter_input(INPUT_POST, 'action');
+    if($action == NULL){
+        $action = filter_input(INPUT_GET, 'action');
+    }
+
+
+switch ($action){
+    case 'something':
+    break;
+
+    default:
+        include 'view/dashboard.php';
+}

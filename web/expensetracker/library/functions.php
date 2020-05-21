@@ -16,7 +16,7 @@ function dbConnect() {
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
   
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully";
+    echo "Connected successfully";
   }
   catch (PDOException $ex)
   {
@@ -27,7 +27,7 @@ function dbConnect() {
 
 function getAllUsers() {
   $db = dbConnect();
-  $sql = 'SELECT * FROM Budget';
+  $sql = 'SELECT * FROM "Budget"';
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $allUsers = $stmt->fetchAll();
