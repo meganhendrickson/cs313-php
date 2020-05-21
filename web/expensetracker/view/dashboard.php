@@ -16,7 +16,8 @@ require_once("../library/functions.php");
 <main>
   <h1>Dashboard</h1>
   <?php
-echo print_r (getAllUsers());
+$allUsers = getAllUsers();
+echo $allUsers;
   ?>
 </main>
 
