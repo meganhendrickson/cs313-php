@@ -1,6 +1,6 @@
 <?php
 //database connection
-function dbConnection(){
+function dbConnect(){
   try
   {
     $dbUrl = getenv('DATABASE_URL');
@@ -26,11 +26,11 @@ function dbConnection(){
 }
 
 function getAllUsers(){
-  $db = dbConnection();
+  $db = dbConnect();
   $sql = 'SELECT * FROM "User"';
   $stmt = $db->prepare($sql);
   $stmt->execute();
-  $allUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $allUsers = $stmt->fetchAll();
   $stmt->closeCursor();
   return $allUsers;
 }
