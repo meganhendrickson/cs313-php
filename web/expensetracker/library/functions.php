@@ -25,12 +25,4 @@ function dbConnect() {
   }
 }
 
-function getAllUsers() {
-  $db = dbConnect();
-  $sql = 'SELECT * FROM client';
-  $stmt = $db->prepare($sql);
-  $stmt->execute();
-  $allUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor();
-  return $allUsers;
-}
+
