@@ -13,6 +13,7 @@
         <h1>CSE 341 Assignments</h1>
         <ul class="assignment-menu">
             <li><a href="/shopping/">Shopping Cart</a></li>
+            <li><a href="/shopping/">Expense Tracker</a>(in progress)</li>
         </ul>
     </main>
 <?php include $_SERVER ['DOCUMENT_ROOT'].'/common/footer.php';?> 

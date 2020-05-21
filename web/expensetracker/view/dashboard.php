@@ -10,13 +10,15 @@ $title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
-require_once("cart-action.php");
-require_once("product.php");
+require_once("../library/functions.php");
 ?>
 
 <main>
   <h1>Dashboard</h1>
-  
+  <?php
+echo '<div>All Users: <br>'
+print_r (getAllUsers()).'<div>';
+  ?>
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
