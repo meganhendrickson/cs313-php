@@ -1,8 +1,6 @@
 <?php
 //database connection
 function dbConnect(){
-  try
-  {
     $dbUrl = getenv('DATABASE_URL');
   
     $dbOpts = parse_url($dbUrl);
@@ -18,12 +16,7 @@ function dbConnect(){
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbConnection;
   }
-  catch (PDOException $ex)
-  {
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-  }
-}
+
 
 function getAllUsers(){
   $db = dbConnect();
