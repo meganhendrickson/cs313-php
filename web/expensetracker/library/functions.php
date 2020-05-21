@@ -27,7 +27,7 @@ function dbConnect() {
 
 function getAllUsers() {
   $db = dbConnect();
-  $sql = 'SELECT * FROM "Budget"';
+  $sql = 'SELECT * FROM Budget';
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $allUsers = $stmt->fetchAll();
