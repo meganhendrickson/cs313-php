@@ -15,9 +15,7 @@ require_once("library/functions.php");
 
 <main>
   <h1>Dashboard</h1>
-  <?php
-echo print_r (getAllUsers());
-  ?>
+
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
