@@ -36,19 +36,19 @@ function dbConnection() {
   }
 }
 
-//include header
-ob_start();
-include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
-$buffer = ob_get_contents();
-ob_end_clean();
-
-//set page title
-$title = "Dashboard";
-$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
-echo $buffer;
-
 ?>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://mighty-wave-93548.herokuapp.com/css/mystyles.css">
+    <title>Backup Title</title>
+</head>
+
+<body>
 <main>
   <h1>Dashboard</h1>
   <?php
