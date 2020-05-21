@@ -23,7 +23,7 @@ function dbConnection() {
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-    
+}  
 
   function getAllUsers(){
     $db = dbConnection();
@@ -34,9 +34,10 @@ function dbConnection() {
     $stmt->closeCursor();
     return $allUsers;
   }
-}
+
 
 $allUsers = getAllUsers();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
