@@ -25,16 +25,4 @@ function dbConnection(){
   }
 }
 
-function getAllUsers(){
-  $db = dbConnection();
-  $sql = 'SELECT * FROM User';
-  $stmt = $db->prepare($sql);
-  $stmt->execute();
-  $allUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor();
-  return $allUsers;
-}
-
-echo print_r (getAllUsers());
-
 ?>
