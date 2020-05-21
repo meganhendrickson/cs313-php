@@ -1,6 +1,6 @@
 <?php
 //database connection
-function dbConnect(){
+function dbConnect() {
   try
   {
     $dbUrl = getenv('DATABASE_URL');
@@ -16,7 +16,7 @@ function dbConnect(){
     $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
   
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $dbConnection;
+    return $dbConnect;
   }
   catch (PDOException $ex)
   {
@@ -25,7 +25,7 @@ function dbConnect(){
   }
 }
 
-function getAllUsers(){
+function getAllUsers() {
   $db = dbConnect();
   $sql = 'SELECT * FROM "User"';
   $stmt = $db->prepare($sql);
