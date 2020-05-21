@@ -6,7 +6,7 @@
 session_start();
 
 // Get database connection file
-require_once("library/functions.php");
+require_once $_SERVER['DOCUMENT_ROOT'].'expensetracker/library/functions.php';
 
 $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
@@ -22,3 +22,4 @@ switch ($action){
     default:
         include ('view/dashboard.php');
 }
+?>
