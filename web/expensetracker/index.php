@@ -54,7 +54,7 @@ $allUsers = getAllUsers();
 <main>
   <h1>Dashboard</h1>
   <?php
-    echo $allUsers;
+    echo print_r(getAllUsers());
   ?>
 </main>
 
