@@ -24,7 +24,7 @@ CREATE TABLE "Expense" (
 INSERT INTO "User" (userName, email, password)
 VALUES ('User1', 'user1@email.com', 'Password#1');
 INSERT INTO "User" (userName, email, password)
-VALUES ('User1', 'user1@email.com', 'Password#1');
+VALUES ('User2', 'user2@email.com', 'Password#2');
 
 INSERT INTO "Budget" (userId, budgetName, budgetAmount, created_at)
 VALUES ('3', 'Food', '500', '05/18/2020');
