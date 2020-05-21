@@ -20,5 +20,5 @@ switch ($action){
     break;
 
     default:
-        include 'view/dashboard.php';
+        include ('view/dashboard.php');
 }
