@@ -11,6 +11,7 @@ $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $bu
 echo $buffer;
 
 require_once $_SERVER['DOCUMENT_ROOT'].'/connections.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'expensetracker/library/functions.php';
 ?>
 
 <main>
