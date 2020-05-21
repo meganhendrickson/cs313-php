@@ -24,3 +24,13 @@ function dbConnect(){
     die();
   }
 }
+
+function getAllUsers(){
+  $db = dbConnect();
+  $sql = 'SELECT * FROM "User"';
+  $stmt = $db->prepare($sql);
+  $stmt->execute();
+  $allUsers = $stmt->fetchAll();
+  $stmt->closeCursor();
+  return $allUsers;
+}
