@@ -1,6 +1,6 @@
 <?php
 //database connection
-function dbConnect() {
+function dbConnection() {
   try
   {
     $dbUrl = getenv('DATABASE_URL');
@@ -17,7 +17,7 @@ function dbConnect() {
   
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
-    return $dbConnect;
+    return $dbConnection;
   }
   catch (PDOException $ex)
   {

@@ -1,6 +1,6 @@
 <?php
 function getAllUsers(){
-  $db = dbconnect();
+  $db = dbConnection();
   $sql = 'SELECT * FROM client';
   $stmt = $db->prepare($sql);
   $stmt->execute();
