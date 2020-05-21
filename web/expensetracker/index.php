@@ -6,7 +6,7 @@
 session_start();
 
 // Get database connection file
-require_once("../library/functions.php");
+require_once("/library/functions.php");
 
 $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
@@ -20,5 +20,5 @@ switch ($action){
     break;
 
     default:
-        include 'view/dashboard.php';
+        include '/view/dashboard.php';
 }
