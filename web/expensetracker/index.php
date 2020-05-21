@@ -52,7 +52,7 @@ echo $buffer;
 <main>
   <h1>Dashboard</h1>
   <?php
-    print_r (getAllUsers());
+    echo print_r (getAllUsers());
   ?>
 </main>
 
