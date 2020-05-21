@@ -1,21 +1,23 @@
 <?php
+//include header
+ob_start();
+include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php';
+$buffer = ob_get_contents();
+ob_end_clean();
 
-/* HOME CONTROLLER*/
-
-// Create or access a Session
-session_start();
+//set page title
+$title = "Dashboard";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+echo $buffer;
 
 require_once("library/functions.php");
+?>
 
-$action = filter_input(INPUT_POST, 'action');
-    if($action == NULL){
-        $action = filter_input(INPUT_GET, 'action');
-    }
+<main>
+  <h1>Dashboard</h1>
+  <?php
+echo print_r (getAllUsers());
+  ?>
+</main>
 
-switch ($action){
-    case 'something':
-    break;
-
-    default:
-        include 'view/dashboard.php';
-}
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
