@@ -23,10 +23,11 @@ function buildDashDisplay($clientBudgets){
     $budgetId=$budget['budgetid'];
     $budgetSpent=getBudgetAmountSpent($budgetId);
     $dash .= "<div class='budgetsummary'>";
-    $dash .= "<p>$budget[budgetname]</p>";
-    $dash .= "<p>Amount: $budget[budgetamount]</p>";
+    $dash .= "<p>$budget[budgetname] $budget[budgetamount]</p>";
      foreach($budgetSpent as $spent){
-      $dash .= "<p>Spent:$spent[sum]</p>";
+      $spent=$spent['sum'];
+      $dash .= "<p>Spent:$spent</p>";
+
      }
     $dash .= "</div>";
   }
