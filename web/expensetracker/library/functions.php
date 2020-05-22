@@ -37,25 +37,6 @@ function buildDashDisplay($clientBudgets){
   return $dash;
 }
 
-
-
-// function buildDashDisplay($clientBudgets){
-//   $dash = "<section id='dashdisplay'>";
-//   foreach ($clientBudgets as $budget){
-//     $budgetId=$budget['budgetid'];
-//     $budgetSpent=getBudgetAmountSpent($budgetId);
-//     $dash .= "<div class='budgetsummary'>";
-//     $dash .= "<p>$budget[budgetname] &#36;$budget[budgetamount]</p>";
-//      foreach($budgetSpent as $spent){
-//       $spent=$spent['sum'];
-//       $dash .= "<p>Spent:$spent</p>";
-//      }
-//     $dash .= "</div>";
-//   }
-//   $dash .="</section>";
-//   return $dash;
-// }
-
 // Get client expenses
 function getBudgetAmountSpent($budgetId){
   $db = dbConnection();
@@ -66,5 +47,21 @@ function getBudgetAmountSpent($budgetId){
   $budgetSpent = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
   return $budgetSpent;
+}
+
+// Get budget details
+function getBudgetDetails($budgetId){
+  $db = dbConnection();
+  $sql = 'SELECT * FROM budget WHERE budgetId = :budgetId';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
+  $stmt->execute();
+  $budgetDetails = $stmt->fetch();
+  $stmt->closeCursor();
+  return $budgetDetails;
+}
+
+function buildBudgetDisplay($budgetDetails){
+  $bd = "<div class='budgetdetails'>";
 }
 ?>
