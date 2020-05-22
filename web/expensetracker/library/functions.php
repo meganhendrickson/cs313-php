@@ -71,10 +71,10 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd .= "<tr><th>Date</th><th>Description</th><th>Amount</th><th>Options</th></tr>";
   foreach ($budgetExpenses as $expense){
     $bd .= "<tr>";
-    $bd .= "<td>$expense[create_at]</td>";
+    $bd .= "<td>$expense[created_at]</td>";
     $bd .= "<td>$expense[description]</td>";
     $bd .= "<td>$expense[expenseamount]</td>";
-    $db .= "<td>Edit | Delete</td>";
+    $db .= "<td> Edit | Delete </td>";
     $bd .= "</tr>";
   }
   $bd .= "</table>";
