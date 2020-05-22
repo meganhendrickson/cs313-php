@@ -30,7 +30,7 @@ function buildDashDisplay($clientBudgets){
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<p>$budget[budgetname] &#36;$budget[budgetamount]</p>";
     $dash .= "<p>Remaining Amount: &#36;$remaining</p>";
-    $dash .= "<a href='https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=".urlencode($budgetId).">View details</a>";
+    $dash .= "<a href='https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=".urlencode($budgetId)."'>View details</a>";
     $dash .= "</div>";
   }
   $dash .="</section>";
