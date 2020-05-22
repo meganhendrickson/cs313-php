@@ -32,7 +32,7 @@ function buildDashDisplay($clientBudgets){
 // Get client expenses
 function getBudgetExpenses($budgetId){
   $db = dbConnection();
-  $sql = 'SELECT SUM expenseamount FROM expense WHERE budgetId = :budgetId';
+  $sql = 'SELECT SUM(expenseamount) FROM expense WHERE budgetId = :budgetId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
   $stmt->execute();
