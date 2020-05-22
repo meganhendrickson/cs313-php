@@ -17,6 +17,11 @@
                 and take walks in the sunshine. I'm still figuring out what I'm doing with my life. But hey,
                 nice to meet you!
             </p>
+            <h2>Here's some things I've been working on:</h2>
+            <ul class="assignment-menu">
+                <li><a href="/shopping/">Shopping Cart</a></li>
+                <li><a href="/expensetracker/">Expense Tracker </a> (in progress)</li>
+            </ul>
         </div>
     </div>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
