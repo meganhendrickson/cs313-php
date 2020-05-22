@@ -25,7 +25,9 @@ function buildDashDisplay($clientBudgets){
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<p>$budget[budgetname]</p>";
     $dash .= "<p>Amount: $budget[budgetamount]</p>";
-    $dash .= "<p>Spent: $budgetSpent</p>";
+     foreach($budgetSpent as $spent){
+      $dash .= "<p>Spent:$spent[sum]</p>";
+     }
     $dash .= "</div>";
   }
   $dash .="</section>";
