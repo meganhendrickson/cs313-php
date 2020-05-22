@@ -17,7 +17,7 @@ function getClientBudgets($clientId){
 }
 
 // Build dashboard summary display
-function buildDashboardSummary(){
+function buildDashDisplay(){
   $clientBudgets = getClientBudgets(1);
   foreach ($clientBudgets as $budget){
     $dash .= "<div class='budgetsummary'>";

@@ -19,6 +19,6 @@ switch ($action){
     break;
 
     default:
-    $dashdisplay = print_r (getClientBudgets(1));
+    $dashDisplay = buildDashDisplay();
         include 'view/dashboard.php';
 }

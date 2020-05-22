@@ -14,7 +14,7 @@ echo $buffer;
 <main>
   <h1>Dashboard</h1>
   <?php
-    echo $dashdisplay;
+    echo $dashDisplay;
   ?>
 </main>
 
