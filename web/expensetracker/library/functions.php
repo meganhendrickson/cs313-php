@@ -38,7 +38,6 @@ function getBudgetExpenses($budgetId){
   $stmt->execute();
   $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-  $total = array_sum($budgetExpenses);
-  return $total;
+  return $budgetExpenses;
 }
 ?>
