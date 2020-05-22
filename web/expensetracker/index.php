@@ -15,7 +15,8 @@ $action = filter_input(INPUT_POST, 'action');
 
 
 switch ($action){
-    case 'something':
+    case 'details':
+        include 'view/budgetdetails.php';
     break;
 
     default:
