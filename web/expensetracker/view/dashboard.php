@@ -15,10 +15,10 @@ echo $buffer;
   <h1>Dashboard</h1>
   <section id="dashdisplay">
   <?php
-    foreach ($clientBudgets as $budget) {
+    while ($clientBudgets) {
       echo '<div class="budgetsumamry">
-              <p>'.$budget['budgetName'].'</p>
-              <p>'.$budget['budgetAmount'].'</p>
+              <p>'.$clientBudgets['budgetName'].'</p>
+              <p>'.$clientBudgets['budgetAmount'].'</p>
             </div>';
     } 
   ?>
