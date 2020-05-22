@@ -9,15 +9,12 @@ ob_end_clean();
 $title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
-
-// Get the common functions file
-require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
 ?>
 
 <main>
   <h1>Dashboard</h1>
   <?php
-    echo print_r(getClientBudget());
+    echo $dashdisplay;
   ?>
 </main>
 
