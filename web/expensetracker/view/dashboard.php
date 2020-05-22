@@ -15,12 +15,7 @@ echo $buffer;
   <h1>Dashboard</h1>
   <section id="dashdisplay">
   <?php
-    foreach ($clientBudgets as $budget) {
-      echo '<div class="budgetsumamry">
-              <p>'.$budget['budgetName'].'</p>
-              <p>'.$budget['budgetAmount'].'</p>
-            </div>';
-    } 
+    echo $dashdisplay;
   ?>
   </section>
 </main>
