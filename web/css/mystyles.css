@@ -48,7 +48,7 @@ h1 {
 
 /* Landing Page Styles */
 .hello-image {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(254, 254, 250, 1) 750px, rgba(254, 254, 250, 2) 800px), url(/images/redscarf2.jpg) no-repeat;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(254, 254, 250, 1) 800px), url(/images/redscarf2.jpg) no-repeat;
     background-attachment: fixed;
     background-color: #868187; 
     min-height: 100vh;
