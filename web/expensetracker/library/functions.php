@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/connections.php';
 
 function getClientBudgets($clientId){
   $db = dbConnection();
-  $sql = 'SELECT * FROM budget WHERE clientId = :clientId';
+  $sql = 'SELECT budgetName, budgetAmount FROM budget WHERE clientId = :clientId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
   $stmt->execute();
