@@ -18,8 +18,8 @@ $action = filter_input(INPUT_POST, 'action');
 switch ($action){
     case 'details':
         $budgetId=filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        
-        include 'view/budgetdetails.php';
+
+        include 'view/budgetdetail.php';
     break;
 
     default:
