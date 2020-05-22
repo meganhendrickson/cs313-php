@@ -20,10 +20,8 @@ switch ($action){
 
     default:
     $clientBudgets = getClientBudgets(1);
-    
     $dashdisplay = buildDashDisplay($clientBudgets);
      print_r (getClientBudgets(1));
-
-     print_r (getBudgetExpenses(1));
+     print_r ( getBudgetAmountSpent());
         include 'view/dashboard.php';
 }
