@@ -18,9 +18,8 @@ $action = filter_input(INPUT_POST, 'action');
 switch ($action){
     case 'details':
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        echo $budgetId;
         //$budgetDetails = getBudgetDetails($budgetId);
-        //print_r (getBudgetDetails($budgetId));
+        print_r (getBudgetDetails($budgetId));
         //$budgetDisplay = buildBudgetDisplay($budgetDetails);
         include 'view/budgetdetail.php';
     break;
