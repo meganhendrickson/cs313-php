@@ -63,5 +63,9 @@ function getBudgetDetails($budgetId){
 
 function buildBudgetDisplay($budgetDetails){
   $bd = "<div class='budgetdetails'>";
+  $bd .= "<p>$budgetDetails[budgetname]</p>";
+  $bd .= "<p>$budgetDetails[budgetamount]</p>";
+  $bd .= "<p>$budgetDetails[created_at]<p>";
+  return $bd;
 }
 ?>

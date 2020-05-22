@@ -13,7 +13,7 @@ echo $buffer;
 
 <main>
   <h1>Budget Details</h1>
-  
+  <?php echo $budgetDisplay ?>
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
