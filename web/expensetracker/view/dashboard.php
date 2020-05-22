@@ -6,7 +6,7 @@ $buffer = ob_get_contents();
 ob_end_clean();
 
 //set page title
-$title = "Page Title";
+$title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
@@ -17,7 +17,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
 <main>
   <h1>Dashboard</h1>
   <?php
-    echo print_r(getAllUsers());
+    echo print_r(getClientBudget());
   ?>
 </main>
 
