@@ -13,11 +13,11 @@ echo $buffer;
 
 <main>
   <h1>Dashboard</h1>
-  <section id="dashdisplay">
+  
   <?php
     echo $dashdisplay;
   ?>
-  </section>
+
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
