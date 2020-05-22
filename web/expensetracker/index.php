@@ -19,8 +19,8 @@ switch ($action){
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         print_r (getBudgetExpenses($budgetId));
         $budgetDetails = getBudgetDetails($budgetId);
-        //$budgetExpenses = getBudgetExpenses($budgetId);
-        $budgetDisplay = buildBudgetDisplay($budgetDetails);
+        $budgetExpenses = getBudgetExpenses($budgetId);
+        $budgetDisplay = buildBudgetDisplay($budgetDetails, $budgetExpenses);
         include 'view/budgetdetail.php';
     break;
 

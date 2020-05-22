@@ -61,11 +61,22 @@ function getBudgetDetails($budgetId){
   return $budgetDetails;
 }
 
-function buildBudgetDisplay($budgetDetails){
+function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd = "<div class='budgetdetails'>";
   $bd .= "<p>$budgetDetails[budgetname]</p>";
   $bd .= "<p>$budgetDetails[budgetamount]</p>";
   $bd .= "<p>$budgetDetails[created_at]<p>";
+  $bd .= "</div>";
+  $bd .= "<table class='budgetexpenses'>";
+  $bd .= "<tr><th>Date</th><th>Description</th><th>Amount</th><th>Edit | Delete</th></tr>";
+  foreach ($budgetExpenses as $expense){
+    $bd .= "<tr>";
+    $bd .= "<td>$expense[create_at]</td>";
+    $bd .= "<td>$expense[description]</td>";
+    $bd .= "<td>$expense[expenseamount]</td>";
+    $bd .= "</tr>";
+  }
+  $bd .= "</table>";
   return $bd;
 }
 
