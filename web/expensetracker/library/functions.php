@@ -20,9 +20,12 @@ function getClientBudgets($clientId){
 function buildDashDisplay($clientBudgets){
   $dash = "<section id='dashdisplay'>";
   foreach ($clientBudgets as $budget){
+    $budgetId=$budget['budgetid'];
+    $budgetSpent=getBudgetAmountSpent($budgetId);
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<p>$budget[budgetname]</p>";
-    $dash .= "<p>$budget[budgetamount]</p>";
+    $dash .= "<p>Amount: $budget[budgetamount]</p>";
+    $dash .= "<p>Spent: $budgetSpent</p>";
     $dash .= "</div>";
   }
   $dash .="</section>";
@@ -30,14 +33,14 @@ function buildDashDisplay($clientBudgets){
 }
 
 // Get client expenses
-function getBudgetExpenses($budgetId){
+function getBudgetAmountSpent($budgetId){
   $db = dbConnection();
   $sql = 'SELECT SUM(expenseamount) FROM expense WHERE budgetId = :budgetId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
   $stmt->execute();
-  $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $budgetSpent = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-  return $budgetExpenses;
+  return $budgetSpent;
 }
 ?>
