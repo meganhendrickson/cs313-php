@@ -24,6 +24,6 @@ switch ($action){
     $dashdisplay = buildDashDisplay($clientBudgets);
      print_r (getClientBudgets(1));
 
-     print_r (getClientExpenses(1));
+     print_r (getBudgetExpenses(1));
         include 'view/dashboard.php';
 }
