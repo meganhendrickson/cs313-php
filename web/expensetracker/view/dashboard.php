@@ -13,9 +13,16 @@ echo $buffer;
 
 <main>
   <h1>Dashboard</h1>
+  <section id="dashdisplay">
   <?php
-    echo $dashDisplay;
+    foreach ($clientBudgets as $budget) {
+      echo '<div class="budgetsumamry">
+              <p>'.$budget['budgetName'].'</p>
+              <p>'.$budget['budgetAmount'].'</p>
+            </div>';
+    } 
   ?>
+  </section>
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
