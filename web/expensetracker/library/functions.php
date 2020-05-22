@@ -11,7 +11,7 @@ function getClientBudgets($clientId){
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
   $stmt->execute();
-  $clientBudget = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $clientBudgets = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
   return $clientBudgets;
 }
