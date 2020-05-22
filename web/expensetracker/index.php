@@ -20,6 +20,6 @@ switch ($action){
 
     default:
     $clientBudgets = getClientBudgets(1);
-     
+     print_r (getClientBudgets(1));
         include 'view/dashboard.php';
 }
