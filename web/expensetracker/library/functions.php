@@ -20,8 +20,8 @@ function buildDashboardSummary(){
   $clientBudgets = getAllClientBudgets(1);
   $dash = "<div class='dashdisplay'>";
   foreach ($clientBudgets as $budget){
-    $budgetName=$budget[budgetName];
-    $budgetAmount=$budget[budgetAmount];
+    $budgetName=$budget['budgetName'];
+    $budgetAmount=$budget['budgetAmount'];
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<p>$budgetName</p>";
     $dash .= "<p>&#36;$budgetAmount</p>";
