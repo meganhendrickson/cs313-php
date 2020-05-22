@@ -18,10 +18,10 @@ function getClientBudgets($clientId){
 
 // Build dashboard summary display
 function buildDashDisplay($clientBudgets){
-  foreach ($clientBudgets as $budget){
+  while ($clientBudgets){
     $dash = "<div class='budgetsummary'>";
-    $dash .= "<p>$budget[budgetname]</p>";
-    $dash .= "<p>$budget[budgetamount]</p>";
+    $dash .= "<p>$clientBudgets[budgetname]</p>";
+    $dash .= "<p>$clientBudgets[budgetamount]</p>";
     $dash .= "</div>";
   }
   return $dash;
