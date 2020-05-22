@@ -30,9 +30,9 @@ function buildDashDisplay($clientBudgets){
 }
 
 // Get client expenses
-function getClientExpenses($budgetId){
+function getBudgetExpenses($budgetId){
   $db = dbConnection();
-  $sql = 'SELECT * FROM expenses WHERE budgetId = :budgetId';
+  $sql = 'SELECT * FROM expense WHERE budgetId = :budgetId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
   $stmt->execute();
