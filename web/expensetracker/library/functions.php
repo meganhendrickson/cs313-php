@@ -21,19 +21,39 @@ function buildDashDisplay($clientBudgets){
   $dash = "<section id='dashdisplay'>";
   foreach ($clientBudgets as $budget){
     $budgetId=$budget['budgetid'];
+    $budgetAmount=$budget['budgetamount'];
     $budgetSpent=getBudgetAmountSpent($budgetId);
-    $dash .= "<div class='budgetsummary'>";
-    $dash .= "<p>$budget[budgetname] $budget[budgetamount]</p>";
-     foreach($budgetSpent as $spent){
+    foreach($budgetSpent as $spent){
       $spent=$spent['sum'];
-      $dash .= "<p>Spent:$spent</p>";
-
      }
+    $remaining=$budgetAmount-$spent;
+    $dash .= "<div class='budgetsummary'>";
+    $dash .= "<p>$budget[budgetname] &#36;$budget[budgetamount]</p>";
+    $dash .= "<p>Remaining Amount: &#36;$remaining</p>";
     $dash .= "</div>";
   }
   $dash .="</section>";
   return $dash;
 }
+
+
+
+// function buildDashDisplay($clientBudgets){
+//   $dash = "<section id='dashdisplay'>";
+//   foreach ($clientBudgets as $budget){
+//     $budgetId=$budget['budgetid'];
+//     $budgetSpent=getBudgetAmountSpent($budgetId);
+//     $dash .= "<div class='budgetsummary'>";
+//     $dash .= "<p>$budget[budgetname] &#36;$budget[budgetamount]</p>";
+//      foreach($budgetSpent as $spent){
+//       $spent=$spent['sum'];
+//       $dash .= "<p>Spent:$spent</p>";
+//      }
+//     $dash .= "</div>";
+//   }
+//   $dash .="</section>";
+//   return $dash;
+// }
 
 // Get client expenses
 function getBudgetAmountSpent($budgetId){
