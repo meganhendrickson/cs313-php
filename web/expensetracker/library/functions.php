@@ -10,7 +10,7 @@ function getClientBudgets($clientId){
   $sql = 'SELECT * FROM budget WHERE clientId = :clientId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
-  $stmt->execute(array(':budgetName' =>$budgetName, ':budgetAmount' =>$budgetAmount));
+  $stmt->execute();
   $clientBudgets = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
   return $clientBudgets;
