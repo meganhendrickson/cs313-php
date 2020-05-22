@@ -21,7 +21,6 @@ h1 {
 
 h2 {
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 2em;
 }
 
 /* Navigation */
@@ -122,7 +121,6 @@ ul.assignment-menu {
 .assignment-menu li a:link, .assignment-menu a:visited {
     color: #404040;
     text-decoration: none;
-    font-size: 1.5em;
 }
 
 .assignment-menu li a:hover {
