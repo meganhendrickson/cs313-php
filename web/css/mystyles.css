@@ -115,19 +115,19 @@ ul.assignment-menu {
 }
 
 .assignment-menu li a:link, .assignment-menu a:visited {
-    color: #fff;
+    color: #404040;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 .assignment-menu li a:hover {
-    color: #fff;
+    color: #404040;
     text-decoration: underline;
     font-size: 1.5em;
 }
 
 .assignment-menu li a:active {
-    color: #f1f1f1;
+    color: #404040;
     text-decoration: underline;
     font-size: 1.5em;
 }
@@ -143,19 +143,19 @@ ul.assignment-menu {
 }
 
 a:link.cart-action, a:visited.cart-action {
-    color: #fff;
+    color: #404040;
     text-decoration: none;
     font-size: 1.5em;
 }
 
 a:hover.cart-action {
-    color: #fff;
+    color: #404040;
     text-decoration: underline;
     font-size: 1.5em;
 }
 
 .cart-action a:active {
-    color: #f1f1f1;
+    color: #404040;
     text-decoration: underline;
     font-size: 1.5em;
 }
