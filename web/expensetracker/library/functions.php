@@ -74,7 +74,7 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
     $bd .= "<td>$expense[created_at]</td>";
     $bd .= "<td>$expense[description]</td>";
     $bd .= "<td>$expense[expenseamount]</td>";
-    $db .= "<td> Edit | Delete </td>";
+    $bd .= "<td>Edit | Delete</td>";
     $bd .= "</tr>";
   }
   $bd .= "</table>";
