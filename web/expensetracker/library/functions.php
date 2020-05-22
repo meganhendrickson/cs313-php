@@ -30,15 +30,15 @@ function buildDashDisplay($clientBudgets){
 }
 
 // Get client expenses
-function getClientExpenses($clientId){
+function getClientExpenses($budgetId){
   $db = dbConnection();
   $sql = 'SELECT * FROM expenses WHERE budgetId = :budgetId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
   $stmt->execute();
-  $clientExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-  return $clientExpenses;
+  return $budgetExpenses;
 }
 
 
