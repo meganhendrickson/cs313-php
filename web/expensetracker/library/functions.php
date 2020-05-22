@@ -5,9 +5,9 @@
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'].'/connections.php';
 
-function getAllClientBudgets(){
+function getAllClientBudgets($clientId){
   $db = dbConnection();
-  $sql = 'SELECT * FROM budget WHERE clientId = 1';
+  $sql = 'SELECT * FROM budget WHERE clientId';
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $clientBudget = $stmt->fetchAll();
@@ -17,11 +17,11 @@ function getAllClientBudgets(){
 
 // Build dashboard summary display
 function buildDashboardSummary(){
-  $clientBudgets = getAllClientBudgets();
+  $clientBudgets = getAllClientBudgets(1);
   $dash = "<div class='dashdisplay'>";
   foreach ($clientBudgets as $budget){
-    $budgetName=$budget['budgetName'];
-    $budgetAmount=$budget['budgetAmount'];
+    $budgetName=$budget[budgetName];
+    $budgetAmount=$budget[budgetAmount];
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<p>$budgetName</p>";
     $dash .= "<p>&#36;$budgetAmount</p>";
