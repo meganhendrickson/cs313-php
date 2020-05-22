@@ -14,12 +14,12 @@ $action = filter_input(INPUT_POST, 'action');
         $action = filter_input(INPUT_GET, 'action');
     }
 
-
 switch ($action){
     case 'details':
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        print_r (getBudgetDetails($budgetId));
+        print_r (getBudgetExpenses($budgetId));
         $budgetDetails = getBudgetDetails($budgetId);
+        //$budgetExpenses = getBudgetExpenses($budgetId);
         $budgetDisplay = buildBudgetDisplay($budgetDetails);
         include 'view/budgetdetail.php';
     break;

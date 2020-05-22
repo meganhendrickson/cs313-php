@@ -68,4 +68,15 @@ function buildBudgetDisplay($budgetDetails){
   $bd .= "<p>$budgetDetails[created_at]<p>";
   return $bd;
 }
+
+function getBudgetExpenses($budgetId){
+  $db = dbConnection();
+  $sql = 'SELECT * FROM expense WHERE budgetId = :budgetId';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
+  $stmt->execute();
+  $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+  return $budgetExpenses;
+}
 ?>
