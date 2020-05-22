@@ -8,6 +8,7 @@ session_start();
 // Get the common functions file
 require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
 
+//Action cases
 $action = filter_input(INPUT_POST, 'action');
     if($action == NULL){
         $action = filter_input(INPUT_GET, 'action');
@@ -16,6 +17,8 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action){
     case 'details':
+        $budgetId=filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
+        
         include 'view/budgetdetails.php';
     break;
 
