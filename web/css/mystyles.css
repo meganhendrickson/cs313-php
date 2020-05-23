@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #FFF8F0;
+  background-color: #f7f7ee;
   color: #404040;
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -40,24 +40,16 @@ footer {
   border-top: 1px solid #f83f70;
 }
 
+/* Navigation */
+/*MAIN TOP NAVIGATION*/
 nav {
   border-bottom: 1px solid #f83f70;
   margin-bottom: 20px;
 }
 
-/* Navigation */
 .topnav {
   overflow: hidden;
-  background-color: #FFF8F0;
-  /*a:not(:first-child) {
-      float: right;
-  }
-  a:hover:not(:first-child) {
-      background-color:  lighten($color-3, 30%); 
-  }
-  .icon {
-      display: none;
-  }*/
+  background-color: #f7f7ee;
 }
 .topnav a {
   float: left;
@@ -91,7 +83,7 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #FFF8F0;
+  background-color: #f7f7ee;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -113,6 +105,7 @@ nav {
 }
 
 /* Landing Page Styles */
+/*LANDING PAGE*/
 .hello-image {
   float: left;
   width: 50%;
@@ -156,13 +149,9 @@ ul.assignment-menu li a:active {
 }
 
 /* SHOPPING CART ASSIGNMENT */
+/* SHOPPING CART ASSIGNMENT*/
 .product-image img {
   max-width: 200px;
-}
-
-.cart-table {
-  color: #000;
-  background-color: #fff;
 }
 
 a:link.cart-action, a:visited.cart-action {

@@ -1,0 +1,39 @@
+/*LANDING PAGE*/
+.hello-image {
+    float:left;
+    width: 50%;
+    padding: $secondary-padding;
+    img {
+        width: 100%;
+    }
+}
+
+.hello-text {
+    float: right;
+    padding: $primary-padding;
+    width: 50%;
+}
+
+.project-list {
+    float:right;
+    padding: $primary-padding;
+    width: 50%;
+}
+
+/*CLASS ASSIGNMENT MENU*/
+ul.assignment-menu li {
+    list-style-type: none;
+    a:link {
+        @include links;
+    }
+    a:visited {
+        @include links;
+    }
+    a:hover {
+        @include linkhover;
+    }
+    a:active{
+        @include linkactive;
+    }
+
+}

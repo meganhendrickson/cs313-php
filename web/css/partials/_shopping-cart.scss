@@ -1,0 +1,19 @@
+/* SHOPPING CART ASSIGNMENT*/
+.product-image img {
+    max-width: 200px;
+}
+
+a:link.cart-action, a:visited.cart-action {
+    color: $color-1;
+    text-decoration: none;
+}
+
+a:hover.cart-action {
+    color: $color-1;
+    text-decoration: underline;
+}
+
+.cart-action a:active {
+    color: $color-1;
+    text-decoration: underline;
+}
