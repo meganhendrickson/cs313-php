@@ -17,7 +17,7 @@
             <a href="https://mighty-wave-93548.herokuapp.com/">Megan Hendrickson</a>
             <div class="dropdown">
                 <button class="dropbtn">CSE 341<i class="fa fa-caret-down"></i></button>
-                <div class="dropdown-contet">
+                <div class="dropdown-content">
                     <href="#">Shopping Cart</a>
                     <href="#">Expense Tracker</a>
                 </div>
