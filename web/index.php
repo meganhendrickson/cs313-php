@@ -20,7 +20,7 @@
     <div class="hello-image">
         <img src="images/redscarf2.jpg" alt="Girl with a red scarf"/>
     </div>
-    <div class="projectlist">
+    <div class="project-list">
         <h2>Here's some things I've been working on:</h2>
         <ul class="assignment-menu">
             <li><a href="/shopping/">Shopping Cart</a></li>

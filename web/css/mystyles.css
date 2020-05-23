@@ -1,5 +1,6 @@
 /* Color Pallet */
 /* Fonts */
+/* Standard padding*/
 * {
   box-sizing: border-box;
 }
@@ -31,6 +32,7 @@ main {
 }
 
 footer {
+  clear: both;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -75,6 +77,10 @@ footer {
   float: right;
   padding: 20px;
   width: 50%;
+}
+
+.project-list {
+  padding: 20px;
 }
 
 /*CLASS ASSIGNMENT MENU*/
