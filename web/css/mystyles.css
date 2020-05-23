@@ -80,6 +80,7 @@ footer {
 }
 
 .project-list {
+  float: right;
   padding: 20px;
 }
 
