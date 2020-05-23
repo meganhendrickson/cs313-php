@@ -49,6 +49,15 @@ nav {
 .topnav {
   overflow: hidden;
   background-color: #FFF8F0;
+  /*a:not(:first-child) {
+      float: right;
+  }
+  a:hover:not(:first-child) {
+      background-color:  lighten($color-3, 30%); 
+  }
+  .icon {
+      display: none;
+  }*/
 }
 .topnav a {
   float: left;
@@ -59,14 +68,48 @@ nav {
   text-decoration: none;
   font-size: 1.15em;
 }
-.topnav a:not(:first-child) {
+
+.dropdown {
   float: right;
+  overflow: hidden;
 }
-.topnav a:hover:not(:first-child) {
+.dropdown .dropbtn {
+  font-size: 1.15em;
+  border: none;
+  outline: none;
+  color: #404040;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #fca1b9;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFF8F0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: #404040;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover {
   background-color: #fdd3de;
 }
-.topnav .icon {
-  display: none;
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Landing Page Styles */

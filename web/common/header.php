@@ -15,8 +15,15 @@
 
         <nav class="topnav" id="myTopnav">
             <a href="https://mighty-wave-93548.herokuapp.com/">Megan Hendrickson</a>
-            <a href="https://mighty-wave-93548.herokuapp.com/cse341.php">CSE 341</a>
+            <div class="dropdown">
+                <button class="dropbtn">CSE 341<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-contet">
+                    <href="#">Shopping Cart</a>
+                    <href="#">Expense Tracker</a>
+                </div>
+            </div>
+            <!--<a href="https://mighty-wave-93548.herokuapp.com/cse341.php">CSE 341</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>  
+                <i class="fa fa-bars"></i></a>-->  
         </nav>
     </header>
