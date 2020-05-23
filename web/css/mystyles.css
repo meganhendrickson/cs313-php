@@ -82,6 +82,7 @@ footer {
 .project-list {
   float: right;
   padding: 20px;
+  width: 50%;
 }
 
 /*CLASS ASSIGNMENT MENU*/
