@@ -30,6 +30,13 @@ main {
   padding: 20px;
 }
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0px 20px;
+}
+
 /* Navigation */
 .topnav {
   overflow: hidden;
@@ -52,6 +59,55 @@ main {
 }
 .topnav .icon {
   display: none;
+}
+
+/*CLASS ASSIGNMENT MENU*/
+ul.assignment-menu {
+  list-style-type: none;
+}
+ul.assignment-menu a:link {
+  color: #f83f70;
+  text-decoration: none;
+}
+ul.assignment-menu a:visited {
+  color: #f83f70;
+  text-decoration: none;
+}
+ul.assignment-menu a:hover {
+  color: #fa7095;
+  text-decoration: underline;
+}
+ul.assignment-menu a:active {
+  color: #f60e4b;
+  text-decoration: underline;
+}
+
+/* SHOPPING CART ASSIGNMENT */
+.product-image img {
+  max-width: 200px;
+}
+
+.cart-table {
+  color: #000;
+  background-color: #fff;
+}
+
+a:link.cart-action, a:visited.cart-action {
+  color: #404040;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+a:hover.cart-action {
+  color: #404040;
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+.cart-action a:active {
+  color: #404040;
+  text-decoration: underline;
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=mystyles.css.map */

@@ -9,6 +9,20 @@ $color-5: #427AA1;
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Bubblegum Sans', cursive;
 
+@mixin links {
+    color: $color-3;
+    text-decoration: none;
+}
+
+@mixin linkhover {
+    color: lighten($color-3, 10%);
+    text-decoration: underline;
+}
+
+@mixin linkactive {
+    color: darken($color-3, 10%);
+    text-decoration: underline;
+}
 * {
     box-sizing: border-box;
 }
@@ -38,6 +52,14 @@ h2 {
 main {
     padding: 20px;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0px 20px;
+}
+
 /* Navigation */
 .topnav {
     overflow: hidden;
@@ -60,4 +82,50 @@ main {
     .icon {
         display: none;
     }
+}
+
+/*CLASS ASSIGNMENT MENU*/
+ul.assignment-menu {
+    list-style-type: none;
+    a:link {
+        @include links;
+    }
+    a:visited {
+        @include links;
+    }
+    a:hover {
+        @include linkhover;
+    }
+    a:active{
+        @include linkactive;
+    }
+
+}
+
+/* SHOPPING CART ASSIGNMENT */
+.product-image img {
+    max-width: 200px;
+}
+
+.cart-table {
+    color: #000;
+    background-color: #fff;
+}
+
+a:link.cart-action, a:visited.cart-action {
+    color: #404040;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+a:hover.cart-action {
+    color: #404040;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+.cart-action a:active {
+    color: #404040;
+    text-decoration: underline;
+    font-size: 1.5em;
 }
