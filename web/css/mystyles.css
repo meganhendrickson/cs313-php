@@ -37,10 +37,11 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 0px 20px;
+  border-top: 1px solid #f83f70;
 }
 
-hr {
-  border-top: 1px solid #f83f70;
+nav {
+  border-bottom: 1px solid #f83f70;
 }
 
 /* Navigation */

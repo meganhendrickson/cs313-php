@@ -17,7 +17,6 @@
             <a href="https://mighty-wave-93548.herokuapp.com/">Megan Hendrickson</a>
             <a href="https://mighty-wave-93548.herokuapp.com/cse341.php">CSE 341</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i></a>
-            <hr>    
+                <i class="fa fa-bars"></i></a>  
         </nav>
     </header>
