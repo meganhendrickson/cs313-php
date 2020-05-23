@@ -112,7 +112,7 @@ footer {
     width: 50%;
 }
 /*CLASS ASSIGNMENT MENU*/
-ul.assignment-menu {
+ul.assignment-menu li {
     list-style-type: none;
     a:link {
         @include links;

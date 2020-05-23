@@ -86,22 +86,22 @@ footer {
 }
 
 /*CLASS ASSIGNMENT MENU*/
-ul.assignment-menu {
+ul.assignment-menu li {
   list-style-type: none;
 }
-ul.assignment-menu a:link {
+ul.assignment-menu li a:link {
   color: #f83f70;
   text-decoration: none;
 }
-ul.assignment-menu a:visited {
+ul.assignment-menu li a:visited {
   color: #f83f70;
   text-decoration: none;
 }
-ul.assignment-menu a:hover {
+ul.assignment-menu li a:hover {
   color: #fa7095;
   text-decoration: underline;
 }
-ul.assignment-menu a:active {
+ul.assignment-menu li a:active {
   color: #f60e4b;
   text-decoration: underline;
 }
