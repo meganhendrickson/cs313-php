@@ -9,3 +9,29 @@ $color-5: #427AA1;
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Bubblegum Sans', cursive;
 
+/* Navigation */
+.topnav {
+    overflow: hidden;
+    background-color: $color-2;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color: $color-1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.15em;
+}
+
+.topnav a:not(:first-child) {
+    float: right;
+}
+
+.topnav a:hover:not(:first-child) {
+    background-color:  lighten($color-3, 30%); 
+}
+
+.topnav .icon {
+    display: none;
+}

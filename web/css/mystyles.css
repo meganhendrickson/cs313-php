@@ -1,0 +1,31 @@
+/* Color Pallet */
+/* Fonts */
+/* Navigation */
+.topnav {
+  overflow: hidden;
+  background-color: #FFF8F0;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #404040;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.15em;
+}
+
+.topnav a:not(:first-child) {
+  float: right;
+}
+
+.topnav a:hover:not(:first-child) {
+  background-color: #fdd3de;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+/*# sourceMappingURL=mystyles.css.map */
