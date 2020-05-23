@@ -66,6 +66,9 @@ footer {
   float: left;
   width: 50%;
 }
+.hello-image img {
+  width: 100%;
+}
 
 .hello-text {
   float: right;
