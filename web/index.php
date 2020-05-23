@@ -11,6 +11,8 @@
 ?>
     <div class="hello-image">
         <div class="hello-text">
+            <img src="/images/redscarf2.png" alt="Girl with a red scarf"/>
+        </div>
             <h1>Well, Hello There!</h1>
             <p>Allow me to introduce myself: I'm a designer, a web developer-in-training, and a chocolate lover.
                 I like to perfect every detail, put puzzles together, laugh at silly jokes, cry over bad design,
@@ -24,5 +26,4 @@
                 <li><a href="/expensetracker/">Expense Tracker </a> (in progress)</li>
             </ul>
         </div>
-    </div>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
