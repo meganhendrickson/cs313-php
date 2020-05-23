@@ -1,3 +1,4 @@
+    <hr>
     <footer>
         <p>&copy; <?php echo date("Y");?> | Megan Hendrickson | All Rights Reserved</p>
         <!-- scripts -->

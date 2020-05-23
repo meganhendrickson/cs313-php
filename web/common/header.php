@@ -20,3 +20,4 @@
                 <i class="fa fa-bars"></i></a>
         </nav>
     </header>
+    <hr>

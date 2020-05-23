@@ -39,6 +39,10 @@ footer {
   padding: 0px 20px;
 }
 
+hr {
+  border-top: 1px solid #f83f70;
+}
+
 /* Navigation */
 .topnav {
   overflow: hidden;
