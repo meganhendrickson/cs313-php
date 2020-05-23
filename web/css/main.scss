@@ -9,29 +9,55 @@ $color-5: #427AA1;
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Bubblegum Sans', cursive;
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-2;
+    color: #404040;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    padding-bottom: 54px; //height of footer
+    min-height: 100vh;
+}
+
+h1 {
+    color: $color-4;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 3em;
+}
+
+h2 {
+    color: $color-4;
+    font-family: 'Bubblegum Sans', cursive;
+}
+
+main {
+    padding: 20px;
+}
 /* Navigation */
 .topnav {
     overflow: hidden;
     background-color: $color-2;
-}
-.topnav a {
-    float: left;
-    display: block;
-    color: $color-1;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.15em;
-}
-
-.topnav a:not(:first-child) {
-    float: right;
-}
-
-.topnav a:hover:not(:first-child) {
-    background-color:  lighten($color-3, 30%); 
-}
-
-.topnav .icon {
-    display: none;
+    a {
+        float: left;
+        display: block;
+        color: $color-1;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 1.15em;
+    }
+    a:not(:first-child) {
+        float: right;
+    }
+    a:hover:not(:first-child) {
+        background-color:  lighten($color-3, 30%); 
+    }
+    .icon {
+        display: none;
+    }
 }

@@ -18,7 +18,7 @@
         </p>
     </div>
     <div class="hello-image">
-        <img src="images/redscarf2.png" alt="Girl with a red scarf"/>
+        <img src="images/redscarf2.jpg" alt="Girl with a red scarf"/>
     </div>
     <div class="projectlist">
         <h2>Here's some things I've been working on:</h2>

@@ -1,11 +1,40 @@
 /* Color Pallet */
 /* Fonts */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFF8F0;
+  color: #404040;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  height: 100%;
+  position: relative;
+  padding-bottom: 54px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #05668D;
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 3em;
+}
+
+h2 {
+  color: #05668D;
+  font-family: "Bubblegum Sans", cursive;
+}
+
+main {
+  padding: 20px;
+}
+
 /* Navigation */
 .topnav {
   overflow: hidden;
   background-color: #FFF8F0;
 }
-
 .topnav a {
   float: left;
   display: block;
@@ -15,15 +44,12 @@
   text-decoration: none;
   font-size: 1.15em;
 }
-
 .topnav a:not(:first-child) {
   float: right;
 }
-
 .topnav a:hover:not(:first-child) {
   background-color: #fdd3de;
 }
-
 .topnav .icon {
   display: none;
 }
