@@ -18,8 +18,8 @@
             <div class="dropdown">
                 <button class="dropbtn">CSE 341<i class="fa fa-caret-down"></i></button>
                 <div class="dropdown-content">
-                    <href="https://mighty-wave-93548.herokuapp.com/shopping/">Shopping Cart</a>
-                    <href="https://mighty-wave-93548.herokuapp.com/expensetracker/">Expense Tracker</a>
+                    <a href="https://mighty-wave-93548.herokuapp.com/shopping/">Shopping Cart</a>
+                    <a href="https://mighty-wave-93548.herokuapp.com/expensetracker/">Expense Tracker</a>
                 </div>
             </div>
             <!--<a href="https://mighty-wave-93548.herokuapp.com/cse341.php">CSE 341</a>
