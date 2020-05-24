@@ -29,7 +29,7 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd = "<div class='budgetdetails'>";
   $bd .= "<h2 class='detail-name'>$budgetDetails[budgetname]</h2>";
   $bd .= "<p class='detail-info'>Budget Amount: &#36;$budgetDetails[budgetamount]</p>";
-  $bd .= "<p class='detail-info>Date Created: $budgetDetails[created_at]</p>";
+  $bd .= "<p class='detail-info'>Date Created: $budgetDetails[created_at]</p>";
   $bd .= "</div>";
   $bd .= "<h3>Expenses</h3>";
   $bd .= "<table class='budgetexpenses'>";
