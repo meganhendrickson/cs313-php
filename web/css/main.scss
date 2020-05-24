@@ -47,9 +47,9 @@ $secondary-padding: 0px 20px;
     text-decoration: underline;
 }
 
-@mixin center($max-width, $width: 90%) {
-    width: $width;
-    max-width: $max-width;
+@mixin center {
+    display: block;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -82,11 +82,8 @@ body {
 h1 {
     color: $color-4;
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 1em;
-    @include breakpoint(small){
-        font-size: 2em;
-    }
-    @include breakpoint(large) {
+    font-size: 2em;
+    @include breakpoint(medium) {
         font-size: 3em;
     }
     

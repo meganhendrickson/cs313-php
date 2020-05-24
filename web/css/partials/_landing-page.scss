@@ -2,7 +2,7 @@
 .hello-image {
     padding: $secondary-padding;
     img {
-        width: 80%;
+        @include center;
     }
     @include breakpoint(medium){
         float:left;

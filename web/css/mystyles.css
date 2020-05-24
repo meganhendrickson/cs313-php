@@ -20,14 +20,9 @@ body {
 h1 {
   color: #05668D;
   font-family: "Bubblegum Sans", cursive;
-  font-size: 1em;
+  font-size: 2em;
 }
-@media (min-width: 576px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   h1 {
     font-size: 3em;
   }
@@ -121,7 +116,10 @@ nav {
   padding: 0px 20px;
 }
 .hello-image img {
-  width: 80%;
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (min-width: 768px) {
   .hello-image {
