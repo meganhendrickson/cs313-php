@@ -349,7 +349,7 @@ table.budgetexpenses td a:active {
   text-decoration: underline;
 }
 table.budgetexpenses tr:nth-child(even) {
-  background-color: #c7dae8;
+  background-color: white;
 }
 
 /*# sourceMappingURL=mystyles.css.map */
