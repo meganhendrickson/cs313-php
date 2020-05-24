@@ -22,4 +22,7 @@
     padding: $notop-padding;
     margin: 15px;
     max-width: 275px;
+    @include breakpoint(medium){
+        font-size: 1.5em;
+    }
 }

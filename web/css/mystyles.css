@@ -270,5 +270,10 @@ a:hover.cart-action {
   margin: 15px;
   max-width: 275px;
 }
+@media (min-width: 768px) {
+  .budgetsummary {
+    font-size: 1.5em;
+  }
+}
 
 /*# sourceMappingURL=mystyles.css.map */
