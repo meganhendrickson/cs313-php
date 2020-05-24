@@ -17,8 +17,8 @@ function buildDashDisplay($clientBudgets){
     $remaining=$budgetAmount-$spent;
     $dash .= "<div class='budgetsummary'>";
     $dash .= "<div class='summaryname'>";
-    $dash .= "<h2>$budget[budgetname] = &#36;$budget[budgetamount]";
-    $dash .= '<a href="/expensetracker/?action=editbudget&budgetId='.urlencode($budgetId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h2>';
+    $dash .= "<h3>$budget[budgetname] = &#36;$budget[budgetamount]";
+    $dash .= '<a href="/expensetracker/?action=editbudget&budgetId='.urlencode($budgetId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h3>';
     $dash .= "</div>";
     $dash .= "<p>Spent: &#36;$spent | Remaining: &#36;$remaining</p>";
     $dash .= '<a href="/expensetracker/?action=details&budgetId='.urlencode($budgetId).'"><i class="fa fa-align-left" aria-hidden="true"></i>View details</a>';
