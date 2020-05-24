@@ -17,27 +17,33 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action){
     case 'register':
-        include 'view/register.php';    
+        include 'view/register.php'; 
+        exit;   
     break;
 
     case 'login':
         include 'view/login.php';
+        exit;
     break;
 
     case 'addexpense':
         include 'view/addexpense.php';
+        exit;
     break;
 
     case 'editexpense':
         include 'view/editexpense.php';
+        exit;
     break;
 
     case 'addbudget':
         include 'view/addbudget.php';
+        exit;
     break;
 
     case 'editbudet':
         include 'view/editbudget.php';
+        exit;
     break;
 
     case 'details':
@@ -47,6 +53,7 @@ switch ($action){
         $budgetExpenses = getBudgetExpenses($budgetId);
         $budgetDisplay = buildBudgetDisplay($budgetDetails, $budgetExpenses);
         include 'view/budgetdetail.php';
+        exit;
     break;
 
     default:

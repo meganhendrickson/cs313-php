@@ -48,6 +48,21 @@ $notop-padding: 0px 20px 20px 20px;
     text-decoration: underline;
 }
 
+@mixin links-2 {
+    color: $color-4;
+    text-decoration: none;
+}
+
+@mixin linkhover-2 {
+    color: lighten($color-4, 10%);
+    text-decoration: underline;
+}
+
+@mixin linkactive-2 {
+    color: darken($color-4, 10%);
+    text-decoration: underline;
+}
+
 @mixin center {
     display: block;
     width: 90%;

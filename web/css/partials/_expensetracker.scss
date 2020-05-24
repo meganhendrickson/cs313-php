@@ -17,9 +17,22 @@
     }
 }
 
-.budgetsummary{
+.budgetsummary {
     @include box;
     padding: $notop-padding;
     margin: 15px;
     max-width: 275px;
+}
+
+.actionmenu {
+    margin-top: 20px;
+    a:link, a:visited {
+        @include links-2;
+    }
+    a:hover {
+        @include linkhover-2;
+    }
+    a:active {
+        @include linkactive-2;
+    }
 }

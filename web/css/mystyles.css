@@ -283,4 +283,20 @@ a:hover.cart-action {
   max-width: 275px;
 }
 
+.actionmenu {
+  margin-top: 20px;
+}
+.actionmenu a:link, .actionmenu a:visited {
+  color: #05668D;
+  text-decoration: none;
+}
+.actionmenu a:hover {
+  color: #078abe;
+  text-decoration: underline;
+}
+.actionmenu a:active {
+  color: #03425c;
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=mystyles.css.map */
