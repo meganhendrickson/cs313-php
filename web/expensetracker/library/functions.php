@@ -16,8 +16,10 @@ function buildDashDisplay($clientBudgets){
      }
     $remaining=$budgetAmount-$spent;
     $dash .= "<div class='budgetsummary'>";
-    $dash .= "<h3>$budget[budgetname] = &#36;$budget[budgetamount]";
-    $dash .= '<a href="/expensetracker/?action=editbudget&budgetId='.urlencode($budgetId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> | <i class="fa fa-minus-square" aria-hidden="true"></i></a></h3>';
+    $dash .= "<div class='summaryname'>";
+    $dash .= "<h2>$budget[budgetname] = &#36;$budget[budgetamount]</h2>";
+    $dash .= '<a href="/expensetracker/?action=editbudget&budgetId='.urlencode($budgetId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> | <i class="fa fa-minus-square" aria-hidden="true"></i></a>';
+    $dash .= "</div>";
     $dash .= "<p>Spent: &#36;$spent | Remaining: &#36;$remaining</p>";
     $dash .= '<a href="/expensetracker/?action=details&budgetId='.urlencode($budgetId).'"><i class="fa fa-align-left" aria-hidden="true"></i>View details</a>';
     $dash .= "</div>";
@@ -32,7 +34,7 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd .= "<p class='detail-info'>Budget Amount: &#36;$budgetDetails[budgetamount]</p>";
   $bd .= "<p class='detail-info'>Date Created: $budgetDetails[created_at]</p>";
   $bd .= "</div>";
-  $bd .= "<h3>Expenses</h3>";
+  $bd .= "<h2>Expenses</h2>";
   $bd .= "<table class='budgetexpenses'>";
   $bd .= "<tr><th>Date</th><th>Description</th><th>Amount</th><th>Options</th></tr>";
   foreach ($budgetExpenses as $expense){

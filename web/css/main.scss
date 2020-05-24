@@ -54,6 +54,16 @@ $secondary-padding: 0px 20px;
     margin-right: auto;
 }
 
+@mixin box {
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 0px solid $color-1;
+    -webkit-box-shadow: 7px 7px 9px -6px rgba(156,156,156,0.75);
+    -moz-box-shadow: 7px 7px 9px -6px rgba(156,156,156,0.75);
+    box-shadow: 7px 7px 9px -6px rgba(156,156,156,0.75);
+}
+
 @mixin flex-container($axis, $wrap: nowrap) {
     display: -webkit-box;
     display: -webkit-flex;
@@ -110,11 +120,14 @@ footer {
     border-top: 1px solid $color-3;
 }
 
-/* Navigation */
+/* TOP NAVIGATION */
 @import 'partials/topnav';
 
-/* Landing Page Styles */
+/* LANDING PAGE SYTLES */
 @import 'partials/landing-page';
 
 /* SHOPPING CART ASSIGNMENT */
 @import 'partials/shopping-cart';
+
+/* EXPENSE TRACKER PROJECT */
+@import 'partials/expensetracker';

@@ -1,0 +1,17 @@
+.addbudgetlink {
+    font-size: 2em;
+    a:link, a:visited {
+        @include links;
+    }
+    a:hover {
+        @include linkhover;
+    }
+
+    a:active {
+        @include linkactive;
+    }
+}
+
+.budgetsummary{
+    @include box;
+}
