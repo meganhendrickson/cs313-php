@@ -52,11 +52,11 @@
 }
 
 table.budgetexpenses{
-    table-layout: fixed;
-    width: 100%;
     border-collapse: collapse;
     border: 3px solid $color-1;
     th, td {
+        border-collapse: collapse;
+        border: 3px solid $color-1;
         text-align: left;
         padding: 8px;
     } 

@@ -316,12 +316,12 @@ a:hover.cart-action {
 }
 
 table.budgetexpenses {
-  table-layout: fixed;
-  width: 100%;
   border-collapse: collapse;
   border: 3px solid #404040;
 }
 table.budgetexpenses th, table.budgetexpenses td {
+  border-collapse: collapse;
+  border: 3px solid #404040;
   text-align: left;
   padding: 8px;
 }
