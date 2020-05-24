@@ -81,7 +81,16 @@ table.budgetexpenses{
             @include linkactive;
         }
     } 
-    tr:nth-child(even){
-        background-color: lighten($color-5, 50%);
+    tr:nth-child(even) {
+        background-color: lighten($color-5, 45%);
     }
+}
+
+.detail-amount {
+    font-weight: bold;
+    margin: 0;
+}
+
+.detail-date {
+    margin:0;
 }
