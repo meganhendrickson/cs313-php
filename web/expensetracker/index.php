@@ -41,7 +41,7 @@ switch ($action){
         exit;
     break;
 
-    case 'editbudet':
+    case 'editbudget':
         include 'view/editbudget.php';
         exit;
     break;
