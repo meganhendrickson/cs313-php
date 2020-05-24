@@ -51,7 +51,8 @@ switch ($action){
         //print_r (getBudgetExpenses($budgetId));
         $budgetDetails = getBudgetDetails($budgetId);
         $budgetExpenses = getBudgetExpenses($budgetId);
-        $budgetDisplay = buildBudgetDisplay($budgetDetails, $budgetExpenses);
+        $budgetSpent = getBudgetAmountSpent($budgetId);
+        $budgetDisplay = buildBudgetDisplay($budgetDetails, $budgetExpenses, $budgetSpent);
         include 'view/budgetdetail.php';
         exit;
     break;
