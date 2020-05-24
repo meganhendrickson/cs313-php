@@ -226,7 +226,7 @@ a:hover.cart-action {
 }
 
 /* EXPENSE TRACKER PROJECT */
-.dashdisplay {
+#dashdisplay {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
