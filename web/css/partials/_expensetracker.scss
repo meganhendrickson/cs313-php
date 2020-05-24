@@ -82,6 +82,6 @@ table.budgetexpenses{
         }
     } 
     tr:nth-child(even){
-        background-color: lighten($color-5, 60%);
+        background-color: lighten($color-5, 40%);
     }
 }
