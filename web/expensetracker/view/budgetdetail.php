@@ -17,8 +17,6 @@ echo $buffer;
 
   <?php echo $budgetDisplay ?>
 
-  <?php include $_SERVER['DOCUMENT_ROOT'] . 'expensetracker/common/actionmenu.php'?>
-
 </main>
-
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
