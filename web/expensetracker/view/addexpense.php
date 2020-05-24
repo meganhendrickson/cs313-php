@@ -13,9 +13,9 @@ echo $buffer;
 
 <main>
   
-  <h1>Budget Details</h1>
+  <h1>Add an Expense</h1>
 
-  <?php echo $budgetDisplay ?>
+  <p>Coming Soon!<p>
 
   <?php include $_SERVER['DOCUMENT_ROOT'] . 'expensetracker/common/actionmenu.php'?>
 

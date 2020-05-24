@@ -7,6 +7,7 @@ session_start();
 
 // Get the common functions file
 require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/model.php';
 
 //Action cases
 $action = filter_input(INPUT_POST, 'action');
@@ -15,6 +16,9 @@ $action = filter_input(INPUT_POST, 'action');
     }
 
 switch ($action){
+    case 'addexpense':
+        include 'view/addexpense.php';
+
     case 'details':
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         //print_r (getBudgetExpenses($budgetId));

@@ -1,20 +1,8 @@
 
 
 <?php
-
-// Get the database connection file
-require_once $_SERVER['DOCUMENT_ROOT'].'/connections.php';
-
-function getClientBudgets($clientId){
-  $db = dbConnection();
-  $sql = 'SELECT * FROM budget WHERE clientId = :clientId';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
-  $stmt->execute();
-  $clientBudgets = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor();
-  return $clientBudgets;
-}
+//get the database model file
+require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/model.php';
 
 // Build dashboard summary display
 function buildDashDisplay($clientBudgets){
@@ -37,30 +25,6 @@ function buildDashDisplay($clientBudgets){
   return $dash;
 }
 
-// Get client expenses
-function getBudgetAmountSpent($budgetId){
-  $db = dbConnection();
-  $sql = 'SELECT SUM(expenseamount) FROM expense WHERE budgetId = :budgetId';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
-  $stmt->execute();
-  $budgetSpent = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor();
-  return $budgetSpent;
-}
-
-// Get budget details
-function getBudgetDetails($budgetId){
-  $db = dbConnection();
-  $sql = 'SELECT * FROM budget WHERE budgetId = :budgetId';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
-  $stmt->execute();
-  $budgetDetails = $stmt->fetch();
-  $stmt->closeCursor();
-  return $budgetDetails;
-}
-
 function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd = "<div class='budgetdetails'>";
   $bd .= "<p>$budgetDetails[budgetname]</p>";
@@ -81,14 +45,4 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   return $bd;
 }
 
-function getBudgetExpenses($budgetId){
-  $db = dbConnection();
-  $sql = 'SELECT * FROM expense WHERE budgetId = :budgetId';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
-  $stmt->execute();
-  $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor();
-  return $budgetExpenses;
-}
 ?>

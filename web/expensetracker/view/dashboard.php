@@ -12,11 +12,13 @@ echo $buffer;
 ?>
 
 <main>
+  
   <h1>Dashboard</h1>
   
   <?php
     echo $dashdisplay;
   ?>
+  <?php include $_SERVER['DOCUMENT_ROOT'] . 'expensetracker/common/actionmenu.php'?>
 
 </main>
 
