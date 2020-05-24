@@ -54,10 +54,12 @@
 table.budgetexpenses{
     border-collapse: collapse;
     border: 3px solid $color-1;
+    thead{
+        border: 3px solid $color-1;
+    }
     th {
         border-collapse: collapse;
         border: 1px solid $color-1;
-        border-bottom: 3px solid $color-1;
         text-align: left;
         padding: 8px; 
     } 
