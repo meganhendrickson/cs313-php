@@ -20,6 +20,7 @@ body {
 h1 {
   color: #05668D;
   font-family: "Bubblegum Sans", cursive;
+  font-size: 1em;
 }
 @media (min-width: 576px) {
   h1 {
