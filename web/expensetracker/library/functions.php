@@ -29,19 +29,10 @@ function buildDashDisplay($clientBudgets){
 }
 
 function buildBudgetDisplay($budgetDetails, $budgetExpenses){
-  $budgetId = $budgetDetails['budgetid'];
-  $budgetAmount = $budgetDetails['budgetamount'];
-  $budgetSpent = getBudgetAmountSpent($budgetId);
-  foreach($budgetSpent as $spent){
-    $spent = $spent['sum'];
-   }
-  $remaining=$budgetAmount-$spent;
   $bd = "<div class='budgetdetails'>";
   $bd .= "<h2 class='detail-name'>$budgetDetails[budgetname]</h2>";
   $bd .= "<p class='detail-date'>Date Created: $budgetDetails[created_at]</p>";
   $bd .= "<p class='detail-amount'>Budget Amount: &#36;$budgetDetails[budgetamount]</p>";
-  $bd .= "<p class='detail-amount'>Spent: &#36$spent</p>";
-  $bd .= "<p class='detail-amount'>Remaining: &#36$remaining</p>";
   $bd .= "</div>";
   $bd .= "<h2>Expenses</h2>";
   $bd .= "<div class='overflow'><table class='budgetexpenses'>";
