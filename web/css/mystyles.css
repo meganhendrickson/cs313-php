@@ -322,6 +322,7 @@ table.budgetexpenses {
 table.budgetexpenses thead {
   border: 3px solid #404040;
   background-color: #427AA1;
+  color: #fff;
 }
 table.budgetexpenses th {
   border-collapse: collapse;
@@ -334,6 +335,18 @@ table.budgetexpenses td {
   border: 1px solid #404040;
   text-align: left;
   padding: 8px;
+}
+table.budgetexpenses td a:link, table.budgetexpenses td a:visited {
+  color: #f83f70;
+  text-decoration: none;
+}
+table.budgetexpenses td a:hover {
+  color: #fa7095;
+  text-decoration: underline;
+}
+table.budgetexpenses td a:active {
+  color: #f60e4b;
+  text-decoration: underline;
 }
 table.budgetexpenses tr:nth-child(even) {
   background-color: #427AA1;

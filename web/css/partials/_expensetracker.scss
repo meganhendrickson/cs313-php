@@ -57,6 +57,7 @@ table.budgetexpenses{
     thead{
         border: 3px solid $color-1;
         background-color: $color-5;
+        color: $color-2;
     }
     th {
         border-collapse: collapse;
@@ -69,6 +70,16 @@ table.budgetexpenses{
         border: 1px solid $color-1;
         text-align: left;
         padding: 8px;
+        a:link, a:visited {
+            @include links;
+        }
+        a:hover {
+            @include linkhover;
+        }
+    
+        a:active {
+            @include linkactive;
+        }
     } 
     tr:nth-child(even){
         background-color: $color-5;
