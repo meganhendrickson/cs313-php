@@ -64,6 +64,10 @@ h3 {
   }
 }
 
+i {
+  margin: 0px 5px;
+}
+
 main {
   padding: 20px;
 }
@@ -235,6 +239,7 @@ a:hover.cart-action {
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: space-around;
+  max-width: 960px;
 }
 
 #addbudgetlink {

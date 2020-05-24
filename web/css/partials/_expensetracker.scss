@@ -1,5 +1,6 @@
 #dashdisplay{
     @include flex-container(row, wrap);
+    max-width: 960px;
 }
 
 #addbudgetlink {
