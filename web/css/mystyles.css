@@ -118,24 +118,39 @@ nav {
 /* Landing Page Styles */
 /*LANDING PAGE*/
 .hello-image {
-  float: left;
-  width: 50%;
   padding: 0px 20px;
 }
 .hello-image img {
-  width: 100%;
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .hello-image {
+    float: left;
+    width: 50%;
+  }
+  .hello-image img {
+    width: 100%;
+  }
 }
 
 .hello-text {
-  float: right;
   padding: 20px;
-  width: 50%;
+}
+@media (min-width: 768px) {
+  .hello-text {
+    float: right;
+    width: 50%;
+  }
 }
 
 .project-list {
-  float: right;
   padding: 20px;
-  width: 50%;
+}
+@media (min-width: 768px) {
+  .project-list {
+    float: right;
+    width: 50%;
+  }
 }
 
 /*CLASS ASSIGNMENT MENU*/
