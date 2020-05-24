@@ -35,6 +35,11 @@ h2 {
   color: #05668D;
   font-family: "Bubblegum Sans", cursive;
 }
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2em;
+  }
+}
 h2 a:link, h2 a:visited {
   color: #f83f70;
   text-decoration: none;
@@ -46,6 +51,17 @@ h2 a:hover {
 h2 a:active {
   color: #f60e4b;
   text-decoration: underline;
+}
+
+h3 {
+  color: #05668D;
+  font-family: "Bubblegum Sans", cursive;
+  font-size: 1em;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5em;
+  }
 }
 
 main {
@@ -222,7 +238,7 @@ a:hover.cart-action {
 }
 
 #addbudgetlink {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 #addbudgetlink a:link, #addbudgetlink a:visited {
   color: #f83f70;
@@ -247,6 +263,7 @@ a:hover.cart-action {
   box-shadow: 7px 7px 9px -6px rgba(156, 156, 156, 0.75);
   padding: 0px 20px 20px 20px;
   margin: 15px;
+  max-width: 275px;
 }
 
 /*# sourceMappingURL=mystyles.css.map */

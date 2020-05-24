@@ -107,6 +107,10 @@ h1 {
 h2 {
     color: $color-4;
     font-family: 'Bubblegum Sans', cursive;
+    @include breakpoint(medium) {
+        font-size: 2em;
+    }
+
     a:link, a:visited {
         @include links;
     }
@@ -117,6 +121,15 @@ h2 {
 
     a:active {
         @include linkactive;
+    }
+}
+
+h3 {
+    color: $color-4;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1em;
+    @include breakpoint(medium) {
+        font-size: 1.5em;
     }
 }
 

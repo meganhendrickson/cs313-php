@@ -3,7 +3,7 @@
 }
 
 #addbudgetlink {
-    font-size: 2em;
+    font-size: 1.5em;
     a:link, a:visited {
         @include links;
     }
@@ -20,4 +20,5 @@
     @include box;
     padding: $notop-padding;
     margin: 15px;
+    max-width: 275px;
 }
