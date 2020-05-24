@@ -282,6 +282,18 @@ a:hover.cart-action {
   margin: 15px;
   max-width: 275px;
 }
+.budgetsummary a:link, .budgetsummary a:visited {
+  color: #05668D;
+  text-decoration: none;
+}
+.budgetsummary a:hover {
+  color: #078abe;
+  text-decoration: underline;
+}
+.budgetsummary a:active {
+  color: #03425c;
+  text-decoration: underline;
+}
 
 .actionmenu {
   margin-top: 20px;
@@ -297,6 +309,24 @@ a:hover.cart-action {
 .actionmenu a:active {
   color: #03425c;
   text-decoration: underline;
+}
+
+.overflow {
+  overflow-x: auto;
+}
+
+table.budgetexpenses {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #404040;
+}
+table.budgetexpenses th, table.budgetexpenses td {
+  text-align: left;
+  padding: 8px;
+}
+table.budgetexpenses tr:nth-child(even) {
+  background-color: lighten #427AA1, 30%;
 }
 
 /*# sourceMappingURL=mystyles.css.map */

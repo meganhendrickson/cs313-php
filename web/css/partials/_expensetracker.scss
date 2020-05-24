@@ -22,6 +22,15 @@
     padding: $notop-padding;
     margin: 15px;
     max-width: 275px;
+    a:link, a:visited {
+        @include links-2;
+    }
+    a:hover {
+        @include linkhover-2;
+    }
+    a:active {
+        @include linkactive-2;
+    }
 }
 
 .actionmenu {
@@ -34,5 +43,24 @@
     }
     a:active {
         @include linkactive-2;
+    }
+}
+
+//table styles
+.overflow {
+    overflow-x:auto
+}
+
+table.budgetexpenses{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid $color-1;
+    th, td {
+        text-align: left;
+        padding: 8px;
+    } 
+    tr:nth-child(even){
+        background-color: lighten ($color-5, 30%);
     }
 }
