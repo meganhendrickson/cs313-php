@@ -321,6 +321,7 @@ table.budgetexpenses {
 }
 table.budgetexpenses thead {
   border: 3px solid #404040;
+  background-color: #427AA1;
 }
 table.budgetexpenses th {
   border-collapse: collapse;
@@ -335,7 +336,7 @@ table.budgetexpenses td {
   padding: 8px;
 }
 table.budgetexpenses tr:nth-child(even) {
-  background-color: lighten #427AA1, 30%;
+  background-color: #427AA1;
 }
 
 /*# sourceMappingURL=mystyles.css.map */
