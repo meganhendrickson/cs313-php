@@ -14,12 +14,12 @@ echo $buffer;
 <main>
   
   <h1>Dashboard</h1>
-  
+  <p id="addbudget"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=addbudget">
+    <i class="fa fa-plus-square" aria-hidden="true"></i>Create a new budget</a></p>
   <?php
     echo $dashdisplay;
   ?>
   
-
-</main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+</main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

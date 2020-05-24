@@ -16,8 +16,28 @@ $action = filter_input(INPUT_POST, 'action');
     }
 
 switch ($action){
+    case 'register':
+        include 'view/register.php';    
+    break;
+
+    case 'login':
+        include 'view/login.php';
+    break;
+
     case 'addexpense':
         include 'view/addexpense.php';
+    break;
+
+    case 'editexpense':
+        include 'view/editexpense.php';
+    break;
+
+    case 'addbudget':
+        include 'view/addbudget.php';
+    break;
+
+    case 'editbudet':
+        include 'view/editbudget.php';
     break;
 
     case 'details':

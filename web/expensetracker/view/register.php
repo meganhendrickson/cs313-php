@@ -6,16 +6,16 @@ $buffer = ob_get_contents();
 ob_end_clean();
 
 //set page title
-$title = "Details";
+$title = "Register";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 ?>
 
 <main>
   
-  <h1>Budget Details</h1>
+  <h1>Register</h1>
 
-  <?php echo $budgetDisplay ?>
+  <p>Coming Soon!<p>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>

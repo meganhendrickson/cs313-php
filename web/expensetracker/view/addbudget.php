@@ -17,6 +17,6 @@ echo $buffer;
 
   <p>Coming Soon!<p>
 
-</main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+</main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
