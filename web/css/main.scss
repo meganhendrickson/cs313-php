@@ -5,6 +5,25 @@ $color-3: #f83f70; // Accent
 $color-4: #05668D; 
 $color-5: #427AA1;
 
+/* Set Breakpoints */
+$break-small: 576px;
+$break-medium: 768px;
+$break-large: 992px;
+
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (min-width: $break-large) { @content; }
+    }
+    @else if $break == medium {
+        @media (min-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+        @media (min-width: $break-small) { @content; }
+    } @else {
+        @media ($break) { @content; }
+    }
+}  
+
 /* Fonts */
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Bubblegum Sans', cursive;
@@ -28,6 +47,23 @@ $secondary-padding: 0px 20px;
     text-decoration: underline;
 }
 
+@mixin center($max-width, $width: 90%) {
+    width: $width;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex-container($axis, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: $axis $wrap;
+    -ms-flex-flow: $axis $wrap;
+    flex-flow: $axis $wrap;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -46,7 +82,13 @@ body {
 h1 {
     color: $color-4;
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 3em;
+    @include breakpoint(small){
+        font-size: 2em;
+    }
+    @include breakpoint(large) {
+        font-size: 3em;
+    }
+    
 }
 
 h2 {
