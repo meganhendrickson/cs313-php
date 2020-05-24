@@ -121,7 +121,7 @@ nav {
   margin-left: auto;
   margin-right: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .hello-image {
     float: left;
     width: 50%;
@@ -134,7 +134,7 @@ nav {
 .hello-text {
   padding: 20px;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .hello-text {
     float: right;
     width: 50%;
@@ -144,7 +144,7 @@ nav {
 .project-list {
   padding: 20px;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .project-list {
     float: right;
     width: 50%;

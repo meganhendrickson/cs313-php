@@ -4,7 +4,7 @@
     img {
         @include center;
     }
-    @include breakpoint(medium){
+    @include breakpoint(small){
         float:left;
         width: 50%;
         img {
@@ -15,7 +15,7 @@
 
 .hello-text {
     padding: $primary-padding;
-    @include breakpoint(medium){
+    @include breakpoint(small){
         float: right;
         width: 50%;
     }
@@ -23,7 +23,7 @@
 
 .project-list {
     padding: $primary-padding;
-    @include breakpoint(medium){
+    @include breakpoint(small){
         float:right;
         width: 50%;
     }
