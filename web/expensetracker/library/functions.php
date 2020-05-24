@@ -36,17 +36,17 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd .= "</div>";
   $bd .= "<h2>Expenses</h2>";
   $bd .= "<div class='overflow'><table class='budgetexpenses'>";
-  $bd .= "<thead><tr><th>Date</th><th>Description</th><th>Amount</th><th>Modify</th></tr></thead>";
+  $bd .= "<thead><tr><th>Date</th><th>Description</th><th>Amount</th><th>Edit</th></tr></thead><tbody>";
   foreach ($budgetExpenses as $expense){
     $expenseId = $expense['expenseid'];
-    $bd .= "<tbody><tr>";
+    $bd .= "<tr>";
     $bd .= "<td>$expense[created_at]</td>";
     $bd .= "<td>$expense[description]</td>";
     $bd .= "<td>&#36;$expense[expenseamount]</td>";
     $bd .= '<td><a href="/expensetracker/?action=editexpense&expenseId='.urlencode($expenseId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
-    $bd .= "</tr></tbody>";
+    $bd .= "</tr>";
   }
-  $bd .= "</table></div>";
+  $bd .= "</tbody></table></div>";
   return $bd;
 }
 
