@@ -27,18 +27,19 @@ function buildDashDisplay($clientBudgets){
 
 function buildBudgetDisplay($budgetDetails, $budgetExpenses){
   $bd = "<div class='budgetdetails'>";
-  $bd .= "<p>$budgetDetails[budgetname]</p>";
-  $bd .= "<p>$budgetDetails[budgetamount]</p>";
-  $bd .= "<p>$budgetDetails[created_at]<p>";
+  $bd .= "<h2 class='detail-name'>$budgetDetails[budgetname]</h2>";
+  $bd .= "<p class='detail-info'>Budget Amount: &#36;$budgetDetails[budgetamount]</p>";
+  $bd .= "<p class='detail-info>Date Created: $budgetDetails[created_at]</p>";
   $bd .= "</div>";
+  $bd .= "<h3>Expenses</h3>";
   $bd .= "<table class='budgetexpenses'>";
   $bd .= "<tr><th>Date</th><th>Description</th><th>Amount</th><th>Options</th></tr>";
   foreach ($budgetExpenses as $expense){
     $bd .= "<tr>";
     $bd .= "<td>$expense[created_at]</td>";
     $bd .= "<td>$expense[description]</td>";
-    $bd .= "<td>$expense[expenseamount]</td>";
-    $bd .= "<td>Edit | Delete</td>";
+    $bd .= "<td>&#36;$expense[expenseamount]</td>";
+    $bd .= "<td><i class='fa fa-pencil-square-o' aria-hidden='true'></i> | <i class='fa fa-minus-square' aria-hidden='true'></i></td>";
     $bd .= "</tr>";
   }
   $bd .= "</table>";
