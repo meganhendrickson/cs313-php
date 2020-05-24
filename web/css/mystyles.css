@@ -63,6 +63,18 @@ h3 {
     font-size: 1.5em;
   }
 }
+h3 a:link, h3 a:visited {
+  color: #f83f70;
+  text-decoration: none;
+}
+h3 a:hover {
+  color: #fa7095;
+  text-decoration: underline;
+}
+h3 a:active {
+  color: #f60e4b;
+  text-decoration: underline;
+}
 
 i {
   margin: 0px 5px;

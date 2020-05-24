@@ -110,15 +110,12 @@ h2 {
     @include breakpoint(medium) {
         font-size: 2em;
     }
-
     a:link, a:visited {
         @include links;
     }
-
     a:hover {
         @include linkhover;
     }
-
     a:active {
         @include linkactive;
     }
@@ -130,6 +127,17 @@ h3 {
     font-size: 1em;
     @include breakpoint(medium) {
         font-size: 1.5em;
+    }
+    a:link, a:visited {
+        @include links;
+    }
+
+    a:hover {
+        @include linkhover;
+    }
+
+    a:active {
+        @include linkactive;
     }
 }
 
