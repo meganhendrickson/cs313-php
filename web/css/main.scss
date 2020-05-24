@@ -65,7 +65,7 @@ $notop-padding: 0px 20px 20px 20px;
     box-shadow: 7px 7px 9px -6px rgba(156,156,156,0.75);
 }
 
-@mixin flex-container($axis, $wrap: nowrap) {
+@mixin flex-container($axis, $wrap) {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -73,6 +73,7 @@ $notop-padding: 0px 20px 20px 20px;
     -webkit-flex-flow: $axis $wrap;
     -ms-flex-flow: $axis $wrap;
     flex-flow: $axis $wrap;
+    justify-content: space-around;
 }
 
 * {
@@ -106,6 +107,17 @@ h1 {
 h2 {
     color: $color-4;
     font-family: 'Bubblegum Sans', cursive;
+    a:link, a:visited {
+        @include links;
+    }
+
+    a:hover {
+        @include linkhover;
+    }
+
+    a:active {
+        @include linkactive;
+    }
 }
 
 main {

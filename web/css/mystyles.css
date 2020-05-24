@@ -35,6 +35,18 @@ h2 {
   color: #05668D;
   font-family: "Bubblegum Sans", cursive;
 }
+h2 a:link, h2 a:visited {
+  color: #f83f70;
+  text-decoration: none;
+}
+h2 a:hover {
+  color: #fa7095;
+  text-decoration: underline;
+}
+h2 a:active {
+  color: #f60e4b;
+  text-decoration: underline;
+}
 
 main {
   padding: 20px;
@@ -198,6 +210,17 @@ a:hover.cart-action {
 }
 
 /* EXPENSE TRACKER PROJECT */
+.dashdisplay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
 #addbudgetlink {
   font-size: 2em;
 }

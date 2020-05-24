@@ -1,3 +1,7 @@
+.dashdisplay{
+    @include flex-container(row, wrap);
+}
+
 #addbudgetlink {
     font-size: 2em;
     a:link, a:visited {
