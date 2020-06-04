@@ -41,7 +41,7 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
     $expenseId = $expense['expenseid'];
     $bd .= "<tr>";
     $bd .= "<td>$expense[created_at]</td>";
-    $bd .= "<td>$expense[description]</td>";
+    $bd .= "<td>$expense[expensedescr]</td>";
     $bd .= "<td>&#36;$expense[expenseamount]</td>";
     $bd .= '<td><a href="/expensetracker/?action=editexpense&expenseId='.urlencode($expenseId).'"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>';
     $bd .= "</tr>";

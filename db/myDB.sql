@@ -17,7 +17,7 @@ CREATE TABLE expense (
 	expenseId serial PRIMARY KEY NOT NULL UNIQUE,
 	budgetId int references budget(budgetId) NOT NULL,
 	expenseAmount real NOT NULL,
-	description varchar(255) NOT NULL,
+	expensedes varchar(255) NOT NULL,
 	created_at date NOT NULL
 );
 
@@ -33,11 +33,11 @@ VALUES ('1', 'Fuel', '150', '05/18/2020');
 INSERT INTO budget (clientId, budgetName, budgetAmount, created_at)
 VALUES ('1', 'Misc', '200', '05/18/2020');
 
-INSERT INTO expense (budgetId, expenseAmount, description, created_at)
+INSERT INTO expense (budgetId, expenseAmount, expensedescr, created_at)
 VALUES ('1', '10', 'Lunch at Sonic', '05/19/2020');
-INSERT INTO expense (budgetId, expenseAmount, description, created_at)
+INSERT INTO expense (budgetId, expenseAmount, expensedescr, created_at)
 VALUES ('1', '75', 'Groceries', '05/19/2020');
-INSERT INTO expense (budgetId, expenseAmount, description, created_at)
+INSERT INTO expense (budgetId, expenseAmount, expensedescr, created_at)
 VALUES ('2', '40', 'gas at Caseys', '05/19/2020');
-INSERT INTO expense (budgetId, expenseAmount, description, created_at)
+INSERT INTO expense (budgetId, expenseAmount, expensedescr, created_at)
 VALUES ('3', '20', 'Movie Tickets', '05/19/2020');

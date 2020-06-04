@@ -37,16 +37,16 @@ switch ($action){
         // Filter and store data
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
-        $date = filter_input(INPUT_POST, 'date');
+        $expensedescr = filter_input(INPUT_POST, 'expensedescr', FILTER_SANITIZE_STRING);
+        $created_at = filter_input(INPUT_POST, 'created_at');
 
         echo $budgetId;
         echo $expenseAmount;
-        echo $description;
-        echo $date;
+        echo $expensedescr;
+        echo $created_at;
 
         //Check for missing data
-        if(empty($budgetId) || empty($expenseAmount) || empty($description) || empty($date)) {
+        if(empty($budgetId) || empty($expenseAmount) || empty($expensedescr) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
             $_SESSION['message'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
@@ -54,7 +54,7 @@ switch ($action){
         }
 
         // Send the data to the database
-        $newExpense = addExpense($budgetId, $expenseAmount, $description, $date);
+        $newExpense = addExpense($budgetId, $expenseAmount, $expensedescr, $date);
         // Check results
         if($newExpense === 1){
             //$msg = '<p class="notice">Expense was successfully added.</p>';

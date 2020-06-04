@@ -48,15 +48,15 @@ function getBudgetExpenses($budgetId){
     return $budgetExpenses;
 }
 
-function addExpense($budgetId, $expenseAmount, $description, $date){
+function addExpense($budgetId, $expenseAmount, $expensedescr, $created_at){
   $db = dbConnection();
   echo connected;
-  $sql = 'INSERT INTO expense (budgetid, expenseamount, description, created_at)
-          VALUES (:budgetId, :expenseAmount, :description, :date)';
+  $sql = 'INSERT INTO expense (budgetid, expenseamount, expensedescr, created_at)
+          VALUES (:budgetId, :expenseAmount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO:: PARAM_INT);
   $stmt->bindValue(':expenseAmount', $expenseAmount, PDO:: PARAM_INT);
-  $stmt->bindValue(':description', $description, PDO:: PARAM_STR);
+  $stmt->bindValue(':expensedescr', $expensedescr, PDO:: PARAM_STR);
   $stmt->bindValue(':date', $date, PDO:: PARAM_DATE);
   $stmt->execute();
   $rowsChanged = $stmt->rowCount();

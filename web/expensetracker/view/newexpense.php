@@ -25,9 +25,9 @@ echo $buffer;
       <label>Amount:</label>
       <input required type="text" name="expenseAmount" id="expenseAmount"/>
       <label>Description:</label>
-      <input required type="text" name="description" id="description"/>
+      <input required type="text" name="expensedescr" id="expensedescr"/>
       <label>Expense Date:</label>
-      <input required type="date" name="date" id="date" min="2020-01-01" max="2020-12-31"/>
+      <input required type="date" name="created_at" id="created_at" min="2020-01-01" max="2020-12-31"/>
       <input type="submit" class="button" name="submit" value="Add Expense"/>
       <!-- Action Key - Value Pair -->
       <input type="hidden" name="action" value="addexpense"/>
