@@ -57,13 +57,13 @@ switch ($action){
         $newExpense = addExpense($budgetId, $expenseAmount, $description, $date);
         // Check results
         if($newExpense === 1){
-            $msg = '<p class="notice">Expense was successfully added.</p>';
-            $_SESSION['message'] = $msg;
+            //$msg = '<p class="notice">Expense was successfully added.</p>';
+            //$_SESSION['message'] = $msg;
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
-            $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
-            $_SESSION['message'] = $msg;
+            //$msg = '<p class="notice">Faild to add expense. Please try again.</p>';
+            //$_SESSION['message'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
             exit;
         }
