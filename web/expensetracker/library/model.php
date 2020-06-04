@@ -50,10 +50,10 @@ function getBudgetExpenses($budgetId){
 
 function addExpense($budgetId, $expenseAmount, $expensedescr, $created_at){
   $db = dbConnection();
-  echo connected;
   $sql = 'INSERT INTO expense (budgetid, expenseamount, expensedescr, created_at)
           VALUES (:budgetId, :expenseAmount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
+  echo $stmt;
   $stmt->bindValue(':budgetId', $budgetId, PDO:: PARAM_INT);
   $stmt->bindValue(':expenseAmount', $expenseAmount, PDO:: PARAM_INT);
   $stmt->bindValue(':expensedescr', $expensedescr, PDO:: PARAM_STR);

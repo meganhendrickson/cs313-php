@@ -40,11 +40,6 @@ switch ($action){
         $expensedescr = filter_input(INPUT_POST, 'expensedescr', FILTER_SANITIZE_STRING);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
-        echo $budgetId;
-        echo $expenseAmount;
-        echo $expensedescr;
-        echo $created_at;
-
         //Check for missing data
         if(empty($budgetId) || empty($expenseAmount) || empty($expensedescr) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
@@ -55,6 +50,7 @@ switch ($action){
 
         // Send the data to the database
         $newExpense = addExpense($budgetId, $expenseAmount, $expensedescr, $date);
+        
         // Check results
         if($newExpense === 1){
             //$msg = '<p class="notice">Expense was successfully added.</p>';
