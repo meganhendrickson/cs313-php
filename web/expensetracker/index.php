@@ -54,7 +54,7 @@ switch ($action){
         if($newExpense === 1){
             $msg = '<p class="notice">Expense was successfully added.</p>';
             $_SESSION['message'] = $msg;
-            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId")
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
             $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
