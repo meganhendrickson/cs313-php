@@ -16,7 +16,7 @@ CREATE TABLE budget (
 CREATE TABLE expense (
 	expenseId serial PRIMARY KEY NOT NULL UNIQUE,
 	budgetId int references budget(budgetId) NOT NULL,
-	expenseAmount int NOT NULL,
+	expenseAmount real NOT NULL,
 	description varchar(255) NOT NULL,
 	created_at date NOT NULL
 );

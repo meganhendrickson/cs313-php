@@ -47,4 +47,19 @@ function getBudgetExpenses($budgetId){
     $stmt->closeCursor();
     return $budgetExpenses;
 }
+
+function addExpense($budgetId, $expenseAmount, $description, $date){
+  $db = dbConnection();
+  $sql = 'INSERT INTO expense (budgetid, expenseamount, description, created_at)
+          VALUES (:budgetId, :expenseAmount, :description, :date)';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetId', $budgetId, PDO:: PARAM_INT);
+  $stmt->bindValue(':expenseAmount', $expenseAmount, PDO:: PARAM_REAL);
+  $stmt->bindValue(':description', $description, PDO:: PARAM_STR);
+  $stmt->bindValue(':date', $date, PDO:: PARAM_DATE);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stm->closeCursor();
+  return $rowsChanged;
+}
 ?>
