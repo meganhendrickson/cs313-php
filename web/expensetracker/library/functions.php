@@ -55,7 +55,7 @@ function buildBudgetList($clientBudgets){
   $catList = '<select name="budgetId" id="budgetList">'; 
   $catList .= "<option>Select a Budget</option>"; 
   foreach ($clientBudgets as $budget) { 
-      $budgetList .= "<option value='$budget[budgetId]'>$budget[budgetName]</option>"; 
+      $budgetList .= "<option value='$budget[budgetid]'>$budget[budgetname]</option>"; 
   } 
   $budgetList .= '</select>'; 
   return $budgetList; 
