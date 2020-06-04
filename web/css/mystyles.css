@@ -255,18 +255,18 @@ a:hover.cart-action {
   max-width: 960px;
 }
 
-#addbudgetlink {
+#newbudgetlink {
   font-size: 1.5em;
 }
-#addbudgetlink a:link, #addbudgetlink a:visited {
+#newbudgetlink a:link, #newbudgetlink a:visited {
   color: #f83f70;
   text-decoration: none;
 }
-#addbudgetlink a:hover {
+#newbudgetlink a:hover {
   color: #fa7095;
   text-decoration: underline;
 }
-#addbudgetlink a:active {
+#newbudgetlink a:active {
   color: #f60e4b;
   text-decoration: underline;
 }

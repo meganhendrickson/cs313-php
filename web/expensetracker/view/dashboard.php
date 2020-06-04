@@ -15,7 +15,7 @@ echo $buffer;
   
   <h1>Dashboard</h1>
   
-  <p id="addbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=addbudget">
+  <p id="newbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newbudget">
     <i class="fa fa-plus-square" aria-hidden="true"></i>Create a new budget</a></p>
   
   <?php
