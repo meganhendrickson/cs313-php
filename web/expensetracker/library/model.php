@@ -54,7 +54,7 @@ function addExpense($budgetId, $expenseAmount, $description, $date){
           VALUES (:budgetId, :expenseAmount, :description, :date)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetId', $budgetId, PDO:: PARAM_INT);
-  $stmt->bindValue(':expenseAmount', $expenseAmount, PDO:: PARAM_REAL);
+  $stmt->bindValue(':expenseAmount', $expenseAmount, PDO:: PARAM_INT);
   $stmt->bindValue(':description', $description, PDO:: PARAM_STR);
   $stmt->bindValue(':date', $date, PDO:: PARAM_DATE);
   $stmt->execute();
