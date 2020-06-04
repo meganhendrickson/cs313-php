@@ -54,7 +54,7 @@ function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
-  $stmt->bindValue(':expensedescr', $expensedescr);
+  $stmt->bindValue(':expensedescr', $expenseDescr);
   $stmt->bindValue(':created_at', $created_at);
   $stmt->execute();
   $rowsChanged = $stmt->rowCount();
