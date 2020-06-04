@@ -53,6 +53,7 @@ function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   echo dbconnected;
   $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES(:budgetid, :expenseamount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
+  echo statementprep;
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
   $stmt->bindValue(':expensedescr', $expenseDescr);
