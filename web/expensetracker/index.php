@@ -27,17 +27,8 @@ switch ($action){
     break;
 
     case 'newexpense':
-        $budgetList = '<select name="budget">';
-        foreach ($clientBudgets as $budget){
-            $budgetList .= "<option value='$budget[budgetId]'";
-            if(isset($budgetId)){
-                if($budget['budgetId'] === $budgetId){
-                    $budgetList .= ' selected ';
-                }
-            }
-            $budgetList .= ">$budget[budgetName].</option>";
-        }
-        $budgetList .= '</select>';
+        $clientBudgets = getClientBudgets(1);
+        $budgetList = buildBudgetList($clientBudgets);
         include 'view/newexpense.php';
         exit;
     break;
