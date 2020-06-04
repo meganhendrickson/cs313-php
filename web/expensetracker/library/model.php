@@ -52,15 +52,14 @@ function addExpense($budgetId, $expenseAmount, $expensedescr, $created_at){
   $db = dbConnection();
   $sql = 'INSERT INTO expense (budgetid, expenseamount, expensedescr, created_at)
           VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
-  $stmt = $db->prepare($sql);
-  echo $stmt;
+  $stmt = $this->pdo->prepare($sql);
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
   $stmt->bindValue(':expensedescr', $expensedescr);
   $stmt->bindValue(':created_at', $created_at);
   $stmt->execute();
   $rowsChanged = $stmt->rowCount();
-  $stm->closeCursor();
+  $stmt->closeCursor();
   return $rowsChanged;
 }
 ?>
