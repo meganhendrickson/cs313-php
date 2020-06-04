@@ -37,7 +37,7 @@ switch ($action){
         // Filter and store data
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $expensedescr = filter_input(INPUT_POST, 'expensedescr', FILTER_SANITIZE_STRING);
+        $expenseDescr = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_STRING);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
         //Check for missing data
@@ -49,7 +49,7 @@ switch ($action){
         }
 
         // Send the data to the database
-        $newExpense = addExpense($budgetId, $expenseAmount, $expensedescr, $date);
+        $newExpense = addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at);
         
         // Check results
         if($newExpense === 1){
