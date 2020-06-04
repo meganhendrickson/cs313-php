@@ -50,6 +50,7 @@ function getBudgetExpenses($budgetId){
 
 function addExpense($budgetId, $expenseAmount, $description, $date){
   $db = dbConnection();
+  echo connected;
   $sql = 'INSERT INTO expense (budgetid, expenseamount, description, created_at)
           VALUES (:budgetId, :expenseAmount, :description, :date)';
   $stmt = $db->prepare($sql);
