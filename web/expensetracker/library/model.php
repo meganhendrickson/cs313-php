@@ -58,7 +58,7 @@ function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   $stmt->bindValue(':expenseamount', $expenseAmount);
   $stmt->bindValue(':expensedescr', $expenseDescr);
   $stmt->bindValue(':created_at', $created_at);
-  echo bindvalues;
+  echo $stmt;
   $stmt->execute();
   echo execute;
   $rowsChanged = $stmt->rowCount();
