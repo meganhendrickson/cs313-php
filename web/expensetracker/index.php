@@ -36,7 +36,7 @@ switch ($action){
     case 'addexpense':
         // Filter and store data
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_FLOAT);
+        $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $date = filter_input(INPUT_POST, 'date');
 
