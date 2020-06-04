@@ -33,6 +33,37 @@ switch ($action){
         exit;
     break;
 
+    case 'addexpense':
+        // Filter and store data
+        $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
+        $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_FLOAT);
+        $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+        $date = filter_input(INPUT_POST, 'date');
+
+        //Check for missing data
+        if(empty($budgetId) || empty($expenseAmount) || empty($description) || empty($date)) {
+            $msg = '<p class="notice"> Please provide information ofr all empty form fields.</p>';
+            $_SESSION['message'] = $msg;
+            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            exit;
+        }
+
+        // Send the data to the database
+        $newExpense = addExpense($budgetId, $expenseAmount, $description, $date);
+        // Check results
+        if($newExpense === 1){
+            $msg = '<p class="notice">Expense was successfully added.</p>';
+            $_SESSION['message'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId")
+            exit;
+        } else {
+            $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
+            $_SESSION['message'] = $msg;
+            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            exit;
+        }
+    break;
+
     case 'editexpense':
         include 'view/editexpense.php';
         exit;
