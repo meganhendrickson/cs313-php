@@ -40,9 +40,14 @@ switch ($action){
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
         $date = filter_input(INPUT_POST, 'date');
 
+        echo $budgetId;
+        echo $expenseAmount;
+        echo $description;
+        echo $date;
+
         //Check for missing data
         if(empty($budgetId) || empty($expenseAmount) || empty($description) || empty($date)) {
-            $msg = '<p class="notice"> Please provide information ofr all empty form fields.</p>';
+            $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
             $_SESSION['message'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
             exit;
