@@ -49,18 +49,18 @@ function getBudgetExpenses($budgetId){
 }
 
 function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
+  echo $budgetId;
+        echo $expenseAmount;
+        echo $expenseDescr;
+        echo $created_at;
   $db = dbConnection();
-  echo dbconnected;
   $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES(:budgetid, :expenseamount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
-  echo statementprep;
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
   $stmt->bindValue(':expensedescr', $expenseDescr);
   $stmt->bindValue(':created_at', $created_at);
-  echo $stmt;
   $stmt->execute();
-  echo execute;
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $rowsChanged;
