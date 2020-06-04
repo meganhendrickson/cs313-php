@@ -26,17 +26,7 @@ switch ($action){
         exit;
     break;
 
-    case 'addexpense':
-        include 'view/newexpense.php';
-        exit;
-    break;
-
-    case 'editexpense':
-        include 'view/editexpense.php';
-        exit;
-    break;
-
-    case 'newbudget':
+    case 'newexpense':
         $budgetList = '<select name="budget">';
         foreach ($clientBudgets as $budget){
             $budgetList .= "<option value='$budget[budgetId]'";
@@ -48,6 +38,17 @@ switch ($action){
             $budgetList .= ">$budget[budgetName].</option>";
         }
         $budgetList .= '</select>';
+        include 'view/newexpense.php';
+        exit;
+    break;
+
+    case 'editexpense':
+        include 'view/editexpense.php';
+        exit;
+    break;
+
+    case 'newbudget':
+        
         include 'view/newbudget.php';
         exit;
     break;
