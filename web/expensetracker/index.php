@@ -66,11 +66,7 @@ switch ($action){
     break;
 
     case 'editexpense':
-        $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        $budgetDetails = getBudgetDetails($budgetId);
-                if(count($budgetDetails)<1){
-            $msg = 'Sorry, no budget information could be found.';
-        } else {echo $budgetDetails;}
+
         include 'view/editexpense.php';
         exit;
     break;
@@ -119,6 +115,11 @@ switch ($action){
     break;
 
     case 'editbudget':
+        $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
+        $budgetDetails = getBudgetDetails($budgetId);
+                if(count($budgetDetails)<1){
+            $msg = 'Sorry, no budget information could be found.';
+        } else {echo $budgetDetails;}
         include 'view/editbudget.php';
         exit;
     break;
