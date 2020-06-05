@@ -29,13 +29,13 @@ echo $buffer;
     <label>Budget Amount:</label>
     <input required type="text" name="budgetAmount" id="budgetAmount"
       <?php if(isset($budgetAmount)){ echo "value='$budgetAmount'";}
-              elseif(isset($budgetDetails['budgetname'])) {echo "value='$budgetDetails[budgetname]'";} 
+              elseif(isset($budgetDetails['budgetamount'])) {echo "value='$budgetDetails[budgetamount]'";} 
       ?>
     />
-    <label>Budget Amount:</label>
-    <input required type="text" name="budgetAmount" id="budgetAmount"
-      <?php if(isset($budgetAmount)){ echo "value='$budgetAmount'";}
-              elseif(isset($budgetDetails['budgetname'])) {echo "value='$budgetDetails[budgetname]'";} 
+    <label>Date:</label>
+    <input required type="text" name="created_at" id="created_at"
+      <?php if(isset($created_at)){ echo "value='$created_at'";}
+              elseif(isset($budgetDetails['created_at'])) {echo "value='$budgetDetails[created_at]'";} 
       ?>
     />
     <input type="submit" class="button" name="submit" value="Update Budget"/>
