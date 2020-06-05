@@ -9,11 +9,18 @@ ob_end_clean();
 $title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
+
+// Create or access a Session
+session_start();
 ?>
 
 <main>
   
   <h1>Dashboard</h1>
+  
+  <div class="msg">
+    <?php if (isset($msg)) {echo $msg;}?>
+  </div>
   
   <p id="newbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newbudget">
     <i class="fa fa-plus-square" aria-hidden="true"></i>Create a new budget</a></p>

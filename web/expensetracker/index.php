@@ -80,14 +80,14 @@ switch ($action){
         // Filter and store data
         $clientId = 1;
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
-        $budgetAmount = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
         //Check for missing data
         if(empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
             $_SESSION['message'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            include $_SERVER['DOCUMENT_ROOT'].'view/newbudget.php';
             exit;
         }
 

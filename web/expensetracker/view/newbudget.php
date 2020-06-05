@@ -9,6 +9,9 @@ ob_end_clean();
 $title = "Add Budget";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
+
+// Create or access a Session
+session_start();
 ?>
 
 <main>
