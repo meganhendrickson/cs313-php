@@ -66,6 +66,7 @@ switch ($action){
     break;
 
     case 'editexpense':
+        
         include 'view/editexpense.php';
         exit;
     break;
