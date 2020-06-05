@@ -43,7 +43,7 @@ switch ($action){
         //Check for missing data
         if(empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
-            $_SESSION['message'] = $msg;
+            $_SESSION['msg'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
             exit;
         }
@@ -54,12 +54,12 @@ switch ($action){
         // Check results
         if($newExpense === 1){
             $msg = '<p class="notice">Expense was successfully added.</p>';
-            $_SESSION['message'] = $msg;
+            $_SESSION['msg'] = $msg;
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
             $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
-            $_SESSION['message'] = $msg;
+            $_SESSION['msg'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
             exit;
         }
@@ -92,7 +92,7 @@ switch ($action){
         //Check for missing data
         if(empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
-            $_SESSION['message'] = $msg;
+            $_SESSION['msg'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'view/newbudget.php';
             exit;
         }
@@ -103,7 +103,7 @@ switch ($action){
         // Check results
         if($newBudget === 1){
             $msg = '<p class="notice">Expense was successfully added.</p>';
-            $_SESSION['message'] = $msg;
+            $_SESSION['msg'] = $msg;
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
             exit;
         } else {
@@ -124,9 +124,40 @@ switch ($action){
         exit;
     break;
 
+    case 'updatebudget':
+        //Filter and store data
+        $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
+        $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
+        $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $created_at = filter_input(INPUT_POST, 'created_at');
+
+        //check for missing data
+        if(empty($budgetId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
+            $msg = '<p class="notice">Please provde innformation for all emtpy form fields.</p>';
+            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/editbudget.php';
+            exit;
+        }
+
+        //Send data to database
+        $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
+
+        //Check and report the result
+        if($updateBudget){
+            $msg="<p class='notice'> $budgetName successfully updated.</p>";
+            $_SESSION['msg'] = $msg;
+            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+            exit;
+        } else {
+            $msg = "<p class='notice'> Faild to update $budgetId. Please try again.</p>";
+            $_SESSION['msg'] = $msg;
+            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudget&budgetId=$budgetId");
+            exit;
+        }
+        
+    break;
+
     case 'details':
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        //print_r (getBudgetExpenses($budgetId));
         $budgetDetails = getBudgetDetails($budgetId);
         $budgetExpenses = getBudgetExpenses($budgetId);
         $budgetSpent = getBudgetAmountSpent($budgetId);

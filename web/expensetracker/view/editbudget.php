@@ -33,15 +33,15 @@ echo $buffer;
       ?>
     />
     <label>Date:</label>
-    <input required type="text" name="created_at" id="created_at"
+    <input required type="date" name="created_at" id="created_at"
       <?php if(isset($created_at)){ echo "value='$created_at'";}
               elseif(isset($budgetDetails['created_at'])) {echo "value='$budgetDetails[created_at]'";} 
       ?>
     />
     <input type="submit" class="button" name="submit" value="Update Budget"/>
-    <input type="hidden" name="action" value="updateBudget"/>
+    <input type="hidden" name="action" value="updatebudget"/>
     <input type="hidden" name="budgetId" value="
-      <?php if(isset($budgetDetails['budgetId'])){echo $budgetDetails['budgetId'];
+      <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
               }elseif(isset($budgetId)){echo $bugetId;} ?>"
     />
   </fieldset>
