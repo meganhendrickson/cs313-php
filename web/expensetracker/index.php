@@ -83,10 +83,10 @@ switch ($action){
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
-        echo $clietId;
+        echo $clientId;
         echo $budgetName;
         echo $budgetAmount;
-        echo $create_at;
+        echo $created_at;
 
         //Check for missing data
         if(empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
