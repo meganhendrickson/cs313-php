@@ -119,7 +119,7 @@ switch ($action){
         $budgetDetails = getBudgetDetails($budgetId);
                 if(count($budgetDetails)<1){
             $msg = 'Sorry, no budget information could be found.';
-        } else {echo $budgetDetails;}
+        }
         include 'view/editbudget.php';
         exit;
     break;
