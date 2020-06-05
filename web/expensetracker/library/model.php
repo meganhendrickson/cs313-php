@@ -50,7 +50,6 @@ function getBudgetExpenses($budgetId){
 
 function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   $db = dbConnection();
-  echo dbconnected;
   $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetid', $budgetId);
@@ -68,8 +67,8 @@ function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
   $sql = 'INSERT INTO budget(clientid, budgetname, budgetamount, created_at) VALUES(:clientid, :budgetname, :budgetamount, :created_at)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientid', $clientId);
-  $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':budgetname', $budgetName);
+  $stmt->bindValue(':budgetamount', $budgetAmount);
   $stmt->bindValue(':created_at', $created_at);
   $stmt->execute();
   $rowsChanged = $stmt->rowCount();
