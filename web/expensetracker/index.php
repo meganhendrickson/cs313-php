@@ -40,10 +40,6 @@ switch ($action){
         $expenseDescr = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_STRING);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
-        echo $budgetId;
-        echo $expenseAmount;
-        echo $expenseDescr;
-        echo $created_at;
         //Check for missing data
         if(empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
@@ -78,6 +74,38 @@ switch ($action){
         
         include 'view/newbudget.php';
         exit;
+    break;
+
+    case 'addbudget':
+        // Filter and store data
+        $clientId = 1;
+        $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
+        $budgetAmount = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $created_at = filter_input(INPUT_POST, 'created_at');
+
+        //Check for missing data
+        if(empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
+            $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
+            $_SESSION['message'] = $msg;
+            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            exit;
+        }
+
+        // Send the data to the database
+        $newBudget = addBudget($clientId, $budgetName, $budgetAmount, $created_at);
+
+        // Check results
+        if($newBudget === 1){
+            //$msg = '<p class="notice">Expense was successfully added.</p>';
+            //$_SESSION['message'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
+            exit;
+        } else {
+            //$msg = '<p class="notice">Faild to add expense. Please try again.</p>';
+            //$_SESSION['message'] = $msg;
+            include $_SERVER['DOCUMENT_ROOT'].'view/newbudget.php';
+            exit;
+        }
     break;
 
     case 'editbudget':
