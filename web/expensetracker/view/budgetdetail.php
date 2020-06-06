@@ -13,10 +13,11 @@ echo $buffer;
 
 <main>
   
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+
   <h1>Budget Details</h1>
 
   <?php echo $budgetDisplay ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
