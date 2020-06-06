@@ -15,7 +15,7 @@ echo $buffer;
   
   <h1>Simple Expense Tracker</h1>
   
-  <div class="message">
+  <div class="msg">
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
   

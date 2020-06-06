@@ -17,7 +17,7 @@ echo $buffer;
 
   <p>Welcome to Simple Expense Tracker! Please register to begin. All fields are required.</p>
   
-  <div class="message">
+  <div class="msg">
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
 

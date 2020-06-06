@@ -35,10 +35,6 @@ switch ($action){
         $clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
-
-        echo '<p>'.$clientName.'</p>';
-        echo '<p>'.$email.'</p>';
-        echo '<p>'.$passcode.'</p>';
         
         //check for valid email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -46,7 +42,6 @@ switch ($action){
             include 'view/register.php';
             exit;
         }
-        echo '<p>validemail</p>';
         
         //check for missing data
         if (empty($clientName) || empty($email) || empty($passcode)) {
@@ -54,18 +49,16 @@ switch ($action){
             include 'view/register.php';
             exit;
         }
-        echo '<p>allfeilds</p>';
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
-        echo '<p>'.$existingEmail.'</p>';
-
+ 
         if ($existingEmail){
             $msg = '<p class="notice">Email already exists. Please login.</p>';
             include 'view/login.php';
             exit;
         }
-        echo '<p>'.$existingEmail.'</p>';
+
         // Validate password strength
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
@@ -76,23 +69,19 @@ switch ($action){
             include 'view/register.php';
         }
 
-        echo '<p>validpass</p>';
-
         // Hash the checked password
         $hashed = password_hash($passcode, PASSWORD_DEFAULT);
-
-        echo '<p>hashed</p>';
 
         //Send data to the model
         $newRegistration = addClient($clientName, $email, $hashed);
 
         if ($regOutcome === 1) {
             setcookie('clientname', $clientName, strtotime('+1 year'), '/');
-            $message = "<p class='notice'>Thanks for registering $clientName!</p>";
-            include include 'view/login.php';
+            $msg = "<p class='notice'>Thanks for registering $clientName!</p>";
+            include 'view/login.php';
             exit;
         } else {
-            $message = "<p class='notice'>Sorry, but the registration failed. Please try again.</p>";
+            $msg = "<p class='notice'>Sorry, but the registration failed. Please try again.</p>";
             include 'view/register.php';
             exit;
         }
