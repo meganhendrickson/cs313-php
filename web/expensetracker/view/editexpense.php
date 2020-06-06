@@ -30,7 +30,7 @@ echo $buffer;
     <label> Description:</label>
     <input required type="text" name="expenseDescr" id="expenseDescr"
       <?php if(isset($expenseDescr)){echo "value='$expenseDescr'";}
-              elseif(isset($expeseDetails['expensedescr'])) {echo "value='$expenseDetails[expensedescr]'";}
+              elseif(isset($expenseDetails['expensedescr'])) {echo "value='$expenseDetails[expensedescr]'";}
       ?>
     />
               <label>Date:</label>
