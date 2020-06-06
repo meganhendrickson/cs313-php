@@ -35,6 +35,5 @@ echo $buffer;
 
   <p>Already a client? <a href="https://mighty-wave-93548.herokuapp.com/expensetracker/">Login here</a></p>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

@@ -73,7 +73,8 @@ switch ($action){
         }
         
         $clientId = $_SESSION['clientData']['clientid'];
-        echo $clientId;
+        $clientBudgets = getClientBudgets($clientId);
+        $dashdisplay = buildDashDisplay($clientBudgets);
         include 'view/dashboard.php';
 
     break;

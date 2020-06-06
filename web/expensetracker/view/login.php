@@ -18,7 +18,7 @@ echo $buffer;
   <div class="msg">
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
-  
+
   <p>Please login to continue.</p>
 
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
@@ -36,6 +36,5 @@ echo $buffer;
     <input type="hidden" name="action" value="newregistration"/>
   </form>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
