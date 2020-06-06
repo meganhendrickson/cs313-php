@@ -174,15 +174,16 @@ function checkExistingEmail($email) {
   $stmt->execute();
   $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
   $stmt->closeCursor();
-  if (empty($matchEmail)) {
-     return 0;
-     echo 'Nothing found';
-     exit;
-  } else {
-     return 1;
-     echo 'Match found';
-     exit;
-  }
+  return $matchEmail;
+  // if (empty($matchEmail)) {
+  //    return 0;
+  //    echo 'Nothing found';
+  //    exit;
+  // } else {
+  //    return 1;
+  //    echo 'Match found';
+  //    exit;
+  // }
 }
 
 ?>

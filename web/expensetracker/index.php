@@ -51,25 +51,27 @@ switch ($action){
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
+        echo $existingEmail;
+        
         if ($existingEmail){
             $msg = '<p class="notice">Email already exists. Please login.</p>';
             include 'view/login.php';
             exit;
         }
 
-        echo existingemail;
+        echo $existingEmail;
 
-        // // Validate password strength
-        // $uppercase = preg_match('@[A-Z]@', $password);
-        // $lowercase = preg_match('@[a-z]@', $password);
-        // $number    = preg_match('@[0-9]@', $password);
+        // Validate password strength
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
 
-        // if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
-        //     $msg = 'Password should be at least 8 characters in length and should include at least one upper case letter and one number.';
-        //     include 'view/register.php';
-        // }
+        if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
+            $msg = 'Password should be at least 8 characters in length and should include at least one upper case letter and one number.';
+            include 'view/register.php';
+        }
 
-        //echo validpass;
+        echo validpass;
 
         //check for missing data
         if (empty($clientName) || empty($email) || empty($passcode)) {
