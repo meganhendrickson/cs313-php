@@ -43,7 +43,7 @@ function getBudgetExpenses($budgetId){
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
     $stmt->execute();
-    $budgetExpenses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $budgetExpenses = $stmt->fetch();
     $stmt->closeCursor();
     return $budgetExpenses;
 }
@@ -54,7 +54,7 @@ function getExpenseDetails($expenseId){
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
   $stmt->execute();
-  $expenseDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $expenseDetails = $stmt->fetch();
   $stmt->closeCursor();
   return $expenseDetails;
 }
