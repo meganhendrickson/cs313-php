@@ -177,7 +177,7 @@ switch ($action){
         if(empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
             $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            include 'view/newexpense.php';
             exit;
         }
 

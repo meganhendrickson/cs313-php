@@ -52,7 +52,7 @@ function buildBudgetDisplay($budgetDetails, $budgetExpenses){
 
 // Build the budget select list 
 function buildBudgetList($clientBudgets){ 
-  $budgetList = '<select id="budgetList" name="budgetId">'; 
+  $budgetList = '<select required id="budgetList" name="budgetId">'; 
   $budgetList .= "<option>Select a Budget</option>"; 
   foreach ($clientBudgets as $budget) { 
       $budgetList .= "<option value='$budget[budgetid]'>$budget[budgetname]</option>"; 

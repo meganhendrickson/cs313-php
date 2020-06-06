@@ -18,7 +18,7 @@ session_start();
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Add an Expense</h1>
   <div class="msg">
-  <?php 
+    <?php 
         if (isset($_SESSION['msg'])) {
             $message = $_SESSION['msg'];
         }
