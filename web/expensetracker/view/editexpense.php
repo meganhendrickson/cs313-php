@@ -27,7 +27,13 @@ echo $buffer;
               elseif(isset($expenseDetails['expenseamount'])) {echo "value='$expenseDetails[expenseamount]'";} 
       ?>
     />
-    <label>Date:</label>
+    <label> Description:</label>
+    <input required type="text" name="expenseDscr" id="expenseDscr"
+      <?php if(isset($expenseDscr)){echo "value='$expenseAmount'";}
+              elseif(isset($expeseDetails['expensedesc'])) {echo "value='$expenseDetails[expensedesc]'";}
+      ?>
+    />
+              <label>Date:</label>
     <input required type="date" name="created_at" id="created_at"
       <?php if(isset($created_at)){ echo "value='$created_at'";}
               elseif(isset($expenseDetails['created_at'])) {echo "value='$expenseDetails[created_at]'";} 
