@@ -84,11 +84,6 @@ switch ($action){
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
-        echo $clientId;
-        echo $budgetName;
-        echo $budgetAmount;
-        echo $created_at;
-
         //Check for missing data
         if(empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice"> Please provide information for all empty form fields.</p>';
@@ -109,7 +104,7 @@ switch ($action){
         } else {
             $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
             $_SESSION['message'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/newbudget.php';
+            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/index.php';
             exit;
         }
     break;
@@ -117,11 +112,13 @@ switch ($action){
     case 'editbudget':
         $budgetId = filter_input(INPUT_GET, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $budgetDetails = getBudgetDetails($budgetId);
-                if(count($budgetDetails)<1){
+        if(count($budgetDetails)<1){
             $msg = 'Sorry, no budget information could be found.';
-        }
+            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/index.php';
+            exit;
+        } else {
         include 'view/editbudget.php';
-        exit;
+        exit;}
     break;
 
     case 'updatebudget':
@@ -134,7 +131,7 @@ switch ($action){
         //check for missing data
         if(empty($budgetId) || empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice">Please provde innformation for all emtpy form fields.</p>';
-            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/editbudget.php';
+            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudget&budgetId=$budgetId");
             exit;
         }
 
