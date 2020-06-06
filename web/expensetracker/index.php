@@ -35,8 +35,17 @@ switch ($action){
             exit;
         }
 
+        //check for existing email
+        $existingEmail = checkExistingEmail($email);
+ 
+        if (!$existingEmail){
+            $msg = '<p class="notice">Email not registered. Please register first.</p>';
+            include 'view/register.php';
+            exit;
+        }
+
         // Query the client data based on the email address
-        $clientData = getClient($clientEmail);
+        $clientData = getClient($email);
 
         // Compare the password just submitted against the hashed password for the matching client
         $hashCheck = password_verify($passcode, $clientData['passcode']);
