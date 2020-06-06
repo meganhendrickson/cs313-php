@@ -161,6 +161,7 @@ switch ($action){
 
     case 'newexpense':
         $clientId= $_SESSION['clientData']['clientId'];
+        echo $clientId;
         $clientBudgets = getClientBudgets($clientId);
         $budgetList = buildBudgetList($clientBudgets);
         include 'view/newexpense.php';
