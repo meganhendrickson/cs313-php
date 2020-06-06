@@ -60,13 +60,14 @@ switch ($action){
         }
 
         // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $password);
-        $lowercase = preg_match('@[a-z]@', $password);
-        $number    = preg_match('@[0-9]@', $password);
+        $uppercase = preg_match('@[A-Z]@', $passcode);
+        $lowercase = preg_match('@[a-z]@', $passcode);
+        $number    = preg_match('@[0-9]@', $passcode);
 
         if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
-            $msg = 'Password should be at least 8 characters in length and should include at least one upper case letter and one number.';
+            $msg = '<p class="notice">Password should be at least 8 characters in length and should include at least one upper case letter and one number.</p>';
             include 'view/register.php';
+            exit;
         }
 
         // Hash the checked password
