@@ -103,4 +103,20 @@ function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
   return $rowsChanged;
 }
 
+function updateExpense($budgetId, $expenseId, $expenseAmount, $expenseDescr, $created_at){
+  $db = dbConnection();
+  echo dbconnected;
+  $sql = "UPDATE expense SET budgetid = :budgetid, expenseamount = :expenseamount, expensedescr = :expensedescr, created_at = :created_at WHERE budgetid = :budgetid";
+  $stmt = $db->prepare($sql);
+  echo prepared;
+  $stmt->bindValue(':budgetid', $budgetId);
+  $stmt->bindValue(':expenseamount', $expenseAmount);
+  $stmt->bindValue(':expensedescr', $expenseDescr);
+  $stmt->bindValue(':created_at', $created_at);
+  $rowsChanged = $stmt->rowCount();
+  $stmt->execute();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
 ?>
