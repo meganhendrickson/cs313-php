@@ -147,7 +147,7 @@ switch ($action){
 
         //Send data to database
         $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
-
+        echo $updateBudget;
         //Check and report the result
         if($updateBudget === 1){
             $msg="<p class='notice'> $budgetName successfully updated.</p>";
