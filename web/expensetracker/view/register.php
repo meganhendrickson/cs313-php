@@ -20,7 +20,7 @@ echo $buffer;
   <div class="message">
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
-  
+
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
   <label>Your Name:</label>
   <input required type="text" name="clientName" id="clientName"/>
@@ -28,7 +28,7 @@ echo $buffer;
   <input required type="text" name="email" id="email"/>
   <label>Password:</label>
   <input required type="password" name="passcode" id="passcode"/>
-  <p>Password must be at least 8 characters and contain at least 1 number, 1 capital letter.</p>
+  <p>Password must be at least 8 characters and contain at least 1 capital letter and 1 number.</p>
   <input type="submit" class="button" name="register" value="Register"/>
   <input type="hidden" name="action" value="register"/>
   </form>

@@ -69,7 +69,7 @@ switch ($action){
         //     include 'view/register.php';
         // }
 
-        echo validpass;
+        //echo validpass;
 
         //check for missing data
         if (empty($clientName) || empty($email) || empty($passcode)) {
