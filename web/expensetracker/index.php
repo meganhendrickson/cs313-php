@@ -130,9 +130,9 @@ switch ($action){
     case 'updatebudget':
         //Filter and store data
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
-        $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
+        $budgetName = "'" . filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING) . "'";
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $created_at = filter_input(INPUT_POST, 'created_at');
+        $created_at = "'" . filter_input(INPUT_POST, 'created_at') . "'";
         
         echo $budgetId;
         echo $budgetName;
