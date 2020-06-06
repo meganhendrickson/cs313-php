@@ -115,7 +115,7 @@ switch ($action){
         $budgetId= filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $deleteExpense = deleteExpense($expenseId);
 
-        header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId);
+        header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
     break;
 
     case 'newbudget':
