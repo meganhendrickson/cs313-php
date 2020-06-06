@@ -126,6 +126,7 @@ switch ($action){
 
     case 'updatebudget':
         //Filter and store data
+        $clientId = 1;
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -135,14 +136,14 @@ switch ($action){
         echo $budgetAmount;
         echo $created_at;
         //check for missing data
-        if(empty($budgetId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
+        if(empty($budgetId) || empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice">Please provde innformation for all emtpy form fields.</p>';
             include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/editbudget.php';
             exit;
         }
 
         //Send data to database
-        $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
+        $updateBudget = updateBudget($budgetId, $clientId, $budgetName, $budgetAmount, $created_at);
 
         //Check and report the result
         if($updateBudget === 1){
