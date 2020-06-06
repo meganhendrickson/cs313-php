@@ -43,7 +43,7 @@ function getBudgetExpenses($budgetId){
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
     $stmt->execute();
-    $budgetExpenses = $stmt->fetch();
+    $budgetExpenses = $stmt->fetchAll();
     $stmt->closeCursor();
     return $budgetExpenses;
 }
