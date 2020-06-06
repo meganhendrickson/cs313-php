@@ -15,11 +15,11 @@ echo $buffer;
   
   <h1>Simple Expense Tracker</h1>
   
-  <p>Please login to continue.</p>
-  
   <div class="msg">
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
+  
+  <p>Please login to continue.</p>
 
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
     <label>Email:</label>

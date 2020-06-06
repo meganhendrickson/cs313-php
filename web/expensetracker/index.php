@@ -16,6 +16,10 @@ $action = filter_input(INPUT_POST, 'action');
     }
 
 switch ($action){
+    case 'notlogin':
+        include 'view/login.php';
+    break;
+
     case 'login':
         // Filter and store and check for validity
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -77,7 +81,10 @@ switch ($action){
     break;
 
     case 'logout':
-    
+        $_SESSION = array();
+        session_destroy();
+        include 'view/dashboard.php';
+        exit;
     break;
 
     case 'newregistration':
@@ -271,7 +278,7 @@ switch ($action){
 
     case 'addbudget':
         // Filter and store data
-        $clientId = 1;
+        $clientId = $_SESSION['clientData']['clientId'];
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
@@ -378,7 +385,8 @@ switch ($action){
     break;
 
     default:
-    $clientBudgets = getClientBudgets(1);
+    $clientId= $_SESSION['clientData']['clientId'];
+    $clientBudgets = getClientBudgets($clientId);
     $dashdisplay = buildDashDisplay($clientBudgets);
     include 'view/dashboard.php';
 }

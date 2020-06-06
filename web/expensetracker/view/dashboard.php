@@ -10,8 +10,9 @@ $title = "Dashboard";
 $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
 echo $buffer;
 
-// Create or access a Session
-session_start();
+if(!$_SESSION['loggedin']){
+  header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=notlogin");
+}
 ?>
 
 <main>
