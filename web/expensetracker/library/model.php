@@ -55,7 +55,7 @@ function getExpenseDetails($expenseId){
   $stmt->bindValue(':expenseid', $expenseId, PDO::PARAM_INT);
   $stmt->execute();
   $expenseDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $stmt->closeCursor9();
+  $stmt->closeCursor();
   return $expenseDetails;
 }
 
