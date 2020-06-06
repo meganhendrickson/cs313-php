@@ -27,7 +27,7 @@ echo $buffer;
     <label>Password:</label>
     <input required type="password" name="passcode" id="passcode"/>
     <input type="submit" class="button" name="login" value="login"/>
-    <input typ="hidden" name="action" value="login"/>
+    <input type="hidden" name="action" value="login"/>
   </form>
 
   <p>Not a member?</p>

@@ -35,13 +35,17 @@ switch ($action){
         $clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
+
+        echo $clientName;
+        echo $email;
+        echo $passcode;
         
         //check for valid email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $msg = '<p class="notice">Not a valid email. Please try again.</p>';
             include 'view/register.php';
             exit;
-          }
+        }
 
         //check for existing email
         $existingEmail = checkExistingEmail($clientEmail);
