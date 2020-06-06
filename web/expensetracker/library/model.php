@@ -99,10 +99,8 @@ function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
   $stmt->bindValue(':created_at', $created_at);
   echo bindvalue;
   $stmt->execute();
-  $rowsChanged = $stmt->rowCount();
-  echo rowsChanged;
+  echo done;
   $stmt->closeCursor();
-  return $rowsChanged;
 }
 
 ?>
