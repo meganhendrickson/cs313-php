@@ -176,12 +176,12 @@ function checkExistingEmail($email) {
   $stmt->closeCursor();
   if (empty($matchEmail)) {
      return 0;
-     //echo 'Nothing found';
-     //exit;
+     echo 'Nothing found';
+     exit;
   } else {
      return 1;
-     //echo 'Match found';
-     //exit;
+     echo 'Match found';
+     exit;
   }
 }
 
