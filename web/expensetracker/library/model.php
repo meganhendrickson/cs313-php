@@ -167,7 +167,7 @@ function addClient($clientName, $email, $hashed){
 
 // Check for an existing email address
 function checkExistingEmail($email) {
-  $db = acmeConnect();
+  $db = dbConnection();
   echo dbconnect;
   $sql = 'SELECT * FROM client WHERE email = :email';
   $stmt = $db->prepare($sql);
@@ -175,18 +175,16 @@ function checkExistingEmail($email) {
   echo '<p>bindvalue</p>';
   $stmt->execute();
   $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
-  echo '<p>'. $matchEmail . '</p>';
   $stmt->closeCursor();
-  return $matchEmail;
-  // if (empty($matchEmail)) {
-  //    return 0;
-  //    echo 'Nothing found';
-  //    exit;
-  // } else {
-  //    return 1;
-  //    echo 'Match found';
-  //    exit;
-  // }
+  if (empty($matchEmail)) {
+     return 0;
+     echo 'Nothing found';
+     exit;
+  } else {
+     return 1;
+     echo 'Match found';
+     exit;
+  }
 }
 
 ?>
