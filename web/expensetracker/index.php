@@ -272,7 +272,7 @@ switch ($action){
     break;
 
     case 'newbudget':
-        $clientId = $_SESSION['clientData']['clientId'];
+        $clientId = $_SESSION['clientData']['clientid'];
         echo $clientId;
         include 'view/newbudget.php';
         exit;
