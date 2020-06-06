@@ -23,7 +23,7 @@ if(!$_SESSION['loggedin']){
     <?php if (isset($msg)) {echo $msg;}?>
   </div>
   
-  <p id="newbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newbudget&clientId=<?php.urlencode($clientId)?>">
+  <p id="newbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newbudget">
     <i class="fa fa-plus-square" aria-hidden="true"></i>Create a new budget</a></p>
   
   <?php
