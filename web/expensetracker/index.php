@@ -279,6 +279,7 @@ switch ($action){
     case 'addbudget':
         // Filter and store data
         $clientId = $_SESSION['clientData']['clientid'];
+        echo $clientId;
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
@@ -385,7 +386,7 @@ switch ($action){
     break;
 
     default:
-    $clientId= $_SESSION['clientData']['clientId'];
+    $clientId= $_SESSION['clientData']['clientid'];
     $clientBudgets = getClientBudgets($clientId);
     $dashdisplay = buildDashDisplay($clientBudgets);
     include 'view/dashboard.php';
