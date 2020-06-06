@@ -47,8 +47,6 @@ switch ($action){
         // Query the client data based on the email address
         $clientData = getClient($email);
 
-        echo $clientData['passcode'];
-        echo $clientData['clientname'];
         // Compare the password just submitted against the hashed password for the matching client
         if(password_verify($passcode, $clientData['passcode'])){
             // A valid user exists, log them in
@@ -60,8 +58,8 @@ switch ($action){
 
             //delete registration cookie - set expiration to one hour ago
             if($_SESSION['loggedin'] = TRUE){
-                unset($_COOKIE['firstname']);
-                setcookie('firstname','', strtotime('-1 year'), '/');
+                unset($_COOKIE['clientName']);
+                setcookie('clientName','', strtotime('-1 year'), '/');
             }
             
             //set client id variable from session data
@@ -142,7 +140,7 @@ switch ($action){
         $newRegistration = addClient($clientName, $email, $hashed);
 
         if ($newRegistration === 1) {
-            setcookie('clientname', $clientName, strtotime('+1 year'), '/');
+            setcookie('clientName', $clientName, strtotime('+1 year'), '/');
             $msg = "<p class='notice'>Thanks for registering $clientName!</p>";
             include 'view/login.php';
             exit;
