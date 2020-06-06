@@ -158,8 +158,7 @@ switch ($action){
     break;
 
     case 'newexpense':
-        $clientId = $_SESSION['clientData']['clientId'];
-        echo $clientId;
+        $clientId = $_SESSION['clientData']['clientid'];
         $clientBudgets = getClientBudgets($clientId);
         $budgetList = buildBudgetList($clientBudgets);
         include 'view/newexpense.php';
@@ -199,7 +198,8 @@ switch ($action){
     break;
 
     case 'editexpense':
-        $clientBudgets = getClientBudgets(1);
+        $clientId = $_SESSION['clientData']['clientid'];
+        $clientBudgets = getClientBudgets($clientId);
         $budgetList = buildBudgetList($clientBudgets);
         $expenseId = filter_input(INPUT_GET, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
         $expenseDetails = getExpenseDetails($expenseId);
@@ -272,15 +272,13 @@ switch ($action){
     break;
 
     case 'newbudget':
-        $clientId = $_SESSION['clientData']['clientid'];
-        echo $clientId;
         include 'view/newbudget.php';
         exit;
     break;
 
     case 'addbudget':
         // Filter and store data
-        $clientId = $_SESSION['clientData']['clientId'];
+        $clientId = $_SESSION['clientData']['clientid'];
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $created_at = filter_input(INPUT_POST, 'created_at');
