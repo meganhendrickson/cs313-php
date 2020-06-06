@@ -89,34 +89,53 @@ function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
 
 function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
   $db = dbConnection();
-  echo dbconnected;
   $sql = "UPDATE budget SET budgetname = :budgetname, budgetamount = :budgetamount, created_at = :created_at WHERE budgetid = :budgetid";
   $stmt = $db->prepare($sql);
-  echo prepared;
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':budgetname', $budgetName);
   $stmt->bindValue(':budgetamount', $budgetAmount);
   $stmt->bindValue(':created_at', $created_at);
-  $rowsChanged = $stmt->rowCount();
   $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $rowsChanged;
 }
 
 function updateExpense($budgetId, $expenseId, $expenseAmount, $expenseDescr, $created_at){
   $db = dbConnection();
-  echo dbconnected;
   $sql = "UPDATE expense SET budgetid = :budgetid, expenseamount = :expenseamount, expensedescr = :expensedescr, created_at = :created_at WHERE budgetid = :budgetid";
   $stmt = $db->prepare($sql);
-  echo prepared;
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
   $stmt->bindValue(':expensedescr', $expenseDescr);
   $stmt->bindValue(':created_at', $created_at);
-  $rowsChanged = $stmt->rowCount();
   $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $rowsChanged;
 }
+
+function deleteExpense($expenseId){
+  $db = dbConnection();
+  $sql = 'DELETE FROM expense WHERE expenseid = :expenseid';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':expenseid', $expenseId);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
+function deleteBudget($budgetId){
+  $db = dbConnection();
+  $sql = 'DELETE FROM budget WHERE budgetid = :budgetid';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetid', $budgetId);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
 
 ?>
