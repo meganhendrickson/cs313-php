@@ -42,7 +42,7 @@ echo $buffer;
     <input type="hidden" name="action" value="updatebudget"/>
     <input type="hidden" name="budgetId" value="
       <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
-              }elseif(isset($budgetId)){echo $bugetId;} ?>"
+              }elseif(isset($budgetId)){echo $budgetId;} ?>"
     />
   </fieldset>
   </form>

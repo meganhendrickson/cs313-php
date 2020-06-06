@@ -66,9 +66,15 @@ switch ($action){
     break;
 
     case 'editexpense':
-
+        $expenseId = filter_input(INPUT_GET, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
+        $expenseDetails = getExpenseDetails($expenseId);
+        if(count($expenseDetails)<1){
+            $msg = 'Sorry, no budget information could be found.';
+            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/index.php';
+            exit;
+        } else {
         include 'view/editexpense.php';
-        exit;
+        exit;}
     break;
 
     case 'newbudget':

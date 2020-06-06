@@ -48,6 +48,17 @@ function getBudgetExpenses($budgetId){
     return $budgetExpenses;
 }
 
+function getExpenseDetails($expenseId){
+  $db = dbConnection();
+  $sql = 'SELECT * FROM expense WHERE expenseid = :expenseid';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':expenseid', $expenseId, PDO::PARAM_INT);
+  $stmt->execute();
+  $expenseDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor9();
+  return $expenseDetails;
+}
+
 function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   $db = dbConnection();
   $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
