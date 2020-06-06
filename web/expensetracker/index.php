@@ -66,6 +66,8 @@ switch ($action){
     break;
 
     case 'editexpense':
+        $clientBudgets = getClientBudgets(1);
+        $budgetList = buildBudgetList($clientBudgets);
         $expenseId = filter_input(INPUT_GET, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
         $expenseDetails = getExpenseDetails($expenseId);
         if(count($expenseDetails)<1){
