@@ -94,7 +94,7 @@ switch ($action){
     }
 
     //Send data to database
-    $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
+    $updateBudget = updateBudget($expenseId, $budgetId, $budgetName, $budgetAmount, $created_at);
 
         // Check results
         if($updateExpense === 1){
