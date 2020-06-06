@@ -41,13 +41,13 @@ switch ($action){
         echo '<p>'.$passcode.'</p>';
         
         //check for valid email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
-            include 'view/register.php';
-            exit;
-        }
+        // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //     $msg = '<p class="notice">Not a valid email. Please try again.</p>';
+        //     include 'view/register.php';
+        //     exit;
+        // }
         
-        echo '<p>validemail</p>';
+        // echo '<p>validemail</p>';
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
