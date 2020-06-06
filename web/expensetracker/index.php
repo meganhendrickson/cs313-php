@@ -86,12 +86,6 @@ switch ($action){
         $expenseDescr = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_STRING);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
-        echo $expenseId;
-        echo $budgetId;
-        echo $expenseAmount;
-        echo $expenseDescr;
-        echo $created_at;
-
     //check for missing data
     if(empty($expenseId) || empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
         $msg = '<p class="notice">Please provide information for all emtpy form fields.</p>';
@@ -100,7 +94,7 @@ switch ($action){
     }
 
     //Send data to database
-    $updateBudget = updateBudget($expenseId, $budgetId, $budgetName, $budgetAmount, $created_at);
+    $updateExpense = updateExpense($expenseId, $budgetId, $expenseAmount, $expenseDescr, $created_at);
 
         // Check results
         if($updateExpense === 1){
