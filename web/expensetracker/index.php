@@ -37,8 +37,8 @@ switch ($action){
         $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
 
         echo $clientName;
-        echo $email;
-        echo $passcode;
+        echo -$email;
+        echo -$passcode;
         
         //check for valid email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -47,19 +47,19 @@ switch ($action){
             exit;
         }
         
-        echo validemail;
+        echo -validemail;
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
-        echo $existingEmail;
-        
+        echo -$existingEmail;
+
         if ($existingEmail){
             $msg = '<p class="notice">Email already exists. Please login.</p>';
             include 'view/login.php';
             exit;
         }
 
-        echo $existingEmail;
+        echo -$existingEmail;
 
         // Validate password strength
         $uppercase = preg_match('@[A-Z]@', $password);
@@ -71,7 +71,7 @@ switch ($action){
             include 'view/register.php';
         }
 
-        echo validpass;
+        echo -validpass;
 
         //check for missing data
         if (empty($clientName) || empty($email) || empty($passcode)) {
@@ -80,12 +80,12 @@ switch ($action){
             exit;
         }
 
-        echo allfeilds;
+        echo -allfeilds;
 
         // Hash the checked password
         $hashed = password_hash($passcode, PASSWORD_DEFAULT);
 
-        echo hashed;
+        echo -hashed;
 
         //Send data to the model
         $newRegistration = addClient($clientName, $email, $hashed);
