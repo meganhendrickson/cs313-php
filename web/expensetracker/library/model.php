@@ -168,8 +168,8 @@ function addClient($clientName, $email, $hashed){
 // Check for an existing email address
 function checkExistingEmail($email) {
   $db = acmeConnect();
-  echo '<p>dbconnect</p>';
-  $sql = 'SELECT email FROM client WHERE email = :email';
+  echo dbconnect;
+  $sql = 'SELECT * FROM client WHERE email = :email';
   $stmt = $db->prepare($sql);
   $stmt->bindVAlue(':email', $email, PDO::PARAM_STR);
   echo '<p>bindvalue</p>';
