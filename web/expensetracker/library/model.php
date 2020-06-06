@@ -122,7 +122,9 @@ function deleteExpense($expenseId){
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':expenseid', $expenseId);
   $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
+  return $rowsChanged;
 }
 
 function deleteBudget($budgetId){

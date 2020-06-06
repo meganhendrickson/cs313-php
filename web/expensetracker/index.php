@@ -113,9 +113,29 @@ switch ($action){
     case 'deleteexpense':
         $expenseId = filter_input(INPUT_POST, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
         $budgetId= filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
+        
+        //Check for missing data
+        if(empty($expenseId) || empty($budgetId)) {
+            $msg = '<p class="notice"> Please try again.</p>';
+            $_SESSION['msg'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
+            exit;
+        }
+
         $deleteExpense = deleteExpense($expenseId);
 
-        header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+        // Check results
+        if($deleteExpense === 1){
+            $msg = '<p class="notice">Expense was successfully deleted.</p>';
+            $_SESSION['msg'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+            exit;
+        } else {
+            $msg = '<p class="notice">Please try again.</p>';
+            $_SESSION['message'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+            exit;
+        }
     break;
 
     case 'newbudget':
