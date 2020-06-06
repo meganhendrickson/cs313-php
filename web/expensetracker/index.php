@@ -46,6 +46,8 @@ switch ($action){
             include 'view/register.php';
             exit;
         }
+        
+        echo validemail;
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
@@ -55,6 +57,8 @@ switch ($action){
             exit;
         }
 
+        echo existingemail;
+
         // Validate password strength
         $uppercase = preg_match('@[A-Z]@', $password);
         $lowercase = preg_match('@[a-z]@', $password);
@@ -62,17 +66,24 @@ switch ($action){
 
         if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
             $msg = 'Password should be at least 8 characters in length and should include at least one upper case letter and one number.';
+            include 'view/register.php';
         }
 
+        echo validpass;
+
         //check for missing data
-        if (empty($clientName) || empty($email) || empty($checkPasscode)) {
+        if (empty($clientName) || empty($email) || empty($passcode)) {
             $msg = '<p class="notice">Please provide information for all empty form fields.</p>';
-            include include 'view/login.php';
+            include 'view/register.php';
             exit;
         }
 
+        echo allfeilds;
+
         // Hash the checked password
         $hashed = password_hash($passcode, PASSWORD_DEFAULT);
+
+        echo hashed;
 
         //Send data to the model
         $newRegistration = addClient($clientName, $email, $hashed);
