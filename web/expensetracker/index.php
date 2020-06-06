@@ -36,37 +36,45 @@ switch ($action){
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
         
-        //check for valid email
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
-            include 'view/register.php';
-            exit;
-        }
-        
         //check for missing data
         if (empty($clientName) || empty($email) || empty($passcode)) {
             $msg = '<p class="notice">Please provide information for all empty form fields.</p>';
             include 'view/register.php';
             exit;
         }
+        
+        //check for valid email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
+            include 'view/register.php';
+            exit;
+        }
 
+        // Check that password meets requirements
+        if( strlen($passcode) < 8 ) {
+            $msg = '<p class="notice">Password is too short!</p>';
+            include 'view/register.php';
+            exit;
+        }
+
+        if( !preg_match("#[0-9]+#", $passcode) ) {
+            $msg = '<p class="notice">Password must include at least one number!</p>';
+            include 'view/register.php';
+            exit;
+        }
+
+        if( !preg_match("#[A-Z]+#", $passcode) ) {
+            $msg = '<p class="notice">Password must include at least one CAPS!</p>';
+            include 'view/register.php';
+            exit;
+        }
+        
         //check for existing email
         $existingEmail = checkExistingEmail($email);
  
         if ($existingEmail){
-            $msg = '<p class="notice">Email already exists. Please login.</p>';
+            $msg = '<p class="notice">Email already exists, do you want to login?</p>';
             include 'view/login.php';
-            exit;
-        }
-
-        // Validate password strength
-        $uppercase = preg_match('@[A-Z]@', $passcode);
-        $lowercase = preg_match('@[a-z]@', $passcode);
-        $number    = preg_match('@[0-9]@', $passcode);
-
-        if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
-            $msg = '<p class="notice">Password should be at least 8 characters in length and should include at least one upper case letter and one number.</p>';
-            include 'view/register.php';
             exit;
         }
 

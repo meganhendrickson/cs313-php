@@ -28,7 +28,7 @@ echo $buffer;
   <input required type="text" name="email" id="email"/>
   <label>Password:</label>
   <input required type="password" name="passcode" id="passcode"/>
-  <p>Password must be at least 8 characters and contain at least 1 capital letter and 1 number.</p>
+  <p>Password must be at least 8 characters and contain at least 1 CAPS and 1 number.</p>
   <input type="submit" class="button" name="register" value="Register"/>
   <input type="hidden" name="action" value="register"/>
   </form>

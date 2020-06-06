@@ -4,12 +4,6 @@
 //get the database model file
 require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/model.php';
 
-// Check for valid email
-function checkEmail($clientEmail){
-  $valEmail = filter_var($clientEmail, FILTER_VALIDATE_EMAIL);
-  return $valEmail;
-}
-
 // Build dashboard summary display
 function buildDashDisplay($clientBudgets){
   $dash = "<section id='dashdisplay'>";
