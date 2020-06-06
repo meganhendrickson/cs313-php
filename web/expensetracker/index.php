@@ -41,13 +41,20 @@ switch ($action){
         echo '<p>'.$passcode.'</p>';
         
         //check for valid email
-        // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //     $msg = '<p class="notice">Not a valid email. Please try again.</p>';
-        //     include 'view/register.php';
-        //     exit;
-        // }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
+            include 'view/register.php';
+            exit;
+        }
+        echo '<p>validemail</p>';
         
-        // echo '<p>validemail</p>';
+        //check for missing data
+        if (empty($clientName) || empty($email) || empty($passcode)) {
+            $msg = '<p class="notice">Please provide information for all empty form fields.</p>';
+            include 'view/register.php';
+            exit;
+        }
+        echo '<p>allfeilds</p>';
 
         //check for existing email
         $existingEmail = checkExistingEmail($email);
@@ -70,15 +77,6 @@ switch ($action){
         }
 
         echo '<p>validpass</p>';
-
-        //check for missing data
-        if (empty($clientName) || empty($email) || empty($passcode)) {
-            $msg = '<p class="notice">Please provide information for all empty form fields.</p>';
-            include 'view/register.php';
-            exit;
-        }
-
-        echo '<p>allfeilds</p>';
 
         // Hash the checked password
         $hashed = password_hash($passcode, PASSWORD_DEFAULT);
