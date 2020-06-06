@@ -93,11 +93,11 @@ switch ($action){
         echo $created_at;
 
     //check for missing data
-    //if(empty($expenseId) || empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
-    //    $msg = '<p class="notice">Please provide information for all emtpy form fields.</p>';
-    //    header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editexpense&budgetId=$budgetId");
-    //    exit;
-    //}
+    if(empty($expenseId) || empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
+        $msg = '<p class="notice">Please provide information for all emtpy form fields.</p>';
+        header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editexpense&budgetId=$budgetId");
+        exit;
+    }
 
     //Send data to database
     $updateBudget = updateBudget($expenseId, $budgetId, $budgetName, $budgetAmount, $created_at);
