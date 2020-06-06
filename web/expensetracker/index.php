@@ -48,7 +48,7 @@ switch ($action){
         }
 
         //check for existing email
-        $existingEmail = checkExistingEmail($clientEmail);
+        $existingEmail = checkExistingEmail($email);
         if ($existingEmail){
             $msg = '<p class="notice">Email already exists. Please login.</p>';
             include 'view/login.php';
