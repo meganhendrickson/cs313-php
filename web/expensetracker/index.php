@@ -131,7 +131,7 @@ switch ($action){
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
-            $msg = '<p class="notice">Please try again.</p>';
+            $msg = '<p class="notice">Failed to delete expense. Please try again.</p>';
             $_SESSION['message'] = $msg;
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
@@ -223,11 +223,22 @@ switch ($action){
         if(empty($budgetId)){
             $msg = '<p class="notice"> Please try again.</p>';
             $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'/expensetracker/index.php';
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
             exit;
         }
         $deleteBudget = deleteBudget($budgetId);
-        
+        // Check results
+        if($deleteBudget === 1){
+            $msg = '<p class="notice">Budget was successfully deleted.</p>';
+            $_SESSION['msg'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
+            exit;
+        } else {
+            $msg = '<p class="notice">Failed to delete budget. Please try again.</p>';
+            $_SESSION['msg'] = $msg;
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
+            exit;
+        }      
     break;
 
     case 'details':

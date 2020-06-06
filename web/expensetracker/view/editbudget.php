@@ -47,8 +47,8 @@ echo $buffer;
   </fieldset>
   </form>
   <h4>Danger Zone</h4>
-  <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
-  <input class="danger" type="submit" class="button" name="submit" value="Delete Budget" />
+  <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deletebudget">
+  <input class="danger" type="submit" class="button" name="submit" id="deletebudget" value="Delete Budget" />
   <input type="hidden" name="action" value="deletebudget">
   <input type="hidden" name="budgetId" value="
       <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
