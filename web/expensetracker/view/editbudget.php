@@ -13,6 +13,8 @@ echo $buffer;
 
 <main>
   
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+
   <h1>Edit Budget</h1>
   <div class="msg">
     <?php if (isset($msg)) {echo $msg;}?>
@@ -55,6 +57,6 @@ echo $buffer;
               }elseif(isset($budgetId)){echo $budgetId;} ?>"
     />
   </form>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

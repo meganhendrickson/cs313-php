@@ -15,7 +15,7 @@ session_start();
 ?>
 
 <main>
-  
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Add a Budget</h1>
 
   <div class="msg">
@@ -35,7 +35,5 @@ session_start();
       <input type="hidden" name="action" value="addbudget"/>
     </fieldset>
   </form >
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

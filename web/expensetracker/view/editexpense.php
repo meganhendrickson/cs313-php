@@ -12,7 +12,7 @@ echo $buffer;
 ?>
 
 <main>
-  
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Edit an Expense</h1>
 
   <div class="msg">
@@ -65,6 +65,5 @@ echo $buffer;
     />
   </form>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

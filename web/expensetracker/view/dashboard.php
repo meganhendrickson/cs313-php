@@ -17,6 +17,8 @@ if(!$_SESSION['loggedin']){
 
 <main>
   
+  <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
+
   <h1>Dashboard</h1>
   
   <div class="msg">
@@ -30,6 +32,5 @@ if(!$_SESSION['loggedin']){
     echo $dashdisplay;
   ?>
   
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
