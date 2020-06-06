@@ -16,14 +16,74 @@ $action = filter_input(INPUT_POST, 'action');
     }
 
 switch ($action){
-    case 'register':
-        include 'view/register.php'; 
-        exit;   
-    break;
-
     case 'login':
         include 'view/login.php';
         exit;
+    break;
+
+    case 'logout':
+    
+    break;
+
+    case 'newregistration':
+        include 'view/register.php';
+        exit;
+    break;
+    
+    case 'register':
+        //Filter and store data
+        $clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
+        
+        //check for valid email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
+            include 'view/register.php';
+            exit;
+          }
+
+        //check for existing email
+        $existingEmail = checkExistingEmail($clientEmail);
+        if ($existingEmail){
+            $msg = '<p class="notice">Email already exists. Please login.</p>';
+            include 'view/login.php';
+            exit;
+        }
+
+        // Validate password strength
+        $uppercase = preg_match('@[A-Z]@', $password);
+        $lowercase = preg_match('@[a-z]@', $password);
+        $number    = preg_match('@[0-9]@', $password);
+
+        if(!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
+            $msg = 'Password should be at least 8 characters in length and should include at least one upper case letter and one number.';
+        }
+
+        //check for missing data
+        if (empty($clientName) || empty($email) || empty($checkPasscode)) {
+            $msg = '<p class="notice">Please provide information for all empty form fields.</p>';
+            include include 'view/login.php';
+            exit;
+        }
+
+        // Hash the checked password
+        $hashed = password_hash($passcode, PASSWORD_DEFAULT);
+
+        //Send data to the model
+        $newRegistration = addClient($clientName, $email, $hashed);
+
+        if ($regOutcome === 1) {
+            setcookie('clientname', $clientName, strtotime('+1 year'), '/');
+            $message = "<p class='notice'>Thanks for registering $clientName!</p>";
+            include include 'view/login.php';
+            exit;
+        } else {
+            $message = "<p class='notice'>Sorry, but the registration failed. Please try again.</p>";
+            include 'view/register.php';
+            exit;
+        }
+        exit;   
     break;
 
     case 'newexpense':

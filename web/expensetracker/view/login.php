@@ -13,9 +13,28 @@ echo $buffer;
 
 <main>
   
-  <h1>Login</h1>
+  <h1>Simple Expense Tracker</h1>
+  
+  <div class="message">
+    <?php if (isset($msg)) {echo $msg;}?>
+  </div>
+  
+  <p>Please login.<p>
 
-  <p>Coming Soon!<p>
+  <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
+    <label>Email:</label>
+    <input required type="text" name="email" id="email"/>
+    <label>Password:</label>
+    <input required type="password" name="passcode" id="passcode"/>
+    <input type="submit" class="button" name="login" value="login"/>
+    <input typ="hidden" name="action" value="login"/>
+  </form>
+
+  <p>Not a member?</p>
+  <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
+    <input type="submit" class="button" name="newregistration" value="Create an Account"/>
+    <input type="hidden" name="action" value="newregistration"/>
+  </form>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>

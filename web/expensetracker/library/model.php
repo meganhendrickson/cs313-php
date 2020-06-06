@@ -2,6 +2,24 @@
 // Get the database connection file
 require_once $_SERVER['DOCUMENT_ROOT'].'/connections.php';
 
+/* ------------------------------------
+          BUDGET MODEL
+-------------------------------------*/
+
+function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
+  $db = dbConnection();
+  $sql = 'INSERT INTO budget(clientid, budgetname, budgetamount, created_at) VALUES(:clientid, :budgetname, :budgetamount, :created_at)';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':clientid', $clientId, PDO:: PARAM_INT);
+  $stmt->bindValue(':budgetname', $budgetName, PDO:: PARAM_STR);
+  $stmt->bindValue(':budgetamount', $budgetAmount, PDO:: PARAM_STR);
+  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
 function getClientBudgets($clientId){
   $db = dbConnection();
   $sql = 'SELECT * FROM budget WHERE clientId = :clientId';
@@ -12,18 +30,6 @@ function getClientBudgets($clientId){
   $stmt->closeCursor();
   return $clientBudgets;
 }
-
-// Get client expenses
-function getBudgetAmountSpent($budgetId){
-    $db = dbConnection();
-    $sql = 'SELECT SUM(expenseamount) FROM expense WHERE budgetId = :budgetId';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
-    $stmt->execute();
-    $budgetSpent = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-    return $budgetSpent;
-  }
   
 // Get budget details
 function getBudgetDetails($budgetId){
@@ -36,6 +42,50 @@ function getBudgetDetails($budgetId){
     $stmt->closeCursor();
     return $budgetDetails;
   }
+
+function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
+  $db = dbConnection();
+  $sql = "UPDATE budget SET budgetname = :budgetname, budgetamount = :budgetamount, created_at = :created_at WHERE budgetid = :budgetid";
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
+  $stmt->bindValue(':budgetname', $budgetName, PDO:: PARAM_STR);
+  $stmt->bindValue(':budgetamount', $budgetAmount, PDO:: PARAM_STR);
+  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
+function deleteBudget($budgetId){
+  $db = dbConnection();
+  $sql = 'DELETE FROM budget WHERE budgetid = :budgetid';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
+/* ------------------------------------
+          EXPENSE MODEL
+-------------------------------------*/
+
+function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
+  $db = dbConnection();
+  $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
+  $stmt->bindValue(':expenseamount', $expenseAmount, PDO:: PARAM_STR);
+  $stmt->bindValue(':expensedescr', $expenseDescr, PDO:: PARAM_STR);
+  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
+  $stmt->execute();
+  $rowsChanged = $stmt->rowCount();
+  $stmt->closeCursor();
+  return $rowsChanged;
+}
+
 
 function getBudgetExpenses($budgetId){
     $db = dbConnection();
@@ -59,47 +109,18 @@ function getExpenseDetails($expenseId){
   return $expenseDetails;
 }
 
-function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
+// Get client expenses
+function getBudgetAmountSpent($budgetId){
   $db = dbConnection();
-  $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
+  $sql = 'SELECT SUM(expenseamount) FROM expense WHERE budgetId = :budgetId';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
-  $stmt->bindValue(':expenseamount', $expenseAmount, PDO:: PARAM_STR);
-  $stmt->bindValue(':expensedescr', $expenseDescr, PDO:: PARAM_STR);
-  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
+  $stmt->bindValue(':budgetId', $budgetId, PDO::PARAM_INT);
   $stmt->execute();
-  $rowsChanged = $stmt->rowCount();
+  $budgetSpent = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-  return $rowsChanged;
+  return $budgetSpent;
 }
 
-function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
-  $db = dbConnection();
-  $sql = 'INSERT INTO budget(clientid, budgetname, budgetamount, created_at) VALUES(:clientid, :budgetname, :budgetamount, :created_at)';
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':clientid', $clientId, PDO:: PARAM_INT);
-  $stmt->bindValue(':budgetname', $budgetName, PDO:: PARAM_STR);
-  $stmt->bindValue(':budgetamount', $budgetAmount, PDO:: PARAM_STR);
-  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
-  $stmt->execute();
-  $rowsChanged = $stmt->rowCount();
-  $stmt->closeCursor();
-  return $rowsChanged;
-}
-
-function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
-  $db = dbConnection();
-  $sql = "UPDATE budget SET budgetname = :budgetname, budgetamount = :budgetamount, created_at = :created_at WHERE budgetid = :budgetid";
-  $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
-  $stmt->bindValue(':budgetname', $budgetName, PDO:: PARAM_STR);
-  $stmt->bindValue(':budgetamount', $budgetAmount, PDO:: PARAM_STR);
-  $stmt->bindValue(':created_at', $created_at, PDO:: PARAM_STR);
-  $stmt->execute();
-  $rowsChanged = $stmt->rowCount();
-  $stmt->closeCursor();
-  return $rowsChanged;
-}
 
 function updateExpense($expenseId, $budgetId, $expenseAmount, $expenseDescr, $created_at){
   $db = dbConnection();
@@ -127,16 +148,21 @@ function deleteExpense($expenseId){
   return $rowsChanged;
 }
 
-function deleteBudget($budgetId){
+/* ------------------------------------
+          CLIENT MODEL
+-------------------------------------*/
+
+function addClient($clientName, $email, $hashed){
   $db = dbConnection();
-  $sql = 'DELETE FROM budget WHERE budgetid = :budgetid';
+  $sql = 'INSERT INTO client(clientname, email, passcode) VALUES (:clientname, :email, :passcode)';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':budgetid', $budgetId, PDO:: PARAM_INT);
+  $stmt->bindValue(':clientname', $clientName, PDO:: PARAM_STR);
+  $stmt->bindValue(':email', $email, PDO:: PARAM_STR);
+  $stmt->bindValue(':passcode', $hashed, PDO:: PARAM_STR);
   $stmt->execute();
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
   return $rowsChanged;
 }
-
 
 ?>

@@ -2,7 +2,7 @@ CREATE TABLE client (
 	clientId serial PRIMARY KEY NOT NULL UNIQUE,
 	clientName varchar(255) NOT NULL,
 	email varchar(255) NOT NULL,
-	password varchar(255) NOT NULL
+	passcode varchar(255) NOT NULL
 );
 
 CREATE TABLE budget (
