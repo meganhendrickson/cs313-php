@@ -48,6 +48,9 @@ echo $buffer;
   </fieldset>
   </form>
 
+  <h3>Danger Zone</h3>
+  <button type="button" class="danger">Delete Expense</button>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
