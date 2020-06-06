@@ -21,6 +21,9 @@ echo $buffer;
   <p>Update expense below. All fields are required.</p>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
     <fieldset>
+      <?php //drop down list using $budgets array
+        echo $budgetList;
+      ?>
     <label>Expense Amount:</label>
     <input required type="text" name="expenseAmount" id="expenseAmount"
       <?php if(isset($expenseAmount)){ echo "value='$expenseAmount'";}
