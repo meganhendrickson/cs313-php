@@ -112,12 +112,6 @@ switch ($action){
 
     case 'deleteexpense':
         $expenseId = filter_input(INPUT_POST, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
-        if(empty($expenseId)){
-            $msg = '<p class="notice"> Please try again.</p>';
-            $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'/expensetracker/index.php';
-            exit;
-        }
         $deleteExpense = deleteExpense($expenseId);
         include $_SERVER['DOCUMENT_ROOT'].'/expensetracker/index.php';
     break;
@@ -211,7 +205,7 @@ switch ($action){
             exit;
         }
         $deleteBudget = deleteBudget($budgetId);
-        include $_SERVER['DOCUMENT_ROOT'].'/expensetracker/index.php';
+        header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
     break;
 
     case 'details':
