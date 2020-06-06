@@ -52,31 +52,30 @@ switch ($action){
         $clientData = getClient($email);
 
         // Compare the password just submitted against the hashed password for the matching client
-        if(password_verify($passcode, $clientData['passcode'])){
-            // A valid user exists, log them in
-            $_SESSION['loggedin'] = TRUE;
-            // Remove the password from the array
-            array_pop($clientData);
-            // Store the array into the session
-            $_SESSION['clientData'] = $clientData;
+        $hashCheck = password_verify($passcode, $clientData['passcode']);
 
-            //delete registration cookie - set expiration to one hour ago
-            if($_SESSION['loggedin'] = TRUE){
-                unset($_COOKIE['clientName']);
-                setcookie('clientName','', strtotime('-1 year'), '/');
-            }
-            
-            //set client id variable from session data
-            $clientId = $_SESSION['clientData']['clientId'];
-            $clientBudgets = getClientBudgets($clientId);
-            $dashdisplay = buildDashDisplay($clientBudgets);
-            include 'view/dashboard.php';
-            exit;
-        } else {
-            $msg = '<p class="notice">Please check your password and try again.</p>';
+        // If the hashes don't match create an error and return to the login view
+        if(!$hashCheck) {
+            $msg = '<p class="notice">Check your password and try again.</p>';
             include 'view/login.php';
             exit;
+        } 
+
+        // A valid user exists, log them in
+        $_SESSION['loggedin'] = TRUE;
+        // Remove the password from the array
+        array_pop($clientData);
+        // Store the array into the session
+        $_SESSION['clientData'] = $clientData;
+
+        //delete registration cookie - set expiration to one hour ago
+        if($_SESSION['loggedin'] = TRUE){
+            unset($_COOKIE['clientName']);
+            setcookie('clientName','', strtotime('-1 year'), '/');
         }
+        
+        $clientId = $_SESSION['clientData']['clientId'];
+        include 'view/dashboard.php';
 
     break;
 
@@ -160,7 +159,7 @@ switch ($action){
     break;
 
     case 'newexpense':
-        $clientId= $_SESSION['clientData']['clientId'];
+        $clientId = $_SESSION['clientData']['clientId'];
         echo $clientId;
         $clientBudgets = getClientBudgets($clientId);
         $budgetList = buildBudgetList($clientBudgets);
