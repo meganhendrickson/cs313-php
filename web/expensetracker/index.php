@@ -1,9 +1,7 @@
 <?php
+session_start();
 
 /* EXPENSE TRACKER CONTROLLER */
-
-// Create or access a Session
-session_start();
 
 // Get the common functions file
 require_once $_SERVER['DOCUMENT_ROOT'].'/expensetracker/library/functions.php';
@@ -74,7 +72,8 @@ switch ($action){
             setcookie('clientName','', strtotime('-1 year'), '/');
         }
         
-        $clientId = $_SESSION['clientData']['clientId'];
+        $clientId = $_SESSION['clientData']['clientid'];
+        echo $clientId;
         include 'view/dashboard.php';
 
     break;
