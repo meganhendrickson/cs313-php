@@ -84,7 +84,7 @@ switch ($action){
         //Send data to the model
         $newRegistration = addClient($clientName, $email, $hashed);
 
-        if ($newRegistation === 1) {
+        if ($newRegistration === 1) {
             setcookie('clientname', $clientName, strtotime('+1 year'), '/');
             $msg = "<p class='notice'>Thanks for registering $clientName!</p>";
             include 'view/login.php';
