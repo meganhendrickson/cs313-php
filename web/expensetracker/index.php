@@ -83,7 +83,7 @@ switch ($action){
         $expenseId = filter_input(INPUT_POST, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $expenseAmount = filter_input(INPUT_POST, 'expenseAmount', FILTER_SANITIZE_NUMBER_INT);
-        $expenseDescr = filter_input(INPUT_POST, 'expensedescr', FILTER_SANITIZE_STRING);
+        $expenseDescr = filter_input(INPUT_POST, 'expenseDescr', FILTER_SANITIZE_STRING);
         $created_at = filter_input(INPUT_POST, 'created_at');
 
         echo $expenseId;
