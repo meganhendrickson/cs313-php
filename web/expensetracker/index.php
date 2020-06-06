@@ -146,12 +146,12 @@ switch ($action){
         if($updateBudget === 1){
             $msg="<p class='notice'> $budgetName successfully updated.</p>";
             $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/index.php';
+            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
             $msg = "<p class='notice'> Failed to update $budgetId. Please try again.</p>";
             $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/expensetracker/index.php';
+            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudget&budgetId=$budgetId");
             exit;
         }
         

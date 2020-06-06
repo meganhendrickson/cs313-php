@@ -50,8 +50,7 @@ function getBudgetExpenses($budgetId){
 
 function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
   $db = dbConnection();
-  $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) '
-          . 'VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
+  $sql = 'INSERT INTO expense(budgetid, expenseamount, expensedescr, created_at) VALUES (:budgetid, :expenseamount, :expensedescr, :created_at)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':budgetid', $budgetId);
   $stmt->bindValue(':expenseamount', $expenseAmount);
@@ -65,8 +64,7 @@ function addExpense($budgetId, $expenseAmount, $expenseDescr, $created_at){
 
 function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
   $db = dbConnection();
-  $sql = 'INSERT INTO budget(clientid, budgetname, budgetamount, created_at) '
-          . 'VALUES(:clientid, :budgetname, :budgetamount, :created_at)';
+  $sql = 'INSERT INTO budget(clientid, budgetname, budgetamount, created_at) VALUES(:clientid, :budgetname, :budgetamount, :created_at)';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':clientid', $clientId);
   $stmt->bindValue(':budgetname', $budgetName);
@@ -80,12 +78,7 @@ function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
 
 function updateBudget($budgetId, $clientId, $budgetName, $budgetAmount, $created_at){
   $db = dbConnection();
-  $sql = 'UPDATE budget '
-          . 'SET budgetname = :budgetname, '
-          . 'clientid = :clientid, '
-          . 'budgetamount = :budgetamount, '
-          . 'created_at = :created_at '
-          . 'WHERE budgetid = :budgetid';
+  $sql = "UPDATE budget SET (clientid,budgetname,budgetamount,created_at) = ('$clientId','$budgetName','$budgetAmount','$created_at') WHERE budgetid= '$budgetId'";
   $stmt = $db->prepare($sql);
   $stmt = bindValue(':budgetid', $budgetId);
   $stmt = bindValue(':clientid', $clientId);
