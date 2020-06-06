@@ -14,9 +14,13 @@ echo $buffer;
 <main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Edit an Expense</h1>
-
   <div class="msg">
-    <?php if (isset($msg)) {echo $msg;}?>
+  <?php 
+        if (isset($_SESSION['msg'])) {
+            $message = $_SESSION['msg'];
+        }
+        if (isset($message)) { echo $message;}
+    ?>
   </div>
   <p>Update expense below. All fields are required.</p>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">

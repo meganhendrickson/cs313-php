@@ -16,6 +16,15 @@ echo $buffer;
   <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
 
   <h1>Budget Details</h1>
+  
+  <div class="msg">
+  <?php 
+        if (isset($_SESSION['msg'])) {
+            $message = $_SESSION['msg'];
+        }
+        if (isset($message)) { echo $message;}
+    ?>
+  </div>
 
   <?php echo $budgetDisplay ?>
 

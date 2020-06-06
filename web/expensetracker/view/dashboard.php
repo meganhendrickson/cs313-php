@@ -22,7 +22,12 @@ if(!$_SESSION['loggedin']){
   <h1>Dashboard</h1>
   
   <div class="msg">
-    <?php if (isset($msg)) {echo $msg;}?>
+  <?php 
+        if (isset($_SESSION['msg'])) {
+            $message = $_SESSION['msg'];
+        }
+        if (isset($message)) { echo $message;}
+    ?>
   </div>
   
   <p id="newbudgetlink"><a href="https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newbudget">
