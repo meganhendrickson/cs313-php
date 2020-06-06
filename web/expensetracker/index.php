@@ -126,7 +126,6 @@ switch ($action){
 
     case 'updatebudget':
         //Filter and store data
-        $clientId = 1;
         $budgetId = filter_input(INPUT_POST, 'budgetId', FILTER_SANITIZE_NUMBER_INT);
         $budgetName = filter_input(INPUT_POST, 'budgetName', FILTER_SANITIZE_STRING);
         $budgetAmount = filter_input(INPUT_POST, 'budgetAmount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
@@ -140,7 +139,7 @@ switch ($action){
         }
 
         //Send data to database
-        $updateBudget = updateBudget($budgetId, $clientId, $budgetName, $budgetAmount, $created_at);
+        $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
 
         //Check and report the result
         if($updateBudget === 1){
