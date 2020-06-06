@@ -53,9 +53,13 @@ echo $buffer;
 
   <h4>Danger Zone</h4>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deleteexpense">
-  <input class="danger" type="submit" class="button" name="submit" id="deleteexpense" value="Delete Expense" />
-  <input type="hidden" name="action" value="deleteexpense">
-  <input type="hidden" name="expenseId" value="
+    <input class="danger" type="submit" class="button" name="submit" id="deleteexpense" value="Delete Expense" />
+    <input type="hidden" name="action" value="deleteexpense">
+    <input type="hidden" name="budgetId" value="
+      <?php if(isset($expenseDetails['budgetid'])){echo $expenseDetails['budgetid'];
+            }elseif(isset($budgetId)){echo $budgetId;} ?>"
+    />
+    <input type="hidden" name="expenseId" value="
       <?php if(isset($expenseDetails['expenseid'])){echo $expenseDetails['expenseid'];
               }elseif(isset($expenseId)){echo $expenseId;} ?>"
     />
