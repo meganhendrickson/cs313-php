@@ -50,9 +50,9 @@ function getBudgetExpenses($budgetId){
 
 function getExpenseDetails($expenseId){
   $db = dbConnection();
-  $sql = 'SELECT * FROM expense WHERE expenseid = :expenseid';
+  $sql = 'SELECT * FROM expense WHERE expenseId = :expenseId';
   $stmt = $db->prepare($sql);
-  $stmt->bindValue(':expenseid', $expenseId, PDO::PARAM_INT);
+  $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
   $stmt->execute();
   $expenseDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
