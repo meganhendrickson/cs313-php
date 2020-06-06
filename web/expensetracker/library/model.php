@@ -154,7 +154,7 @@ function deleteExpense($expenseId){
 
 function getClient($email){
   $db = dbConnection();
-  $sql = 'SELECT * FROM client WHERE email = :email';
+  $sql = 'SELECT clientid, clientname, passcode FROM client WHERE email = :email';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':email', $email, PDO::PARAM_STR);
   $stmt->execute();

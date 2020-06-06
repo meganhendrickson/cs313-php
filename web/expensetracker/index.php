@@ -46,36 +46,36 @@ switch ($action){
 
         // Query the client data based on the email address
         $clientData = getClient($email);
-        echo gotdata;
-        // Compare the password just submitted against the hashed password for the matching client
-        $hashCheck = password_verify($passcode, $clientData['passcode']);
 
-        // If the hashes don't match create an error and return to the login view
-        if(!$hashCheck) {
+        echo $clientData['passcode'];
+        echo $clientData['clientname'];
+        // Compare the password just submitted against the hashed password for the matching client
+        if(password_verify($passcode, $clientData['passcode'])){
+            // A valid user exists, log them in
+            $_SESSION['loggedin'] = TRUE;
+            // Remove the password from the array
+            array_pop($clientData);
+            // Store the array into the session
+            $_SESSION['clientData'] = $clientData;
+
+            //delete registration cookie - set expiration to one hour ago
+            if($_SESSION['loggedin'] = TRUE){
+                unset($_COOKIE['firstname']);
+                setcookie('firstname','', strtotime('-1 year'), '/');
+            }
+            
+            //set client id variable from session data
+            $clientId = $_SESSION['clientData']['clientId'];
+            $clientBudgets = getClientBudgets($clientId);
+            $dashdisplay = buildDashDisplay($clientBudgets);
+            include 'view/dashboard.php';
+            exit;
+        } else {
             $msg = '<p class="notice">Please check your password and try again.</p>';
             include 'view/login.php';
             exit;
-        } 
-
-        // A valid user exists, log them in
-        $_SESSION['loggedin'] = TRUE;
-        // Remove the password from the array
-        array_pop($clientData);
-        // Store the array into the session
-        $_SESSION['clientData'] = $clientData;
-
-        //delete registration cookie - set expiration to one hour ago
-        if($_SESSION['loggedin'] = TRUE){
-            unset($_COOKIE['firstname']);
-            setcookie('firstname','', strtotime('-1 year'), '/');
         }
-        
-        //set client id variable from session data
-        $clientId = $_SESSION['clientData']['clientId'];
-        $clientBudgets = getClientBudgets($clientId);
-        $dashdisplay = buildDashDisplay($clientBudgets);
-        include 'view/dashboard.php';
-        exit;
+
     break;
 
     case 'logout':
