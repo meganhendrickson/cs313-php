@@ -129,7 +129,7 @@ switch ($action){
         $created_at = filter_input(INPUT_POST, 'created_at');
     
         //check for missing data
-        if(empty($budgetId) || empty($clientId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
+        if(empty($budgetId) || empty($budgetName) || empty($budgetAmount) || empty($created_at)) {
             $msg = '<p class="notice">Please provde innformation for all emtpy form fields.</p>';
             header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudget&budgetId=$budgetId");
             exit;
