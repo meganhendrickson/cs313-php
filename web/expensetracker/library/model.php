@@ -79,7 +79,7 @@ function addBudget($clientId, $budgetName, $budgetAmount, $created_at){
 function updateBudget($budgetId, $budgetName, $budgetAmount, $created_at){
   $db = dbConnection();
   echo dbconnected;
-  $sql = 'UPDATE budget SET budgetname = :budgetname, clientid = :clientid, budgetamount = :budgetamount, created_at = :created_at WHERE budgetid = :budgetid';
+  $sql = 'UPDATE budget SET budgetname=:budgetname, clientid=:clientid, budgetamount=:budgetamount, created_at=:created_at WHERE budgetid=:budgetid';
   $stmt = $db->prepare($sql);
   $stmt = bindValue(':budgetid', $budgetId);
   $stmt = bindValue(':clientid', $clientId);
