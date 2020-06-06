@@ -28,9 +28,9 @@ echo $buffer;
       ?>
     />
     <label> Description:</label>
-    <input required type="text" name="expenseDscr" id="expenseDscr"
-      <?php if(isset($expenseDscr)){echo "value='$expenseAmount'";}
-              elseif(isset($expeseDetails['expensedesc'])) {echo "value='$expenseDetails[expensedesc]'";}
+    <input required type="text" name="expenseDescr" id="expenseDescr"
+      <?php if(isset($expenseDescr)){echo "value='$expenseDescr'";}
+              elseif(isset($expeseDetails['expensedescr'])) {echo "value='$expenseDetails[expensedescr]'";}
       ?>
     />
               <label>Date:</label>
