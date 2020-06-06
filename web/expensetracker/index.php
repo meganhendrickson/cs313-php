@@ -147,20 +147,11 @@ switch ($action){
 
         //Send data to database
         $updateBudget = updateBudget($budgetId, $budgetName, $budgetAmount, $created_at);
-        echo $updateBudget;
-        //Check and report the result
-        if($updateBudget === 1){
-            $msg="<p class='notice'> $budgetName successfully updated.</p>";
-            $_SESSION['msg'] = $msg;
-            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
-            exit;
-        } else {
-            $msg = "<p class='notice'> Failed to update budget. Please try again.</p>";
-            $_SESSION['msg'] = $msg;
-            header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudget&budgetId=$budgetId");
-            exit;
-        }
-        
+
+        $msg="<p class='notice'> $budgetName successfully updated.</p>";
+        $_SESSION['msg'] = $msg;
+        header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+        exit;       
     break;
 
     case 'details':
