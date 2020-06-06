@@ -17,7 +17,55 @@ $action = filter_input(INPUT_POST, 'action');
 
 switch ($action){
     case 'login':
-        include 'view/login.php';
+        // Filter and store and check for validity
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
+
+        // Check for missing data
+        if (empty($email) || empty($passcode)) {
+            $message = '<p class="notice">All fields required. Please provide a valid email address and password.</p>';
+            include 'view/login.php';
+            exit;
+        }
+
+        //check for valid email
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = '<p class="notice">Not a valid email. Please try again.</p>';
+            include 'view/login.php';
+            exit;
+        }
+
+        // Query the client data based on the email address
+        $clientData = getClient($clientEmail);
+
+        // Compare the password just submitted against the hashed password for the matching client
+        $hashCheck = password_verify($passcode, $clientData['passcode']);
+
+        // If the hashes don't match create an error and return to the login view
+        if(!$hashCheck) {
+            $msg = '<p class="notice">Please check your password and try again.</p>';
+            include 'view/login.php';
+            exit;
+        } 
+
+        // A valid user exists, log them in
+        $_SESSION['loggedin'] = TRUE;
+        // Remove the password from the array
+        array_pop($clientData);
+        // Store the array into the session
+        $_SESSION['clientData'] = $clientData;
+
+        //delete registration cookie - set expiration to one hour ago
+        if($_SESSION['loggedin'] = TRUE){
+            unset($_COOKIE['firstname']);
+            setcookie('firstname','', strtotime('-1 year'), '/');
+        }
+        
+        //set client id variable from session data
+        $clientId = $_SESSION['clientData']['clientId'];
+        $clientBudgets = getClientBudgets($clientId);
+        $dashdisplay = buildDashDisplay($clientBudgets);
+        include 'view/dashboard.php';
         exit;
     break;
 
@@ -33,7 +81,7 @@ switch ($action){
     case 'register':
         //Filter and store data
         $clientName = filter_input(INPUT_POST, 'clientName', FILTER_SANITIZE_STRING);
-        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
         $passcode = filter_input(INPUT_POST, 'passcode', FILTER_SANITIZE_STRING);
         
         //check for missing data
@@ -325,5 +373,5 @@ switch ($action){
     default:
     $clientBudgets = getClientBudgets(1);
     $dashdisplay = buildDashDisplay($clientBudgets);
-        include 'view/dashboard.php';
+    include 'view/dashboard.php';
 }

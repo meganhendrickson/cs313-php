@@ -152,6 +152,17 @@ function deleteExpense($expenseId){
           CLIENT MODEL
 -------------------------------------*/
 
+function getClient($email){
+  $db = dbConnection();
+  $sql = 'SELECT * FROM client WHERE email = :email';
+  $stmt = $db->prepare($sql);
+  $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+  $stmt->execute();
+  $clientData = $stmt->fetch(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+  return $clientData;
+}
+
 function addClient($clientName, $email, $hashed){
   $db = dbConnection();
   $sql = 'INSERT INTO client(clientname, email, passcode) VALUES (:clientname, :email, :passcode)';
