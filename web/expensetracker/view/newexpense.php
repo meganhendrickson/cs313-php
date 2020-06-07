@@ -19,7 +19,10 @@ if(!$_SESSION['loggedin']){
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Add an Expense</h1>
   <div class="msg">
-    <?php if (isset($_SESSION['msg'])) {echo $_SESSION['msg'];}?>
+    <?php if (isset($_SESSION['msg'])) {
+      $msg = $_SESSION['msg'];
+      session_unset($_SESSION['msg']);
+    }?>
   </div>>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
     <fieldset>
