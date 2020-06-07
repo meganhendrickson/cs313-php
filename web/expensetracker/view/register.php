@@ -18,12 +18,7 @@ echo $buffer;
   <p>Welcome to Simple Expense Tracker! Please register to begin. All fields are required.</p>
   
   <div class="msg">
-  <?php 
-    if (isset($_SESSION['msg'])) {
-      $msg = $_SESSION['msg'];
-      echo $msg;
-      $_SESSION['msg'] = "";
-    }?>
+  <?php if (isset($msg)) {echo $msg;}?>
   </div>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
   <label>Your Name:</label>
