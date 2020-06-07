@@ -23,7 +23,7 @@ if(!$_SESSION['loggedin']){
       $msg = $_SESSION['msg'];
       echo $msg;
       $_SESSION['msg'] = "";
-    }?>>
+    }?>
   </div>
   <p>Update expense below. All fields are required.</p>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
@@ -36,19 +36,19 @@ if(!$_SESSION['loggedin']){
       <?php if(isset($expenseAmount)){ echo "value='$expenseAmount'";}
               elseif(isset($expenseDetails['expenseamount'])) {echo "value='$expenseDetails[expenseamount]'";} 
       ?>
-    /></br>
+    />
     <label> Description:</label>
     <input required type="text" name="expenseDescr" id="expenseDescr"
       <?php if(isset($expenseDescr)){echo "value='$expenseDescr'";}
               elseif(isset($expenseDetails['expensedescr'])) {echo "value='$expenseDetails[expensedescr]'";}
       ?>
-    /></br>
+    />
     <label>Date:</label>
     <input required type="date" name="created_at" id="created_at"
       <?php if(isset($created_at)){ echo "value='$created_at'";}
               elseif(isset($expenseDetails['created_at'])) {echo "value='$expenseDetails[created_at]'";} 
       ?>
-    /></br>
+    />
     <input type="submit" class="button" name="submit" value="Update Expense"/>
     <input type="hidden" name="action" value="updateexpense"/>
     <input type="hidden" name="expenseId" value="
@@ -57,10 +57,11 @@ if(!$_SESSION['loggedin']){
     />
   </fieldset>
   </form>
-
+            </br>
+            </br>
   <h4>Danger Zone</h4>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deleteexpense">
-    <input class="danger" type="submit" class="button" name="submit" id="deleteexpense" value="Delete Expense" />
+    <input type="submit" class="button danger" name="submit" id="deleteexpense" value="Delete Expense" />
     <input type="hidden" name="action" value="deleteexpense">
     <input type="hidden" name="budgetId" value="
       <?php if(isset($expenseDetails['budgetid'])){echo $expenseDetails['budgetid'];

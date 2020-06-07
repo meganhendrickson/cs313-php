@@ -380,7 +380,7 @@ fieldset {
 input {
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -398,6 +398,13 @@ input[type=submit] {
 }
 input[type=submit]:hover {
   background-color: #03425c;
+}
+
+.danger {
+  background-color: #010d12;
+}
+.danger:hover {
+  background-color: #05668D;
 }
 
 /*# sourceMappingURL=mystyles.css.map */

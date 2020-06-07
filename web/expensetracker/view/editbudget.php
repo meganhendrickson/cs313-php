@@ -35,19 +35,19 @@ if(!$_SESSION['loggedin']){
       <?php if(isset($budgetName)){ echo "value='$budgetName'";}
               elseif(isset($budgetDetails['budgetname'])) {echo "value='$budgetDetails[budgetname]'";} 
       ?>
-    /></br>
+    />
     <label>Budget Amount:</label>
     <input required type="text" name="budgetAmount" id="budgetAmount"
       <?php if(isset($budgetAmount)){ echo "value='$budgetAmount'";}
               elseif(isset($budgetDetails['budgetamount'])) {echo "value='$budgetDetails[budgetamount]'";} 
       ?>
-    /></br>
+    />
     <label>Date:</label>
     <input required type="date" name="created_at" id="created_at"
       <?php if(isset($created_at)){ echo "value='$created_at'";}
               elseif(isset($budgetDetails['created_at'])) {echo "value='$budgetDetails[created_at]'";} 
       ?>
-    /></br>
+    />
     <input type="submit" class="button" name="submit" value="Update Budget"/>
     <input type="hidden" name="action" value="updatebudget"/>
     <input type="hidden" name="budgetId" value="
@@ -56,9 +56,11 @@ if(!$_SESSION['loggedin']){
     />
   </fieldset>
   </form>
+            </br>
+            </br>
   <h4>Danger Zone</h4>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deletebudget">
-  <input class="danger" type="submit" class="button" name="submit" id="deletebudget" value="Delete Budget" />
+  <input type="submit" class="button danger" name="submit" id="deletebudget" value="Delete Budget" />
   <input type="hidden" name="action" value="deletebudget">
   <input type="hidden" name="budgetId" value="
       <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
