@@ -21,9 +21,10 @@ if(!$_SESSION['loggedin']){
   <div class="msg">
     <?php if (isset($_SESSION['msg'])) {
       $msg = $_SESSION['msg'];
+      echo $msg;
       session_unset($_SESSION['msg']);
     }?>
-  </div>>
+  </div>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
     <fieldset>
       <?php //drop down list using $budgets array
