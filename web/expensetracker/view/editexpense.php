@@ -57,8 +57,9 @@ if(!$_SESSION['loggedin']){
     />
   </fieldset>
   </form>
-            </br>
-  <fieldset>          </br>
+  </br>
+  </br>
+  <fieldset>          
   <h4>Danger Zone</h4>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deleteexpense">
     <input type="submit" class="button danger" name="submit" id="deleteexpense" value="Delete Expense" />
@@ -72,7 +73,7 @@ if(!$_SESSION['loggedin']){
               }elseif(isset($expenseId)){echo $expenseId;} ?>"
     />
   </form>
-  </fieldset>
+            </fieldset>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>

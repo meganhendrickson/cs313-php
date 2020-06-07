@@ -24,7 +24,7 @@
         <h2>Here's some things I've been working on:</h2>
         <ul class="assignment-menu">
             <li><a href="/shopping/">Shopping Cart</a></li>
-            <li><a href="/expensetracker/">Expense Tracker </a> (in progress)</li>
+            <li><a href="/expensetracker/">Expense Tracker </a></li>
         </ul>
     </div>   
 <?php include $_SERVER['DOCUMENT_ROOT'].'/common/footer.php'?>
