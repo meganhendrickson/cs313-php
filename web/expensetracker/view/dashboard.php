@@ -25,7 +25,7 @@ if(!$_SESSION['loggedin']){
     <?php if (isset($_SESSION['msg'])) {
       $msg = $_SESSION['msg'];
       echo $msg;
-      unset($_SESSION['msg']);
+      $_SESSION['msg'] = "";
     }?>
   </div>
   
