@@ -22,7 +22,7 @@ if(!$_SESSION['loggedin']){
     <?php if (isset($_SESSION['msg'])) {
       $msg = $_SESSION['msg'];
       echo $msg;
-      session_unset($_SESSION['msg']);
+      $_SESSION['msg'] = "";
     }?>
   </div>
   <p>All feilds are required.</p>
