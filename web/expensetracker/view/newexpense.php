@@ -25,6 +25,7 @@ if(!$_SESSION['loggedin']){
       session_unset($_SESSION['msg']);
     }?>
   </div>
+  <p>All feilds are required.</p>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
     <fieldset>
       <?php //drop down list using $budgets array
