@@ -223,7 +223,7 @@ switch ($action){
     //check for missing data
     if(empty($expenseId) || empty($budgetId) || empty($expenseAmount) || empty($expenseDescr) || empty($created_at)) {
         $msg = '<p class="notice">Please provide information for all emtpy form fields.</p>';
-        header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editexpense&budgetId=$budgetId");
+        header ("location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editexpense&expenseId=$expenseId");
         exit;
     }
 
@@ -239,7 +239,7 @@ switch ($action){
         } else {
             $msg = '<p class="notice">Failed to update expense. Please try again.</p>';
             $_SESSION['msg'] = $msg;
-            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editexpense&expenseId=$expenseId");
             exit;
         }
     break;
@@ -298,12 +298,12 @@ switch ($action){
         
         // Check results
         if($newBudget === 1){
-            $msg = '<p class="notice">Expense was successfully added.</p>';
+            $msg = '<p class="notice">Budget was successfully added.</p>';
             $_SESSION['msg'] = $msg;
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/");
             exit;
         } else {
-            $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
+            $msg = '<p class="notice">Failed to add budget. Please try again.</p>';
             $_SESSION['message'] = $msg;
             include $_SERVER['DOCUMENT_ROOT'].'/expensetracker/index.php';
             exit;
@@ -348,7 +348,7 @@ switch ($action){
         } else {
             $msg = '<p class="notice">Failed to update budget. Please try again.</p>';
             $_SESSION['msg'] = $msg;
-            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=editbudgets&budgetId=$budgetId");
             exit;
         }       
     break;
