@@ -22,8 +22,8 @@ echo $buffer;
   <p>Please login to continue.</p>
 
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
-    <label>Email:</label>
-    <input required type="text" name="email" id="email"/>
+    <label>Email:</label></br>
+    <input required type="text" name="email" id="email"/></br>
     <label>Password:</label>
     <input required type="password" name="passcode" id="passcode"/>
     <input type="submit" class="button" name="login" value="login"/>
