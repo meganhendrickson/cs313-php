@@ -1,5 +1,5 @@
 h4 {
-    color: $color-3;
+    color: darken($color-3, 10%);
     font-weight: bold;
     font-size: 1.4em; 
 }
@@ -135,8 +135,8 @@ input[type=submit] {
   }
 
   input.button.danger {
-    background-color: $color-3;
+    background-color: darken($color-3, 10%);
     &:hover{
-        background-color: darken($color-3, 10%);
+        background-color: darken($color-3, 20%);
     }
   }
