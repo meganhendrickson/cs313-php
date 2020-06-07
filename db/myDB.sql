@@ -9,7 +9,7 @@ CREATE TABLE budget (
 	budgetId serial PRIMARY KEY NOT NULL UNIQUE,
 	clientId int references client(clientId) NOT NULL,
 	budgetName varchar(255) NOT NULL,
-	budgetAmount int NOT NULL,
+	budgetAmount float NOT NULL,
 	created_at date NOT NULL
 );
 
