@@ -243,7 +243,13 @@ a:hover.cart-action {
 }
 
 /* EXPENSE TRACKER PROJECT */
-h4, .notice {
+h4 {
+  color: #f83f70;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.notice {
   color: #f83f70;
   font-weight: bold;
 }
@@ -400,10 +406,10 @@ input[type=submit]:hover {
   background-color: #03425c;
 }
 
-.danger {
+input.button.danger {
   background-color: #010d12;
 }
-.danger:hover {
+input.button.danger:hover {
   background-color: #05668D;
 }
 
