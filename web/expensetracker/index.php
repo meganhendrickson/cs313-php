@@ -25,7 +25,7 @@ switch ($action){
 
         // Check for missing data
         if (empty($email) || empty($passcode)) {
-            $message = '<p class="notice">All fields required. Please provide a valid email address and password.</p>';
+            $msg = '<p class="notice">All fields required. Please provide a valid email address and password.</p>';
             include 'view/login.php';
             exit;
         }

@@ -19,10 +19,8 @@ if(!$_SESSION['loggedin']){
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Add an Expense</h1>
   <div class="msg">
-    <?php 
-        if (isset($_SESSION['msg'])) {echo $msg;}
-    ?>
-  </div>
+    <?php if (isset($_SESSION['msg'])) {echo $_SESSION['msg'];}?>
+  </div>>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
     <fieldset>
       <?php //drop down list using $budgets array
