@@ -21,12 +21,11 @@ if(!$_SESSION['loggedin']){
 
   <h1>Edit Budget</h1>
   <div class="msg">
-  <?php 
-        if (isset($_SESSION['msg'])) {
-            $message = $_SESSION['msg'];
-        }
-        if (isset($message)) { echo $message;}
-    ?>
+   <?php if (isset($_SESSION['msg'])) {
+      $msg = $_SESSION['msg'];
+      echo $msg;
+      $_SESSION['msg'] = "";
+    }?>
   </div>
   <p>Update budget below. All fields are required.</p>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">

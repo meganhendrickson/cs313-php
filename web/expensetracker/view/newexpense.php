@@ -19,7 +19,7 @@ if(!$_SESSION['loggedin']){
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/expensetracker/common/actionmenu.php' ?>
   <h1>Add an Expense</h1>
   <div class="msg">
-    <?php if (isset($_SESSION['msg'])) {
+   <?php if (isset($_SESSION['msg'])) {
       $msg = $_SESSION['msg'];
       echo $msg;
       $_SESSION['msg'] = "";

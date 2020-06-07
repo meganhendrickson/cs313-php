@@ -22,12 +22,11 @@ if(!$_SESSION['loggedin']){
   <h1>Budget Details</h1>
   
   <div class="msg">
-  <?php 
-        if (isset($_SESSION['msg'])) {
-            $message = $_SESSION['msg'];
-        }
-        if (isset($message)) { echo $message;}
-    ?>
+    <?php if (isset($_SESSION['msg'])) {
+      $msg = $_SESSION['msg'];
+      echo $msg;
+      $_SESSION['msg'] = "";
+    }?>
   </div>
 
   <?php echo $budgetDisplay ?>
