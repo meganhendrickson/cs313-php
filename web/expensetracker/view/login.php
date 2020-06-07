@@ -16,11 +16,7 @@ echo $buffer;
   <h1>Simple Expense Tracker</h1>
   
   <div class="msg">
-    <?php if (isset($_SESSION['msg'])) {
-      $msg = $_SESSION['msg'];
-      echo $msg;
-      $_SESSION['msg'] = "";
-    }?>
+  <?php if (isset($msg)) {echo $msg;}?>
   </div>
 
   <p>Please login to continue.</p>

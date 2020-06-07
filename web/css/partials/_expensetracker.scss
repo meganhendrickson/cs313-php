@@ -1,3 +1,8 @@
+h4, .notice{
+    color: $color-3;
+    font-weight: bold;
+}
+
 #dashdisplay{
     @include flex-container(row, wrap);
     max-width: 960px;
@@ -82,7 +87,7 @@ table.budgetexpenses{
         }
     } 
     tr:nth-child(even) {
-        background-color: lighten($color-5, 45%);
+        background-color: $color-6;
     }
 }
 
@@ -93,4 +98,9 @@ table.budgetexpenses{
 
 .detail-date {
     margin:0;
+}
+
+fieldset {
+    background-color: $color-6;
+    @include box;
 }

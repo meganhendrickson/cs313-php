@@ -4,6 +4,7 @@ $color-2: #fff; // Background
 $color-3: #f83f70; // Accent
 $color-4: #05668D; 
 $color-5: #427AA1;
+$color-6: lighten($color-5, 45%);
 
 /* Set Breakpoints */
 $break-small: 576px;
@@ -88,7 +89,6 @@ $notop-padding: 0px 20px 20px 20px;
     -webkit-flex-flow: $axis $wrap;
     -ms-flex-flow: $axis $wrap;
     flex-flow: $axis $wrap;
-    justify-content: space-around;
 }
 
 * {
