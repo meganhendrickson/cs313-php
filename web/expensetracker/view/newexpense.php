@@ -32,9 +32,9 @@ if(!$_SESSION['loggedin']){
         echo $budgetList;
       ?>
       <label>Amount:</label>
-      <input required type="text" name="expenseAmount" id="expenseAmount"/>
+      <input required type="text" name="expenseAmount" id="expenseAmount"/></br>
       <label>Description:</label>
-      <input required type="text" name="expenseDescr" id="expenseDescr"/>
+      <input required type="text" name="expenseDescr" id="expenseDescr"/></br>
       <label>Expense Date:</label>
       <input required type="date" name="created_at" id="created_at" min="2020-01-01" max="2020-12-31"/>
       <input type="submit" class="button" name="submit" value="Add Expense"/>

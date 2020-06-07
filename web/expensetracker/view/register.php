@@ -22,9 +22,9 @@ echo $buffer;
   </div>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post"> 
   <label>Your Name:</label>
-  <input required type="text" name="clientName" id="clientName"/>
+  <input required type="text" name="clientName" id="clientName"/></br>
   <label>Email:</label>
-  <input required type="text" name="email" id="email"/>
+  <input required type="text" name="email" id="email"/></br>
   <label>Password:</label>
   <input required type="password" name="passcode" id="passcode"/>
   <p>Password must be at least 8 characters and contain at least 1 CAPS and 1 number.</p>

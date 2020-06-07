@@ -29,9 +29,9 @@ if(!$_SESSION['loggedin']){
     <fieldset>
 
       <label>Budget Name:</label>
-      <input required type="text" name="budgetName" id="budgetName"/>
+      <input required type="text" name="budgetName" id="budgetName"/></br>
       <label>Budget Amount:</label>
-      <input required type="text" name="budgetAmount" id="budgetAmount"/>
+      <input required type="text" name="budgetAmount" id="budgetAmount"/></br>
       <label>Date:</label>
       <input required type="date" name="created_at" id="created_at" min="2020-01-01" max="2020-12-31"/>
       <input type="submit" class="button" name="submit" value="Add Budget"/>

@@ -36,19 +36,19 @@ if(!$_SESSION['loggedin']){
       <?php if(isset($expenseAmount)){ echo "value='$expenseAmount'";}
               elseif(isset($expenseDetails['expenseamount'])) {echo "value='$expenseDetails[expenseamount]'";} 
       ?>
-    />
+    /></br>
     <label> Description:</label>
     <input required type="text" name="expenseDescr" id="expenseDescr"
       <?php if(isset($expenseDescr)){echo "value='$expenseDescr'";}
               elseif(isset($expenseDetails['expensedescr'])) {echo "value='$expenseDetails[expensedescr]'";}
       ?>
-    />
-              <label>Date:</label>
+    /></br>
+    <label>Date:</label>
     <input required type="date" name="created_at" id="created_at"
       <?php if(isset($created_at)){ echo "value='$created_at'";}
               elseif(isset($expenseDetails['created_at'])) {echo "value='$expenseDetails[created_at]'";} 
       ?>
-    />
+    /></br>
     <input type="submit" class="button" name="submit" value="Update Expense"/>
     <input type="hidden" name="action" value="updateexpense"/>
     <input type="hidden" name="expenseId" value="

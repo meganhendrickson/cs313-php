@@ -25,8 +25,8 @@ echo $buffer;
     <label>Email:</label>
     <input required type="text" name="email" id="email"/></br>
     <label>Password:</label>
-    <input required type="password" name="passcode" id="passcode"/>
-    <input type="submit" class="button" name="login" value="login"/>
+    <input required type="password" name="passcode" id="passcode"/></br>
+    <input type="submit" class="button" name="login" value="Login"/>
     <input type="hidden" name="action" value="login"/>
   </form>
 
