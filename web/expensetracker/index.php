@@ -191,9 +191,9 @@ switch ($action){
             header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=details&budgetId=$budgetId");
             exit;
         } else {
-            $msg = '<p class="notice">Faild to add expense. Please try again.</p>';
+            $msg = '<p class="notice">Failed to add expense. Please try again.</p>';
             $_SESSION['msg'] = $msg;
-            include $_SERVER['DOCUMENT_ROOT'].'view/newexpense.php';
+            header ("Location: https://mighty-wave-93548.herokuapp.com/expensetracker/?action=newexpense");
             exit;
         }
     break;
