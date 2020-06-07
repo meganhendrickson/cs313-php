@@ -20,10 +20,7 @@ if(!$_SESSION['loggedin']){
   <h1>Add an Expense</h1>
   <div class="msg">
     <?php 
-        if (isset($_SESSION['msg'])) {
-            $message = $_SESSION['msg'];
-        }
-        if (isset($message)) { echo $message;}
+        if (isset($_SESSION['msg'])) {echo $message;}
     ?>
   </div>
   <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post">
