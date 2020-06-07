@@ -134,8 +134,8 @@ input[type=submit] {
     }
   }
   input.button.danger {
-    background-color: darken($color-4, 25%);
+    background-color: $color-4;
     &:hover{
-        background-color: $color-4;
+        background-color: darken($color-4, 10%);
     }
   }

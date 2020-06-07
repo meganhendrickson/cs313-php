@@ -407,10 +407,10 @@ input[type=submit]:hover {
 }
 
 input.button.danger {
-  background-color: #010d12;
+  background-color: #05668D;
 }
 input.button.danger:hover {
-  background-color: #05668D;
+  background-color: #03425c;
 }
 
 /*# sourceMappingURL=mystyles.css.map */

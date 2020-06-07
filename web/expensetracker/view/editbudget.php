@@ -58,15 +58,17 @@ if(!$_SESSION['loggedin']){
   </form>
             </br>
             </br>
-  <h4>Danger Zone</h4>
-  <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deletebudget">
-  <input type="submit" class="button danger" name="submit" id="deletebudget" value="Delete Budget" />
-  <input type="hidden" name="action" value="deletebudget">
-  <input type="hidden" name="budgetId" value="
-      <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
-              }elseif(isset($budgetId)){echo $budgetId;} ?>"
-    />
-  </form>
+  <fieldset>
+    <h4>Danger Zone</h4>
+    <form action="https://mighty-wave-93548.herokuapp.com/expensetracker/index.php" method="post" id="deletebudget">
+      <input type="submit" class="button danger" name="submit" id="deletebudget" value="Delete Budget" />
+      <input type="hidden" name="action" value="deletebudget">
+      <input type="hidden" name="budgetId" value="
+          <?php if(isset($budgetDetails['budgetid'])){echo $budgetDetails['budgetid'];
+                  }elseif(isset($budgetId)){echo $budgetId;} ?>"
+      />
+    </form>
+  </fieldset>
 
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php' ?>
